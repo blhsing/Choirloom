@@ -1,0 +1,1 @@
+{"extends":"./tsconfig.json","compilerOptions":{"noEmit":false,"outDir":".runtime/app","rewriteRelativeImportExtensions":true,"allowImportingTsExtensions":true,"jsx":"react-jsx"},"include":["server","shared"],"exclude":["src","tests"]}
