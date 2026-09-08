@@ -1,4 +1,4 @@
-// Recorded sample instruments; harmonic definitions support offline tests and the choir vowel.
+// Recorded sample instruments; harmonic definitions support offline tests when no sample bank is attached.
 export const previewInstruments=[
  {id:'piano',en:'Piano',zh:'鋼琴',harmonics:[1,.45,.22,.12,.07,.03],attack:.006,decay:1.4,sustain:.12},
  {id:'electric-piano',en:'Electric piano',zh:'電鋼琴',harmonics:[1,.12,.35,.04,.09],attack:.008,decay:2,sustain:.15},
@@ -13,7 +13,6 @@ export const previewInstruments=[
  {id:'organ',en:'Organ',zh:'管風琴',harmonics:[1,.65,.1,.45,0,.1,0,.2],attack:.012,decay:.1,sustain:1},
  {id:'marimba',en:'Marimba',zh:'馬林巴琴',harmonics:[1,.02,.01,.45,.08,.02],attack:.003,decay:.55,sustain:.015},
  {id:'bells',en:'Bells',zh:'鐘聲',harmonics:[1,.1,.6,.05,.35,.1,.2],attack:.003,decay:2.5,sustain:.08},
- {id:'voice',en:'Choir vowel',zh:'合唱母音',harmonics:[1],attack:.035,decay:.1,sustain:.8},
 ] as const;
 export type PreviewInstrument=typeof previewInstruments[number]['id'];
 export function previewInstrument(value:unknown):PreviewInstrument{return previewInstruments.find(i=>i.id===value)?.id||'piano';}

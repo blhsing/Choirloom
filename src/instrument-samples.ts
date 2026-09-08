@@ -7,7 +7,6 @@ const decoded=new Map<string,Promise<AudioBuffer>>();
 export function nearestSample<T extends {pitch:number}>(samples:T[],pitch:number):T{return samples.reduce((best,s)=>Math.abs(s.pitch-pitch)<Math.abs(best.pitch-pitch)?s:best);}
 async function sampleBytes(url:string){let cache:Cache|undefined;try{cache=await caches.open('choirloom-instruments-v1');const found=await cache.match(url);if(found)return found.arrayBuffer();}catch{}const response=await fetch(url,{cache:'force-cache'});if(!response.ok)throw Error('instrumentSampleUnavailable');try{await cache?.put(url,response.clone());}catch{}return response.arrayBuffer();}
 export async function loadInstrument(ctx:AudioContext,instrument:PreviewInstrument,score:Score,base:string):Promise<LoadedSample[]>{
- if(instrument==='voice')return [];
  const root=base.replace(/\/$/,'')+'/instrument-samples/';
  manifest??=fetch(root+'index.json').then(r=>{if(!r.ok)throw Error('instrumentSampleUnavailable');return r.json();}).catch(e=>{manifest=undefined;throw e;});
  const bank=(await manifest)[instrument];if(!bank?.samples.length)throw Error('instrumentSampleUnavailable');
