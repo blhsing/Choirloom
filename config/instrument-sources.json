@@ -1,0 +1,921 @@
+{
+  "piano": {
+    "source": "vcsl",
+    "license": "CC0-1.0",
+    "loop": false,
+    "samples": [
+      {
+        "pitch": 24,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Chordophones/Zithers/Grand%20Piano%2C%20Kawai/Sustains/GPiano_sus_C0_v3_rr1_Player.wav",
+        "sourcePath": "Chordophones/Zithers/Grand Piano, Kawai/Sustains/GPiano_sus_C0_v3_rr1_Player.wav"
+      },
+      {
+        "pitch": 27,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Chordophones/Zithers/Grand%20Piano%2C%20Kawai/Sustains/GPiano_sus_D%230_v3_rr1_Player.wav",
+        "sourcePath": "Chordophones/Zithers/Grand Piano, Kawai/Sustains/GPiano_sus_D#0_v3_rr1_Player.wav"
+      },
+      {
+        "pitch": 30,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Chordophones/Zithers/Grand%20Piano%2C%20Kawai/Sustains/GPiano_sus_F%230_v3_rr1_Player.wav",
+        "sourcePath": "Chordophones/Zithers/Grand Piano, Kawai/Sustains/GPiano_sus_F#0_v3_rr1_Player.wav"
+      },
+      {
+        "pitch": 33,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Chordophones/Zithers/Grand%20Piano%2C%20Kawai/Sustains/GPiano_sus_A0_v3_rr1_Player.wav",
+        "sourcePath": "Chordophones/Zithers/Grand Piano, Kawai/Sustains/GPiano_sus_A0_v3_rr1_Player.wav"
+      },
+      {
+        "pitch": 36,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Chordophones/Zithers/Grand%20Piano%2C%20Kawai/Sustains/GPiano_sus_C1_v3_rr1_Player.wav",
+        "sourcePath": "Chordophones/Zithers/Grand Piano, Kawai/Sustains/GPiano_sus_C1_v3_rr1_Player.wav"
+      },
+      {
+        "pitch": 39,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Chordophones/Zithers/Grand%20Piano%2C%20Kawai/Sustains/GPiano_sus_D%231_v3_rr1_Player.wav",
+        "sourcePath": "Chordophones/Zithers/Grand Piano, Kawai/Sustains/GPiano_sus_D#1_v3_rr1_Player.wav"
+      },
+      {
+        "pitch": 42,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Chordophones/Zithers/Grand%20Piano%2C%20Kawai/Sustains/GPiano_sus_F%231_v3_rr1_Player.wav",
+        "sourcePath": "Chordophones/Zithers/Grand Piano, Kawai/Sustains/GPiano_sus_F#1_v3_rr1_Player.wav"
+      },
+      {
+        "pitch": 45,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Chordophones/Zithers/Grand%20Piano%2C%20Kawai/Sustains/GPiano_sus_A1_v3_rr1_Player.wav",
+        "sourcePath": "Chordophones/Zithers/Grand Piano, Kawai/Sustains/GPiano_sus_A1_v3_rr1_Player.wav"
+      },
+      {
+        "pitch": 48,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Chordophones/Zithers/Grand%20Piano%2C%20Kawai/Sustains/GPiano_sus_C2_v3_rr1_Player.wav",
+        "sourcePath": "Chordophones/Zithers/Grand Piano, Kawai/Sustains/GPiano_sus_C2_v3_rr1_Player.wav"
+      },
+      {
+        "pitch": 52,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Chordophones/Zithers/Grand%20Piano%2C%20Kawai/Sustains/GPiano_sus_E2_v3_rr1_Player.wav",
+        "sourcePath": "Chordophones/Zithers/Grand Piano, Kawai/Sustains/GPiano_sus_E2_v3_rr1_Player.wav"
+      },
+      {
+        "pitch": 56,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Chordophones/Zithers/Grand%20Piano%2C%20Kawai/Sustains/GPiano_sus_G%232_v3_rr1_Player.wav",
+        "sourcePath": "Chordophones/Zithers/Grand Piano, Kawai/Sustains/GPiano_sus_G#2_v3_rr1_Player.wav"
+      },
+      {
+        "pitch": 60,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Chordophones/Zithers/Grand%20Piano%2C%20Kawai/Sustains/GPiano_sus_C3_v3_rr1_Player.wav",
+        "sourcePath": "Chordophones/Zithers/Grand Piano, Kawai/Sustains/GPiano_sus_C3_v3_rr1_Player.wav"
+      },
+      {
+        "pitch": 64,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Chordophones/Zithers/Grand%20Piano%2C%20Kawai/Sustains/GPiano_sus_E3_v3_rr1_Player.wav",
+        "sourcePath": "Chordophones/Zithers/Grand Piano, Kawai/Sustains/GPiano_sus_E3_v3_rr1_Player.wav"
+      },
+      {
+        "pitch": 68,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Chordophones/Zithers/Grand%20Piano%2C%20Kawai/Sustains/GPiano_sus_G%233_v3_rr1_Player.wav",
+        "sourcePath": "Chordophones/Zithers/Grand Piano, Kawai/Sustains/GPiano_sus_G#3_v3_rr1_Player.wav"
+      },
+      {
+        "pitch": 72,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Chordophones/Zithers/Grand%20Piano%2C%20Kawai/Sustains/GPiano_sus_C4_v3_rr1_Player.wav",
+        "sourcePath": "Chordophones/Zithers/Grand Piano, Kawai/Sustains/GPiano_sus_C4_v3_rr1_Player.wav"
+      },
+      {
+        "pitch": 76,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Chordophones/Zithers/Grand%20Piano%2C%20Kawai/Sustains/GPiano_sus_E4_v3_rr1_Player.wav",
+        "sourcePath": "Chordophones/Zithers/Grand Piano, Kawai/Sustains/GPiano_sus_E4_v3_rr1_Player.wav"
+      },
+      {
+        "pitch": 80,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Chordophones/Zithers/Grand%20Piano%2C%20Kawai/Sustains/GPiano_sus_G%234_v3_rr1_Player.wav",
+        "sourcePath": "Chordophones/Zithers/Grand Piano, Kawai/Sustains/GPiano_sus_G#4_v3_rr1_Player.wav"
+      },
+      {
+        "pitch": 83,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Chordophones/Zithers/Grand%20Piano%2C%20Kawai/Sustains/GPiano_sus_B4_v3_rr1_Player.wav",
+        "sourcePath": "Chordophones/Zithers/Grand Piano, Kawai/Sustains/GPiano_sus_B4_v3_rr1_Player.wav"
+      },
+      {
+        "pitch": 87,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Chordophones/Zithers/Grand%20Piano%2C%20Kawai/Sustains/GPiano_sus_D%235_v3_rr1_Player.wav",
+        "sourcePath": "Chordophones/Zithers/Grand Piano, Kawai/Sustains/GPiano_sus_D#5_v3_rr1_Player.wav"
+      },
+      {
+        "pitch": 90,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Chordophones/Zithers/Grand%20Piano%2C%20Kawai/Sustains/GPiano_sus_F%235_v3_rr1_Player.wav",
+        "sourcePath": "Chordophones/Zithers/Grand Piano, Kawai/Sustains/GPiano_sus_F#5_v3_rr1_Player.wav"
+      },
+      {
+        "pitch": 93,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Chordophones/Zithers/Grand%20Piano%2C%20Kawai/Sustains/GPiano_sus_A5_v3_rr1_Player.wav",
+        "sourcePath": "Chordophones/Zithers/Grand Piano, Kawai/Sustains/GPiano_sus_A5_v3_rr1_Player.wav"
+      },
+      {
+        "pitch": 96,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Chordophones/Zithers/Grand%20Piano%2C%20Kawai/Sustains/GPiano_sus_C6_v3_rr1_Player.wav",
+        "sourcePath": "Chordophones/Zithers/Grand Piano, Kawai/Sustains/GPiano_sus_C6_v3_rr1_Player.wav"
+      }
+    ]
+  },
+  "electric-piano": {
+    "source": "vcsl",
+    "license": "CC0-1.0",
+    "loop": false,
+    "samples": [
+      {
+        "pitch": 12,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Electrophones/TX81Z/FM%20Piano/FMPiano_C0_vl2.wav",
+        "sourcePath": "Electrophones/TX81Z/FM Piano/FMPiano_C0_vl2.wav"
+      },
+      {
+        "pitch": 16,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Electrophones/TX81Z/FM%20Piano/FMPiano_E0_vl2.wav",
+        "sourcePath": "Electrophones/TX81Z/FM Piano/FMPiano_E0_vl2.wav"
+      },
+      {
+        "pitch": 20,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Electrophones/TX81Z/FM%20Piano/FMPiano_G%230_vl2.wav",
+        "sourcePath": "Electrophones/TX81Z/FM Piano/FMPiano_G#0_vl2.wav"
+      },
+      {
+        "pitch": 24,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Electrophones/TX81Z/FM%20Piano/FMPiano_C1_vl2.wav",
+        "sourcePath": "Electrophones/TX81Z/FM Piano/FMPiano_C1_vl2.wav"
+      },
+      {
+        "pitch": 28,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Electrophones/TX81Z/FM%20Piano/FMPiano_E1_vl2.wav",
+        "sourcePath": "Electrophones/TX81Z/FM Piano/FMPiano_E1_vl2.wav"
+      },
+      {
+        "pitch": 32,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Electrophones/TX81Z/FM%20Piano/FMPiano_G%231_vl2.wav",
+        "sourcePath": "Electrophones/TX81Z/FM Piano/FMPiano_G#1_vl2.wav"
+      },
+      {
+        "pitch": 36,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Electrophones/TX81Z/FM%20Piano/FMPiano_C2_vl2.wav",
+        "sourcePath": "Electrophones/TX81Z/FM Piano/FMPiano_C2_vl2.wav"
+      },
+      {
+        "pitch": 40,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Electrophones/TX81Z/FM%20Piano/FMPiano_E2_vl2.wav",
+        "sourcePath": "Electrophones/TX81Z/FM Piano/FMPiano_E2_vl2.wav"
+      },
+      {
+        "pitch": 44,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Electrophones/TX81Z/FM%20Piano/FMPiano_G%232_vl2.wav",
+        "sourcePath": "Electrophones/TX81Z/FM Piano/FMPiano_G#2_vl2.wav"
+      },
+      {
+        "pitch": 48,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Electrophones/TX81Z/FM%20Piano/FMPiano_C3_vl2.wav",
+        "sourcePath": "Electrophones/TX81Z/FM Piano/FMPiano_C3_vl2.wav"
+      },
+      {
+        "pitch": 52,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Electrophones/TX81Z/FM%20Piano/FMPiano_E3_vl2.wav",
+        "sourcePath": "Electrophones/TX81Z/FM Piano/FMPiano_E3_vl2.wav"
+      },
+      {
+        "pitch": 56,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Electrophones/TX81Z/FM%20Piano/FMPiano_G%233_vl2.wav",
+        "sourcePath": "Electrophones/TX81Z/FM Piano/FMPiano_G#3_vl2.wav"
+      },
+      {
+        "pitch": 60,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Electrophones/TX81Z/FM%20Piano/FMPiano_C4_vl2.wav",
+        "sourcePath": "Electrophones/TX81Z/FM Piano/FMPiano_C4_vl2.wav"
+      },
+      {
+        "pitch": 64,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Electrophones/TX81Z/FM%20Piano/FMPiano_E4_vl2.wav",
+        "sourcePath": "Electrophones/TX81Z/FM Piano/FMPiano_E4_vl2.wav"
+      },
+      {
+        "pitch": 68,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Electrophones/TX81Z/FM%20Piano/FMPiano_G%234_vl2.wav",
+        "sourcePath": "Electrophones/TX81Z/FM Piano/FMPiano_G#4_vl2.wav"
+      },
+      {
+        "pitch": 72,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Electrophones/TX81Z/FM%20Piano/FMPiano_C5_vl2.wav",
+        "sourcePath": "Electrophones/TX81Z/FM Piano/FMPiano_C5_vl2.wav"
+      },
+      {
+        "pitch": 76,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Electrophones/TX81Z/FM%20Piano/FMPiano_E5_vl2.wav",
+        "sourcePath": "Electrophones/TX81Z/FM Piano/FMPiano_E5_vl2.wav"
+      },
+      {
+        "pitch": 80,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Electrophones/TX81Z/FM%20Piano/FMPiano_G%235_vl2.wav",
+        "sourcePath": "Electrophones/TX81Z/FM Piano/FMPiano_G#5_vl2.wav"
+      },
+      {
+        "pitch": 84,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Electrophones/TX81Z/FM%20Piano/FMPiano_C6_vl2.wav",
+        "sourcePath": "Electrophones/TX81Z/FM Piano/FMPiano_C6_vl2.wav"
+      }
+    ]
+  },
+  "organ": {
+    "source": "vcsl",
+    "license": "CC0-1.0",
+    "loop": true,
+    "samples": [
+      {
+        "pitch": 36,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Aerophones/Edge-blown%20Aerophones/Pipe%20Organ/Loud/Rode_Man3Open_C1.wav",
+        "sourcePath": "Aerophones/Edge-blown Aerophones/Pipe Organ/Loud/Rode_Man3Open_C1.wav"
+      },
+      {
+        "pitch": 39,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Aerophones/Edge-blown%20Aerophones/Pipe%20Organ/Loud/Rode_Man3Open_D%231.wav",
+        "sourcePath": "Aerophones/Edge-blown Aerophones/Pipe Organ/Loud/Rode_Man3Open_D#1.wav"
+      },
+      {
+        "pitch": 42,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Aerophones/Edge-blown%20Aerophones/Pipe%20Organ/Loud/Rode_Man3Open_F%231.wav",
+        "sourcePath": "Aerophones/Edge-blown Aerophones/Pipe Organ/Loud/Rode_Man3Open_F#1.wav"
+      },
+      {
+        "pitch": 45,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Aerophones/Edge-blown%20Aerophones/Pipe%20Organ/Loud/Rode_Man3Open_A1.wav",
+        "sourcePath": "Aerophones/Edge-blown Aerophones/Pipe Organ/Loud/Rode_Man3Open_A1.wav"
+      },
+      {
+        "pitch": 48,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Aerophones/Edge-blown%20Aerophones/Pipe%20Organ/Loud/Rode_Man3Open_C2.wav",
+        "sourcePath": "Aerophones/Edge-blown Aerophones/Pipe Organ/Loud/Rode_Man3Open_C2.wav"
+      },
+      {
+        "pitch": 51,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Aerophones/Edge-blown%20Aerophones/Pipe%20Organ/Loud/Rode_Man3Open_D%232.wav",
+        "sourcePath": "Aerophones/Edge-blown Aerophones/Pipe Organ/Loud/Rode_Man3Open_D#2.wav"
+      },
+      {
+        "pitch": 54,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Aerophones/Edge-blown%20Aerophones/Pipe%20Organ/Loud/Rode_Man3Open_F%232.wav",
+        "sourcePath": "Aerophones/Edge-blown Aerophones/Pipe Organ/Loud/Rode_Man3Open_F#2.wav"
+      },
+      {
+        "pitch": 57,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Aerophones/Edge-blown%20Aerophones/Pipe%20Organ/Loud/Rode_Man3Open_A2.wav",
+        "sourcePath": "Aerophones/Edge-blown Aerophones/Pipe Organ/Loud/Rode_Man3Open_A2.wav"
+      },
+      {
+        "pitch": 60,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Aerophones/Edge-blown%20Aerophones/Pipe%20Organ/Loud/Rode_Man3Open_C3.wav",
+        "sourcePath": "Aerophones/Edge-blown Aerophones/Pipe Organ/Loud/Rode_Man3Open_C3.wav"
+      },
+      {
+        "pitch": 63,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Aerophones/Edge-blown%20Aerophones/Pipe%20Organ/Loud/Rode_Man3Open_D%233.wav",
+        "sourcePath": "Aerophones/Edge-blown Aerophones/Pipe Organ/Loud/Rode_Man3Open_D#3.wav"
+      },
+      {
+        "pitch": 66,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Aerophones/Edge-blown%20Aerophones/Pipe%20Organ/Loud/Rode_Man3Open_F%233.wav",
+        "sourcePath": "Aerophones/Edge-blown Aerophones/Pipe Organ/Loud/Rode_Man3Open_F#3.wav"
+      },
+      {
+        "pitch": 69,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Aerophones/Edge-blown%20Aerophones/Pipe%20Organ/Loud/Rode_Man3Open_A3.wav",
+        "sourcePath": "Aerophones/Edge-blown Aerophones/Pipe Organ/Loud/Rode_Man3Open_A3.wav"
+      },
+      {
+        "pitch": 72,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Aerophones/Edge-blown%20Aerophones/Pipe%20Organ/Loud/Rode_Man3Open_C4.wav",
+        "sourcePath": "Aerophones/Edge-blown Aerophones/Pipe Organ/Loud/Rode_Man3Open_C4.wav"
+      },
+      {
+        "pitch": 75,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Aerophones/Edge-blown%20Aerophones/Pipe%20Organ/Loud/Rode_Man3Open_D%234.wav",
+        "sourcePath": "Aerophones/Edge-blown Aerophones/Pipe Organ/Loud/Rode_Man3Open_D#4.wav"
+      },
+      {
+        "pitch": 78,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Aerophones/Edge-blown%20Aerophones/Pipe%20Organ/Loud/Rode_Man3Open_F%234.wav",
+        "sourcePath": "Aerophones/Edge-blown Aerophones/Pipe Organ/Loud/Rode_Man3Open_F#4.wav"
+      },
+      {
+        "pitch": 81,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Aerophones/Edge-blown%20Aerophones/Pipe%20Organ/Loud/Rode_Man3Open_A4.wav",
+        "sourcePath": "Aerophones/Edge-blown Aerophones/Pipe Organ/Loud/Rode_Man3Open_A4.wav"
+      },
+      {
+        "pitch": 84,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Aerophones/Edge-blown%20Aerophones/Pipe%20Organ/Loud/Rode_Man3Open_C5.wav",
+        "sourcePath": "Aerophones/Edge-blown Aerophones/Pipe Organ/Loud/Rode_Man3Open_C5.wav"
+      },
+      {
+        "pitch": 87,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Aerophones/Edge-blown%20Aerophones/Pipe%20Organ/Loud/Rode_Man3Open_D%235.wav",
+        "sourcePath": "Aerophones/Edge-blown Aerophones/Pipe Organ/Loud/Rode_Man3Open_D#5.wav"
+      },
+      {
+        "pitch": 90,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Aerophones/Edge-blown%20Aerophones/Pipe%20Organ/Loud/Rode_Man3Open_F%235.wav",
+        "sourcePath": "Aerophones/Edge-blown Aerophones/Pipe Organ/Loud/Rode_Man3Open_F#5.wav"
+      },
+      {
+        "pitch": 93,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Aerophones/Edge-blown%20Aerophones/Pipe%20Organ/Loud/Rode_Man3Open_A5.wav",
+        "sourcePath": "Aerophones/Edge-blown Aerophones/Pipe Organ/Loud/Rode_Man3Open_A5.wav"
+      },
+      {
+        "pitch": 96,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Aerophones/Edge-blown%20Aerophones/Pipe%20Organ/Loud/Rode_Man3Open_C6.wav",
+        "sourcePath": "Aerophones/Edge-blown Aerophones/Pipe Organ/Loud/Rode_Man3Open_C6.wav"
+      }
+    ]
+  },
+  "marimba": {
+    "source": "vcsl",
+    "license": "CC0-1.0",
+    "loop": false,
+    "samples": [
+      {
+        "pitch": 41,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Idiophones/Struck%20Idiophones/Marimba/Marimba_hit_Outrigger_F1_med_01.wav",
+        "sourcePath": "Idiophones/Struck Idiophones/Marimba/Marimba_hit_Outrigger_F1_med_01.wav"
+      },
+      {
+        "pitch": 48,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Idiophones/Struck%20Idiophones/Marimba/Marimba_hit_Outrigger_C2_med_01.wav",
+        "sourcePath": "Idiophones/Struck Idiophones/Marimba/Marimba_hit_Outrigger_C2_med_01.wav"
+      },
+      {
+        "pitch": 55,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Idiophones/Struck%20Idiophones/Marimba/Marimba_hit_Outrigger_G2_med_01.wav",
+        "sourcePath": "Idiophones/Struck Idiophones/Marimba/Marimba_hit_Outrigger_G2_med_01.wav"
+      },
+      {
+        "pitch": 59,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Idiophones/Struck%20Idiophones/Marimba/Marimba_hit_Outrigger_B2_med_01.wav",
+        "sourcePath": "Idiophones/Struck Idiophones/Marimba/Marimba_hit_Outrigger_B2_med_01.wav"
+      },
+      {
+        "pitch": 65,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Idiophones/Struck%20Idiophones/Marimba/Marimba_hit_Outrigger_F3_med_01.wav",
+        "sourcePath": "Idiophones/Struck Idiophones/Marimba/Marimba_hit_Outrigger_F3_med_01.wav"
+      },
+      {
+        "pitch": 72,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Idiophones/Struck%20Idiophones/Marimba/Marimba_hit_Outrigger_C4_med_01.wav",
+        "sourcePath": "Idiophones/Struck Idiophones/Marimba/Marimba_hit_Outrigger_C4_med_01.wav"
+      },
+      {
+        "pitch": 79,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Idiophones/Struck%20Idiophones/Marimba/Marimba_hit_Outrigger_G4_med_01.wav",
+        "sourcePath": "Idiophones/Struck Idiophones/Marimba/Marimba_hit_Outrigger_G4_med_01.wav"
+      },
+      {
+        "pitch": 83,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Idiophones/Struck%20Idiophones/Marimba/Marimba_hit_Outrigger_B4_med_01.wav",
+        "sourcePath": "Idiophones/Struck Idiophones/Marimba/Marimba_hit_Outrigger_B4_med_01.wav"
+      },
+      {
+        "pitch": 89,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Idiophones/Struck%20Idiophones/Marimba/Marimba_hit_Outrigger_F5_med_01.wav",
+        "sourcePath": "Idiophones/Struck Idiophones/Marimba/Marimba_hit_Outrigger_F5_med_01.wav"
+      },
+      {
+        "pitch": 96,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Idiophones/Struck%20Idiophones/Marimba/Marimba_hit_Outrigger_C6_med_01.wav",
+        "sourcePath": "Idiophones/Struck Idiophones/Marimba/Marimba_hit_Outrigger_C6_med_01.wav"
+      }
+    ]
+  },
+  "bells": {
+    "source": "vcsl",
+    "license": "CC0-1.0",
+    "loop": false,
+    "samples": [
+      {
+        "pitch": 70,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Idiophones/Struck%20Idiophones/Tubular%20Bells%201/chimes_A%233_ff_rr1.wav",
+        "sourcePath": "Idiophones/Struck Idiophones/Tubular Bells 1/chimes_A#3_ff_rr1.wav"
+      },
+      {
+        "pitch": 60,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Idiophones/Struck%20Idiophones/Tubular%20Bells%201/chimes_C3_f_rr1.wav",
+        "sourcePath": "Idiophones/Struck Idiophones/Tubular Bells 1/chimes_C3_f_rr1.wav"
+      },
+      {
+        "pitch": 72,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Idiophones/Struck%20Idiophones/Tubular%20Bells%201/chimes_C4_ff_rr2.wav",
+        "sourcePath": "Idiophones/Struck Idiophones/Tubular Bells 1/chimes_C4_ff_rr2.wav"
+      },
+      {
+        "pitch": 62,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Idiophones/Struck%20Idiophones/Tubular%20Bells%201/chimes_D3_ff_rr1.wav",
+        "sourcePath": "Idiophones/Struck Idiophones/Tubular Bells 1/chimes_D3_ff_rr1.wav"
+      },
+      {
+        "pitch": 74,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Idiophones/Struck%20Idiophones/Tubular%20Bells%201/chimes_D4_ff_rr2.wav",
+        "sourcePath": "Idiophones/Struck Idiophones/Tubular Bells 1/chimes_D4_ff_rr2.wav"
+      },
+      {
+        "pitch": 64,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Idiophones/Struck%20Idiophones/Tubular%20Bells%201/chimes_E3_ff_rr2.wav",
+        "sourcePath": "Idiophones/Struck Idiophones/Tubular Bells 1/chimes_E3_ff_rr2.wav"
+      },
+      {
+        "pitch": 76,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Idiophones/Struck%20Idiophones/Tubular%20Bells%201/chimes_E4_ff_rr2.wav",
+        "sourcePath": "Idiophones/Struck Idiophones/Tubular Bells 1/chimes_E4_ff_rr2.wav"
+      },
+      {
+        "pitch": 66,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Idiophones/Struck%20Idiophones/Tubular%20Bells%201/chimes_F%233_fff_rr1.wav",
+        "sourcePath": "Idiophones/Struck Idiophones/Tubular Bells 1/chimes_F#3_fff_rr1.wav"
+      },
+      {
+        "pitch": 68,
+        "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Idiophones/Struck%20Idiophones/Tubular%20Bells%201/chimes_G%233_ff_rr1.wav",
+        "sourcePath": "Idiophones/Struck Idiophones/Tubular Bells 1/chimes_G#3_ff_rr1.wav"
+      }
+    ]
+  },
+  "strings": {
+    "source": "vsco",
+    "license": "CC0-1.0",
+    "loop": true,
+    "samples": [
+      {
+        "pitch": 55,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/susVib/VlnEns_susVib_G2_v2.wav",
+        "sourcePath": "Strings/Violin Section/susVib/VlnEns_susVib_G2_v2.wav"
+      },
+      {
+        "pitch": 59,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/susVib/VlnEns_susVib_B2_v2.wav",
+        "sourcePath": "Strings/Violin Section/susVib/VlnEns_susVib_B2_v2.wav"
+      },
+      {
+        "pitch": 62,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/susVib/VlnEns_susVib_D3_v2.wav",
+        "sourcePath": "Strings/Violin Section/susVib/VlnEns_susVib_D3_v2.wav"
+      },
+      {
+        "pitch": 66,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/susVib/VlnEns_susVib_F%233_v2.wav",
+        "sourcePath": "Strings/Violin Section/susVib/VlnEns_susVib_F#3_v2.wav"
+      },
+      {
+        "pitch": 69,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/susVib/VlnEns_susVib_A3_v2.wav",
+        "sourcePath": "Strings/Violin Section/susVib/VlnEns_susVib_A3_v2.wav"
+      },
+      {
+        "pitch": 72,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/susVib/VlnEns_susVib_C4_v2.wav",
+        "sourcePath": "Strings/Violin Section/susVib/VlnEns_susVib_C4_v2.wav"
+      },
+      {
+        "pitch": 76,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/susVib/VlnEns_susVib_E4_v2.wav",
+        "sourcePath": "Strings/Violin Section/susVib/VlnEns_susVib_E4_v2.wav"
+      },
+      {
+        "pitch": 79,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/susVib/VlnEns_susVib_G4_v2.wav",
+        "sourcePath": "Strings/Violin Section/susVib/VlnEns_susVib_G4_v2.wav"
+      },
+      {
+        "pitch": 83,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/susVib/VlnEns_susVib_B4_v2.wav",
+        "sourcePath": "Strings/Violin Section/susVib/VlnEns_susVib_B4_v2.wav"
+      },
+      {
+        "pitch": 86,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/susVib/VlnEns_susVib_D5_v2.wav",
+        "sourcePath": "Strings/Violin Section/susVib/VlnEns_susVib_D5_v2.wav"
+      }
+    ]
+  },
+  "violin": {
+    "source": "vsco",
+    "license": "CC0-1.0",
+    "loop": true,
+    "samples": [
+      {
+        "pitch": 55,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Solo%20Violin/Arco%20Vib/LLVln_ArcoVib_G3_f.wav",
+        "sourcePath": "Strings/Solo Violin/Arco Vib/LLVln_ArcoVib_G3_f.wav"
+      },
+      {
+        "pitch": 60,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Solo%20Violin/Arco%20Vib/LLVln_ArcoVib_C4_f.wav",
+        "sourcePath": "Strings/Solo Violin/Arco Vib/LLVln_ArcoVib_C4_f.wav"
+      },
+      {
+        "pitch": 64,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Solo%20Violin/Arco%20Vib/LLVln_ArcoVib_E4_f.wav",
+        "sourcePath": "Strings/Solo Violin/Arco Vib/LLVln_ArcoVib_E4_f.wav"
+      },
+      {
+        "pitch": 67,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Solo%20Violin/Arco%20Vib/LLVln_ArcoVib_G4_f.wav",
+        "sourcePath": "Strings/Solo Violin/Arco Vib/LLVln_ArcoVib_G4_f.wav"
+      },
+      {
+        "pitch": 72,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Solo%20Violin/Arco%20Vib/LLVln_ArcoVib_C5_f.wav",
+        "sourcePath": "Strings/Solo Violin/Arco Vib/LLVln_ArcoVib_C5_f.wav"
+      },
+      {
+        "pitch": 76,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Solo%20Violin/Arco%20Vib/LLVln_ArcoVib_E5_f.wav",
+        "sourcePath": "Strings/Solo Violin/Arco Vib/LLVln_ArcoVib_E5_f.wav"
+      },
+      {
+        "pitch": 79,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Solo%20Violin/Arco%20Vib/LLVln_ArcoVib_G5_f.wav",
+        "sourcePath": "Strings/Solo Violin/Arco Vib/LLVln_ArcoVib_G5_f.wav"
+      },
+      {
+        "pitch": 84,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Solo%20Violin/Arco%20Vib/LLVln_ArcoVib_C6_f.wav",
+        "sourcePath": "Strings/Solo Violin/Arco Vib/LLVln_ArcoVib_C6_f.wav"
+      }
+    ]
+  },
+  "flute": {
+    "source": "vsco",
+    "license": "CC0-1.0",
+    "loop": true,
+    "samples": [
+      {
+        "pitch": 60,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Woodwinds/Flute/susNV/LDFlute_susNV_C3_v3_1.wav",
+        "sourcePath": "Woodwinds/Flute/susNV/LDFlute_susNV_C3_v3_1.wav"
+      },
+      {
+        "pitch": 64,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Woodwinds/Flute/susNV/LDFlute_susNV_E3_v3_1.wav",
+        "sourcePath": "Woodwinds/Flute/susNV/LDFlute_susNV_E3_v3_1.wav"
+      },
+      {
+        "pitch": 69,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Woodwinds/Flute/susNV/LDFlute_susNV_A3_v3_1.wav",
+        "sourcePath": "Woodwinds/Flute/susNV/LDFlute_susNV_A3_v3_1.wav"
+      },
+      {
+        "pitch": 72,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Woodwinds/Flute/susNV/LDFlute_susNV_C4_v3_1.wav",
+        "sourcePath": "Woodwinds/Flute/susNV/LDFlute_susNV_C4_v3_1.wav"
+      },
+      {
+        "pitch": 76,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Woodwinds/Flute/susNV/LDFlute_susNV_E4_v3_1.wav",
+        "sourcePath": "Woodwinds/Flute/susNV/LDFlute_susNV_E4_v3_1.wav"
+      },
+      {
+        "pitch": 81,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Woodwinds/Flute/susNV/LDFlute_susNV_A4_v3_1.wav",
+        "sourcePath": "Woodwinds/Flute/susNV/LDFlute_susNV_A4_v3_1.wav"
+      },
+      {
+        "pitch": 93,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Woodwinds/Flute/susNV/LDFlute_susNV_A5_v3_1.wav",
+        "sourcePath": "Woodwinds/Flute/susNV/LDFlute_susNV_A5_v3_1.wav"
+      }
+    ]
+  },
+  "clarinet": {
+    "source": "vsco",
+    "license": "CC0-1.0",
+    "loop": true,
+    "samples": [
+      {
+        "pitch": 50,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Woodwinds/Clarinet/susLong/DCClar_susLong_D2_v2_rr1_sum.wav",
+        "sourcePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_D2_v2_rr1_sum.wav"
+      },
+      {
+        "pitch": 53,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Woodwinds/Clarinet/susLong/DCClar_susLong_F2_v2_rr1_sum.wav",
+        "sourcePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_F2_v2_rr1_sum.wav"
+      },
+      {
+        "pitch": 58,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Woodwinds/Clarinet/susLong/DCClar_susLong_A%232_v2_rr1_sum.wav",
+        "sourcePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_A#2_v2_rr1_sum.wav"
+      },
+      {
+        "pitch": 62,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Woodwinds/Clarinet/susLong/DCClar_susLong_D3_v2_rr1_sum.wav",
+        "sourcePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_D3_v2_rr1_sum.wav"
+      },
+      {
+        "pitch": 65,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Woodwinds/Clarinet/susLong/DCClar_susLong_F3_v2_rr1_sum.wav",
+        "sourcePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_F3_v2_rr1_sum.wav"
+      },
+      {
+        "pitch": 70,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Woodwinds/Clarinet/susLong/DCClar_susLong_A%233_v2_rr1_sum.wav",
+        "sourcePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_A#3_v2_rr1_sum.wav"
+      },
+      {
+        "pitch": 74,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Woodwinds/Clarinet/susLong/DCClar_susLong_D4_v2_rr1_sum.wav",
+        "sourcePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_D4_v2_rr1_sum.wav"
+      },
+      {
+        "pitch": 77,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Woodwinds/Clarinet/susLong/DCClar_susLong_F4_v2_rr1_sum.wav",
+        "sourcePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_F4_v2_rr1_sum.wav"
+      },
+      {
+        "pitch": 82,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Woodwinds/Clarinet/susLong/DCClar_susLong_A%234_v2_rr1_sum.wav",
+        "sourcePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_A#4_v2_rr1_sum.wav"
+      },
+      {
+        "pitch": 86,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Woodwinds/Clarinet/susLong/DCClar_susLong_D5_v2_rr1_sum.wav",
+        "sourcePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_D5_v2_rr1_sum.wav"
+      },
+      {
+        "pitch": 90,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Woodwinds/Clarinet/susLong/DCClar_susLong_F%235_v2_rr1_sum.wav",
+        "sourcePath": "Woodwinds/Clarinet/susLong/DCClar_susLong_F#5_v2_rr1_sum.wav"
+      }
+    ]
+  },
+  "trumpet": {
+    "source": "vsco",
+    "license": "CC0-1.0",
+    "loop": true,
+    "samples": [
+      {
+        "pitch": 53,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Brass/Trumpet/sus/Sum_SHTrumpet_sus_F2_v3_rr1.wav",
+        "sourcePath": "Brass/Trumpet/sus/Sum_SHTrumpet_sus_F2_v3_rr1.wav"
+      },
+      {
+        "pitch": 57,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Brass/Trumpet/sus/Sum_SHTrumpet_sus_A2_v3_rr1.wav",
+        "sourcePath": "Brass/Trumpet/sus/Sum_SHTrumpet_sus_A2_v3_rr1.wav"
+      },
+      {
+        "pitch": 60,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Brass/Trumpet/sus/Sum_SHTrumpet_sus_C3_v3_rr1.wav",
+        "sourcePath": "Brass/Trumpet/sus/Sum_SHTrumpet_sus_C3_v3_rr1.wav"
+      },
+      {
+        "pitch": 63,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Brass/Trumpet/sus/Sum_SHTrumpet_sus_D%233_v3_rr1.wav",
+        "sourcePath": "Brass/Trumpet/sus/Sum_SHTrumpet_sus_D#3_v3_rr1.wav"
+      },
+      {
+        "pitch": 67,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Brass/Trumpet/sus/Sum_SHTrumpet_sus_G3_v3_rr1.wav",
+        "sourcePath": "Brass/Trumpet/sus/Sum_SHTrumpet_sus_G3_v3_rr1.wav"
+      },
+      {
+        "pitch": 70,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Brass/Trumpet/sus/Sum_SHTrumpet_sus_A%233_v3_rr1.wav",
+        "sourcePath": "Brass/Trumpet/sus/Sum_SHTrumpet_sus_A#3_v3_rr1.wav"
+      },
+      {
+        "pitch": 74,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Brass/Trumpet/sus/Sum_SHTrumpet_sus_D4_v3_rr1.wav",
+        "sourcePath": "Brass/Trumpet/sus/Sum_SHTrumpet_sus_D4_v3_rr1.wav"
+      },
+      {
+        "pitch": 77,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Brass/Trumpet/sus/Sum_SHTrumpet_sus_F4_v3_rr1.wav",
+        "sourcePath": "Brass/Trumpet/sus/Sum_SHTrumpet_sus_F4_v3_rr1.wav"
+      },
+      {
+        "pitch": 81,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Brass/Trumpet/sus/Sum_SHTrumpet_sus_A4_v3_rr1.wav",
+        "sourcePath": "Brass/Trumpet/sus/Sum_SHTrumpet_sus_A4_v3_rr1.wav"
+      },
+      {
+        "pitch": 84,
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Brass/Trumpet/sus/Sum_SHTrumpet_sus_C5_v3_rr1.wav",
+        "sourcePath": "Brass/Trumpet/sus/Sum_SHTrumpet_sus_C5_v3_rr1.wav"
+      }
+    ]
+  },
+  "guitar": {
+    "source": "discord",
+    "license": "CC0-1.0",
+    "loop": false,
+    "samples": [
+      {
+        "pitch": 40,
+        "url": "https://raw.githubusercontent.com/sfzinstruments/Discord-SFZ-GM-Bank/7a9c478fe331f94f246d33332f0adedb25bbbe27/Discord%20GM/Melodic/026-Acoustic%20Guitar%20%28steel%29/MartinGM2_040__E2_1.wav",
+        "sourcePath": "Discord GM/Melodic/026-Acoustic Guitar (steel)/MartinGM2_040__E2_1.wav"
+      },
+      {
+        "pitch": 43,
+        "url": "https://raw.githubusercontent.com/sfzinstruments/Discord-SFZ-GM-Bank/7a9c478fe331f94f246d33332f0adedb25bbbe27/Discord%20GM/Melodic/026-Acoustic%20Guitar%20%28steel%29/MartinGM2_043__G2_1.wav",
+        "sourcePath": "Discord GM/Melodic/026-Acoustic Guitar (steel)/MartinGM2_043__G2_1.wav"
+      },
+      {
+        "pitch": 46,
+        "url": "https://raw.githubusercontent.com/sfzinstruments/Discord-SFZ-GM-Bank/7a9c478fe331f94f246d33332f0adedb25bbbe27/Discord%20GM/Melodic/026-Acoustic%20Guitar%20%28steel%29/MartinGM2_046_Bb2_1.wav",
+        "sourcePath": "Discord GM/Melodic/026-Acoustic Guitar (steel)/MartinGM2_046_Bb2_1.wav"
+      },
+      {
+        "pitch": 49,
+        "url": "https://raw.githubusercontent.com/sfzinstruments/Discord-SFZ-GM-Bank/7a9c478fe331f94f246d33332f0adedb25bbbe27/Discord%20GM/Melodic/026-Acoustic%20Guitar%20%28steel%29/MartinGM2_049_Db3_1.wav",
+        "sourcePath": "Discord GM/Melodic/026-Acoustic Guitar (steel)/MartinGM2_049_Db3_1.wav"
+      },
+      {
+        "pitch": 52,
+        "url": "https://raw.githubusercontent.com/sfzinstruments/Discord-SFZ-GM-Bank/7a9c478fe331f94f246d33332f0adedb25bbbe27/Discord%20GM/Melodic/026-Acoustic%20Guitar%20%28steel%29/MartinGM2_052__E3_1.wav",
+        "sourcePath": "Discord GM/Melodic/026-Acoustic Guitar (steel)/MartinGM2_052__E3_1.wav"
+      },
+      {
+        "pitch": 55,
+        "url": "https://raw.githubusercontent.com/sfzinstruments/Discord-SFZ-GM-Bank/7a9c478fe331f94f246d33332f0adedb25bbbe27/Discord%20GM/Melodic/026-Acoustic%20Guitar%20%28steel%29/MartinGM2_055__G3_1.wav",
+        "sourcePath": "Discord GM/Melodic/026-Acoustic Guitar (steel)/MartinGM2_055__G3_1.wav"
+      },
+      {
+        "pitch": 58,
+        "url": "https://raw.githubusercontent.com/sfzinstruments/Discord-SFZ-GM-Bank/7a9c478fe331f94f246d33332f0adedb25bbbe27/Discord%20GM/Melodic/026-Acoustic%20Guitar%20%28steel%29/MartinGM2_058_Bb3_1.wav",
+        "sourcePath": "Discord GM/Melodic/026-Acoustic Guitar (steel)/MartinGM2_058_Bb3_1.wav"
+      },
+      {
+        "pitch": 61,
+        "url": "https://raw.githubusercontent.com/sfzinstruments/Discord-SFZ-GM-Bank/7a9c478fe331f94f246d33332f0adedb25bbbe27/Discord%20GM/Melodic/026-Acoustic%20Guitar%20%28steel%29/MartinGM2_061_Db4_1.wav",
+        "sourcePath": "Discord GM/Melodic/026-Acoustic Guitar (steel)/MartinGM2_061_Db4_1.wav"
+      },
+      {
+        "pitch": 64,
+        "url": "https://raw.githubusercontent.com/sfzinstruments/Discord-SFZ-GM-Bank/7a9c478fe331f94f246d33332f0adedb25bbbe27/Discord%20GM/Melodic/026-Acoustic%20Guitar%20%28steel%29/MartinGM2_064__E4_1.wav",
+        "sourcePath": "Discord GM/Melodic/026-Acoustic Guitar (steel)/MartinGM2_064__E4_1.wav"
+      },
+      {
+        "pitch": 68,
+        "url": "https://raw.githubusercontent.com/sfzinstruments/Discord-SFZ-GM-Bank/7a9c478fe331f94f246d33332f0adedb25bbbe27/Discord%20GM/Melodic/026-Acoustic%20Guitar%20%28steel%29/MartinGM2_068_Ab4_1.wav",
+        "sourcePath": "Discord GM/Melodic/026-Acoustic Guitar (steel)/MartinGM2_068_Ab4_1.wav"
+      },
+      {
+        "pitch": 71,
+        "url": "https://raw.githubusercontent.com/sfzinstruments/Discord-SFZ-GM-Bank/7a9c478fe331f94f246d33332f0adedb25bbbe27/Discord%20GM/Melodic/026-Acoustic%20Guitar%20%28steel%29/MartinGM2_071__B4_1.wav",
+        "sourcePath": "Discord GM/Melodic/026-Acoustic Guitar (steel)/MartinGM2_071__B4_1.wav"
+      },
+      {
+        "pitch": 74,
+        "url": "https://raw.githubusercontent.com/sfzinstruments/Discord-SFZ-GM-Bank/7a9c478fe331f94f246d33332f0adedb25bbbe27/Discord%20GM/Melodic/026-Acoustic%20Guitar%20%28steel%29/MartinGM2_074__D5_1.wav",
+        "sourcePath": "Discord GM/Melodic/026-Acoustic Guitar (steel)/MartinGM2_074__D5_1.wav"
+      },
+      {
+        "pitch": 77,
+        "url": "https://raw.githubusercontent.com/sfzinstruments/Discord-SFZ-GM-Bank/7a9c478fe331f94f246d33332f0adedb25bbbe27/Discord%20GM/Melodic/026-Acoustic%20Guitar%20%28steel%29/MartinGM2_077__F5_1.wav",
+        "sourcePath": "Discord GM/Melodic/026-Acoustic Guitar (steel)/MartinGM2_077__F5_1.wav"
+      },
+      {
+        "pitch": 80,
+        "url": "https://raw.githubusercontent.com/sfzinstruments/Discord-SFZ-GM-Bank/7a9c478fe331f94f246d33332f0adedb25bbbe27/Discord%20GM/Melodic/026-Acoustic%20Guitar%20%28steel%29/MartinGM2_080_Ab5_1.wav",
+        "sourcePath": "Discord GM/Melodic/026-Acoustic Guitar (steel)/MartinGM2_080_Ab5_1.wav"
+      },
+      {
+        "pitch": 83,
+        "url": "https://raw.githubusercontent.com/sfzinstruments/Discord-SFZ-GM-Bank/7a9c478fe331f94f246d33332f0adedb25bbbe27/Discord%20GM/Melodic/026-Acoustic%20Guitar%20%28steel%29/MartinGM2_083__B5_1.wav",
+        "sourcePath": "Discord GM/Melodic/026-Acoustic Guitar (steel)/MartinGM2_083__B5_1.wav"
+      }
+    ]
+  },
+  "bass": {
+    "source": "discord",
+    "license": "CC0-1.0",
+    "loop": false,
+    "samples": [
+      {
+        "pitch": 24,
+        "url": "https://raw.githubusercontent.com/sfzinstruments/Discord-SFZ-GM-Bank/7a9c478fe331f94f246d33332f0adedb25bbbe27/Discord%20GM/Melodic/034-Electric%20Bass%20%28finger%29/killer_bass_c2_vl3.wav",
+        "sourcePath": "Discord GM/Melodic/034-Electric Bass (finger)/killer_bass_c2_vl3.wav"
+      },
+      {
+        "pitch": 30,
+        "url": "https://raw.githubusercontent.com/sfzinstruments/Discord-SFZ-GM-Bank/7a9c478fe331f94f246d33332f0adedb25bbbe27/Discord%20GM/Melodic/034-Electric%20Bass%20%28finger%29/killer_bass_gb2_vl3.wav",
+        "sourcePath": "Discord GM/Melodic/034-Electric Bass (finger)/killer_bass_gb2_vl3.wav"
+      },
+      {
+        "pitch": 36,
+        "url": "https://raw.githubusercontent.com/sfzinstruments/Discord-SFZ-GM-Bank/7a9c478fe331f94f246d33332f0adedb25bbbe27/Discord%20GM/Melodic/034-Electric%20Bass%20%28finger%29/killer_bass_c3_vl3.wav",
+        "sourcePath": "Discord GM/Melodic/034-Electric Bass (finger)/killer_bass_c3_vl3.wav"
+      },
+      {
+        "pitch": 42,
+        "url": "https://raw.githubusercontent.com/sfzinstruments/Discord-SFZ-GM-Bank/7a9c478fe331f94f246d33332f0adedb25bbbe27/Discord%20GM/Melodic/034-Electric%20Bass%20%28finger%29/killer_bass_gb3_vl3.wav",
+        "sourcePath": "Discord GM/Melodic/034-Electric Bass (finger)/killer_bass_gb3_vl3.wav"
+      },
+      {
+        "pitch": 48,
+        "url": "https://raw.githubusercontent.com/sfzinstruments/Discord-SFZ-GM-Bank/7a9c478fe331f94f246d33332f0adedb25bbbe27/Discord%20GM/Melodic/034-Electric%20Bass%20%28finger%29/killer_bass_c4_vl3.wav",
+        "sourcePath": "Discord GM/Melodic/034-Electric Bass (finger)/killer_bass_c4_vl3.wav"
+      },
+      {
+        "pitch": 54,
+        "url": "https://raw.githubusercontent.com/sfzinstruments/Discord-SFZ-GM-Bank/7a9c478fe331f94f246d33332f0adedb25bbbe27/Discord%20GM/Melodic/034-Electric%20Bass%20%28finger%29/killer_bass_gb4_vl3.wav",
+        "sourcePath": "Discord GM/Melodic/034-Electric Bass (finger)/killer_bass_gb4_vl3.wav"
+      },
+      {
+        "pitch": 60,
+        "url": "https://raw.githubusercontent.com/sfzinstruments/Discord-SFZ-GM-Bank/7a9c478fe331f94f246d33332f0adedb25bbbe27/Discord%20GM/Melodic/034-Electric%20Bass%20%28finger%29/killer_bass_c5_vl3.wav",
+        "sourcePath": "Discord GM/Melodic/034-Electric Bass (finger)/killer_bass_c5_vl3.wav"
+      },
+      {
+        "pitch": 66,
+        "url": "https://raw.githubusercontent.com/sfzinstruments/Discord-SFZ-GM-Bank/7a9c478fe331f94f246d33332f0adedb25bbbe27/Discord%20GM/Melodic/034-Electric%20Bass%20%28finger%29/killer_bass_gb5_vl3.wav",
+        "sourcePath": "Discord GM/Melodic/034-Electric Bass (finger)/killer_bass_gb5_vl3.wav"
+      },
+      {
+        "pitch": 69,
+        "url": "https://raw.githubusercontent.com/sfzinstruments/Discord-SFZ-GM-Bank/7a9c478fe331f94f246d33332f0adedb25bbbe27/Discord%20GM/Melodic/034-Electric%20Bass%20%28finger%29/killer_bass_a5_vl3.wav",
+        "sourcePath": "Discord GM/Melodic/034-Electric Bass (finger)/killer_bass_a5_vl3.wav"
+      }
+    ]
+  },
+  "classical-guitar": {
+    "source": "FreePats Spanish classical guitar, Roberto",
+    "license": "CC0-1.0",
+    "loop": false,
+    "archive": "https://freepats.zenvoid.org/Guitar/SpanishClassicalGuitar/SpanishClassicalGuitar-SFZ-20190618.7z",
+    "samples": [
+      {
+        "pitch": 31,
+        "archivePath": "SpanishClassicalGuitar-SFZ-20190618/samples/G1.wav"
+      },
+      {
+        "pitch": 34,
+        "archivePath": "SpanishClassicalGuitar-SFZ-20190618/samples/A#1.wav"
+      },
+      {
+        "pitch": 37,
+        "archivePath": "SpanishClassicalGuitar-SFZ-20190618/samples/C#2.wav"
+      },
+      {
+        "pitch": 40,
+        "archivePath": "SpanishClassicalGuitar-SFZ-20190618/samples/E2.wav"
+      },
+      {
+        "pitch": 43,
+        "archivePath": "SpanishClassicalGuitar-SFZ-20190618/samples/G2.wav"
+      },
+      {
+        "pitch": 47,
+        "archivePath": "SpanishClassicalGuitar-SFZ-20190618/samples/B2.wav"
+      },
+      {
+        "pitch": 50,
+        "archivePath": "SpanishClassicalGuitar-SFZ-20190618/samples/D3.wav"
+      },
+      {
+        "pitch": 53,
+        "archivePath": "SpanishClassicalGuitar-SFZ-20190618/samples/F3.wav"
+      },
+      {
+        "pitch": 56,
+        "archivePath": "SpanishClassicalGuitar-SFZ-20190618/samples/G#3.wav"
+      },
+      {
+        "pitch": 59,
+        "archivePath": "SpanishClassicalGuitar-SFZ-20190618/samples/B3.wav"
+      },
+      {
+        "pitch": 62,
+        "archivePath": "SpanishClassicalGuitar-SFZ-20190618/samples/D4.wav"
+      },
+      {
+        "pitch": 65,
+        "archivePath": "SpanishClassicalGuitar-SFZ-20190618/samples/F4.wav"
+      },
+      {
+        "pitch": 69,
+        "archivePath": "SpanishClassicalGuitar-SFZ-20190618/samples/A4.wav"
+      },
+      {
+        "pitch": 72,
+        "archivePath": "SpanishClassicalGuitar-SFZ-20190618/samples/C5.wav"
+      },
+      {
+        "pitch": 75,
+        "archivePath": "SpanishClassicalGuitar-SFZ-20190618/samples/D#5.wav"
+      },
+      {
+        "pitch": 78,
+        "archivePath": "SpanishClassicalGuitar-SFZ-20190618/samples/F#5.wav"
+      },
+      {
+        "pitch": 81,
+        "archivePath": "SpanishClassicalGuitar-SFZ-20190618/samples/A5.wav"
+      },
+      {
+        "pitch": 84,
+        "archivePath": "SpanishClassicalGuitar-SFZ-20190618/samples/C6.wav"
+      }
+    ]
+  }
+}

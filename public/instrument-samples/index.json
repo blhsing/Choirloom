@@ -1,0 +1,1228 @@
+{
+  "piano": {
+    "source": "vcsl",
+    "license": "CC0-1.0",
+    "samples": [
+      {
+        "pitch": 24,
+        "file": "piano/24.flac",
+        "sha256": "39393f9240ded2b3a6ad970db389d335a08a3fff9f6ed5a8cafa6a9fe36ec333",
+        "bytes": 435981
+      },
+      {
+        "pitch": 27,
+        "file": "piano/27.flac",
+        "sha256": "19eaf275c118ed66e6d5c23c3592bcbc21f2e2ab1c55b1d1c7afe1d534dff2c3",
+        "bytes": 458706
+      },
+      {
+        "pitch": 30,
+        "file": "piano/30.flac",
+        "sha256": "212c930f3d2306ef769aeeb803b0f4eb79d5780dd5bd2817c6468576ca06e137",
+        "bytes": 503991
+      },
+      {
+        "pitch": 33,
+        "file": "piano/33.flac",
+        "sha256": "e56541ce31d1e963a7dd292521c390619d8e9b117c886a3daff9652d0dc93a65",
+        "bytes": 443056
+      },
+      {
+        "pitch": 36,
+        "file": "piano/36.flac",
+        "sha256": "983eb83343b7167f7aa114a83eb34aee7162b28d9cdf479018b9184daa79c71b",
+        "bytes": 435647
+      },
+      {
+        "pitch": 39,
+        "file": "piano/39.flac",
+        "sha256": "03dc8c0acd40b21fca805057347fcd5d03e0e830cb9832b59cf1b58d17e385bf",
+        "bytes": 476077
+      },
+      {
+        "pitch": 42,
+        "file": "piano/42.flac",
+        "sha256": "9517093596160249b6c5416761ff761723c6198ad137982188d432bb7efaa7fb",
+        "bytes": 491403
+      },
+      {
+        "pitch": 45,
+        "file": "piano/45.flac",
+        "sha256": "6b904c6643f664311aa539613451869579d27211bd237b0b1fb1f9fff77f1493",
+        "bytes": 410134
+      },
+      {
+        "pitch": 48,
+        "file": "piano/48.flac",
+        "sha256": "43834856c16f32327e73cd2821fe90c1c84b7dfc07edddec29b5cb190808badc",
+        "bytes": 440492
+      },
+      {
+        "pitch": 52,
+        "file": "piano/52.flac",
+        "sha256": "0ac6ee3a307df976b2a77f09a58e4b35ee8b3206f0ded2afaa896e819cf20c24",
+        "bytes": 402829
+      },
+      {
+        "pitch": 56,
+        "file": "piano/56.flac",
+        "sha256": "8e8a57120251c9b38b54d24873533c2789bae3b76536ab63c03f9788b0c62fcb",
+        "bytes": 431592
+      },
+      {
+        "pitch": 60,
+        "file": "piano/60.flac",
+        "sha256": "ed2926e2b49baf9af1c6f82afe4b67a1918584a7d6875fe47396c3da0f825c47",
+        "bytes": 429057
+      },
+      {
+        "pitch": 64,
+        "file": "piano/64.flac",
+        "sha256": "f1408f22aa39674c1c0e80ceddefd3143492592e266b8c8a314f078e304f57d2",
+        "bytes": 382907
+      },
+      {
+        "pitch": 68,
+        "file": "piano/68.flac",
+        "sha256": "b6c871f4ca7a7ba4c78336e63cc01afc8ba2415ad9079190ea63ada0e0b83115",
+        "bytes": 381423
+      },
+      {
+        "pitch": 72,
+        "file": "piano/72.flac",
+        "sha256": "92f5e4fb177a3f4fee4a3b70777f17422e05c5d686ead2a1f3e59589ac1854b2",
+        "bytes": 318422
+      },
+      {
+        "pitch": 76,
+        "file": "piano/76.flac",
+        "sha256": "8841e9609335659dc9fc081c78878605c0465a3649ba7bc222985ea46e0af271",
+        "bytes": 206070
+      },
+      {
+        "pitch": 80,
+        "file": "piano/80.flac",
+        "sha256": "c0903501ab2063013cf67dbf1376a316505437911d4f51d81af17f8fb8e445d9",
+        "bytes": 187730
+      },
+      {
+        "pitch": 83,
+        "file": "piano/83.flac",
+        "sha256": "69974b24733e5c1feb0d71311127cca35b27c5f27535da110d4b38ae0c363207",
+        "bytes": 141804
+      },
+      {
+        "pitch": 87,
+        "file": "piano/87.flac",
+        "sha256": "919c2a0077e2825a73a52ddcc822fdd278d70904a4ba3774e146d00a434f410f",
+        "bytes": 107018
+      },
+      {
+        "pitch": 90,
+        "file": "piano/90.flac",
+        "sha256": "1d2206293b7b3601eb892c97b7c5720fb818467c9d7e507de93b13f532bc32eb",
+        "bytes": 85851
+      },
+      {
+        "pitch": 93,
+        "file": "piano/93.flac",
+        "sha256": "4d82fca59b1901e79d5ace543c30b331e1771b10a311a0927c858b9cb166f616",
+        "bytes": 58332
+      },
+      {
+        "pitch": 96,
+        "file": "piano/96.flac",
+        "sha256": "645ad2d89486fcdf48990bd5b34bf454011c195bc35673166654252293d82334",
+        "bytes": 63893
+      }
+    ]
+  },
+  "electric-piano": {
+    "source": "vcsl",
+    "license": "CC0-1.0",
+    "samples": [
+      {
+        "pitch": 12,
+        "file": "electric-piano/12.flac",
+        "sha256": "4820c233f1b8f73b9fa31bcccc3dee924d1814e95bb87e323b45519c5eb7c11d",
+        "bytes": 377200
+      },
+      {
+        "pitch": 16,
+        "file": "electric-piano/16.flac",
+        "sha256": "4e9766c331b9cd2253d9c2b194a01aeff91fd1bfe634aac41d7bb910577f19c2",
+        "bytes": 372961
+      },
+      {
+        "pitch": 20,
+        "file": "electric-piano/20.flac",
+        "sha256": "734daaddda10d51021173b00adbe84e34c515875923baf58fa504046aba8a0ca",
+        "bytes": 371168
+      },
+      {
+        "pitch": 24,
+        "file": "electric-piano/24.flac",
+        "sha256": "a1ee6f964648aea0a4e99e32aa610e79b2eb318ec53ade2b88c386d449b858ba",
+        "bytes": 371704
+      },
+      {
+        "pitch": 28,
+        "file": "electric-piano/28.flac",
+        "sha256": "a03dd5423dbe97946188d1bc7bb66d251b8d5be14dad4e7f1d17d15a14358dc1",
+        "bytes": 375440
+      },
+      {
+        "pitch": 32,
+        "file": "electric-piano/32.flac",
+        "sha256": "7dc126b3be2e070f13a19a5b7202a94198d18a76f86d488a36fb9dd5fddce28b",
+        "bytes": 375556
+      },
+      {
+        "pitch": 36,
+        "file": "electric-piano/36.flac",
+        "sha256": "91eb4352005190497e1402390d76f7f0200b195d95d0e8bbb2def6c614372147",
+        "bytes": 381429
+      },
+      {
+        "pitch": 40,
+        "file": "electric-piano/40.flac",
+        "sha256": "dcfce1e43647bd95eecc9a49bb67b1e961c0708a39e235ee0c1d7b34c09f85f6",
+        "bytes": 385490
+      },
+      {
+        "pitch": 44,
+        "file": "electric-piano/44.flac",
+        "sha256": "bec1c58d9d23a5cbd6ac7e4ad6823f6f68e14e32fc39102b45c1c09045053223",
+        "bytes": 363831
+      },
+      {
+        "pitch": 48,
+        "file": "electric-piano/48.flac",
+        "sha256": "0a74904047d2ebe1f067ac4b102228006592e4e11abae147d033057520acc738",
+        "bytes": 395150
+      },
+      {
+        "pitch": 52,
+        "file": "electric-piano/52.flac",
+        "sha256": "0a3256e1e9ee38b6469bc463f39334930841d08fd6e34a82218e1d62a019f846",
+        "bytes": 336793
+      },
+      {
+        "pitch": 56,
+        "file": "electric-piano/56.flac",
+        "sha256": "cfe75254f8ff4c725057f219a62b34915b3450720ad7d6e348372e9abb60d71f",
+        "bytes": 291160
+      },
+      {
+        "pitch": 60,
+        "file": "electric-piano/60.flac",
+        "sha256": "f0da06e44f999ccd346f55759576eab1b7411a189b40eee3375c6ead6bf33967",
+        "bytes": 296507
+      },
+      {
+        "pitch": 64,
+        "file": "electric-piano/64.flac",
+        "sha256": "ec06e162e3efd24ead0887ed247874c57d002f56b149a65a5658d7e1fec43f5b",
+        "bytes": 264033
+      },
+      {
+        "pitch": 68,
+        "file": "electric-piano/68.flac",
+        "sha256": "58d53307c16ee3d5bd15afae3a40ad98f938e63997830ab992e7cc13438e05b6",
+        "bytes": 219505
+      },
+      {
+        "pitch": 72,
+        "file": "electric-piano/72.flac",
+        "sha256": "a573aa72235ef222c61ccbadf37d8936a058983dbfb992778d03a50cd70f9d42",
+        "bytes": 223140
+      },
+      {
+        "pitch": 76,
+        "file": "electric-piano/76.flac",
+        "sha256": "21d859842da8534f7078c0e30f8c87b2b32d89e79c2bc39dab87ae70f9d4023a",
+        "bytes": 193713
+      },
+      {
+        "pitch": 80,
+        "file": "electric-piano/80.flac",
+        "sha256": "5a93dcfdeb96deac8be823593d2e53b81da4f7a799de1c7370458d1ed943fd98",
+        "bytes": 166852
+      },
+      {
+        "pitch": 84,
+        "file": "electric-piano/84.flac",
+        "sha256": "4b2d6b9aed2a41581ff732644ce78d155c3d4a781fde792a9aff3d174d50cb76",
+        "bytes": 170025
+      }
+    ]
+  },
+  "organ": {
+    "source": "vcsl",
+    "license": "CC0-1.0",
+    "samples": [
+      {
+        "pitch": 36,
+        "file": "organ/36.flac",
+        "sha256": "0532b45bef7e6ac4269ba9f3f41c8113b4c7cc13b4b8955382ed8f8a53724a86",
+        "bytes": 278672,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 39,
+        "file": "organ/39.flac",
+        "sha256": "6773e6df70c9dc8be361c3474450da8f26c3a040984dab539c4265b51bdd26f3",
+        "bytes": 290637,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 42,
+        "file": "organ/42.flac",
+        "sha256": "b0f54ef73f8c7af21fb0229da6a8a036baa28a6f2e80c4c48c533bdb35bc3b68",
+        "bytes": 305017,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 45,
+        "file": "organ/45.flac",
+        "sha256": "47211bab3afedc89b6c31df0876d4029a1ef88e94b1c3b8dbbba35433fd2dfe0",
+        "bytes": 334647,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 48,
+        "file": "organ/48.flac",
+        "sha256": "cdc41b8ba274120d33e3486a51c1230de81e35d462cb7c4e5da86f49c2f773d5",
+        "bytes": 321010,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 51,
+        "file": "organ/51.flac",
+        "sha256": "8b363bd73433c80be2216f143a5d35c8af804d1d3ade02b6a98d279a286beb60",
+        "bytes": 337856,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 54,
+        "file": "organ/54.flac",
+        "sha256": "0770c5b83979786b34bfc49dd2804762f00546f00ebad21b597b53cceb5b9d9d",
+        "bytes": 358325,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 57,
+        "file": "organ/57.flac",
+        "sha256": "9d54d19da8efb34a360a466c4ff42ef3b55e53a67b899b96a400289d9205383e",
+        "bytes": 354843,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 60,
+        "file": "organ/60.flac",
+        "sha256": "b32e1af8541f8d649e26da0ee5d0c727b949168c005bcf7b2569908717a8785b",
+        "bytes": 332950,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 63,
+        "file": "organ/63.flac",
+        "sha256": "94070a612a90994c91f47bb6ca3da6cc82bc39d32ad9ff254bc3d02554442411",
+        "bytes": 355501,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 66,
+        "file": "organ/66.flac",
+        "sha256": "ee613a87d2ad7dea32bd0e7c2d9d144ed5cb099dab98715402fc3f874d7a77aa",
+        "bytes": 372089,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 69,
+        "file": "organ/69.flac",
+        "sha256": "ee7652cc896568a5cb1e6e5768282e1038a445b3609eabfb5f2ce95da60cf737",
+        "bytes": 363126,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 72,
+        "file": "organ/72.flac",
+        "sha256": "123c9a95c8ef3dabb2f8aa984956df172a57f095f6bf75061f1587d1af6e99de",
+        "bytes": 362403,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 75,
+        "file": "organ/75.flac",
+        "sha256": "9ad6bfa6bd8627c19d344be6e5c1d639f17881f7dc2a5b23cc0d3ffb2c560d80",
+        "bytes": 374503,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 78,
+        "file": "organ/78.flac",
+        "sha256": "8ed96d456d954dbf531e983d82bd9a88d38d55029261129edad58080ff150bfa",
+        "bytes": 393071,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 81,
+        "file": "organ/81.flac",
+        "sha256": "b1b1a27aecaf39442d041aaef14b6cb305402fa8c3fa9346b66bdc70b1662a04",
+        "bytes": 405829,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 84,
+        "file": "organ/84.flac",
+        "sha256": "0ba18e7945a8a7d3632e0a4afe3855088982c17031e31d82a8ee21fee25155ce",
+        "bytes": 401002,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 87,
+        "file": "organ/87.flac",
+        "sha256": "b568edb7534736669f098a6d6c69e56ec14aea4b64942f0f854f3afab1d40d72",
+        "bytes": 412116,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 90,
+        "file": "organ/90.flac",
+        "sha256": "6d201d31c066981b36ed6f526fab1dbc8913c68db886cde9593c12e47312611c",
+        "bytes": 418419,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 93,
+        "file": "organ/93.flac",
+        "sha256": "c5bb76fec7d4f00c7c18ffd49e3dfbf4441b40fcd1ed7eeac823278acb12d611",
+        "bytes": 433919,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 96,
+        "file": "organ/96.flac",
+        "sha256": "c4d79b51046ae57a73587816f3d140c46d12c5c7ed5b3a18623e9b759659cce5",
+        "bytes": 441684,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      }
+    ]
+  },
+  "marimba": {
+    "source": "vcsl",
+    "license": "CC0-1.0",
+    "samples": [
+      {
+        "pitch": 41,
+        "file": "marimba/41.flac",
+        "sha256": "8cae29cefcf94fd3a3a46dcf0b3a3d3732f2fc3372840d99c03a7aa31b2390d7",
+        "bytes": 86507
+      },
+      {
+        "pitch": 48,
+        "file": "marimba/48.flac",
+        "sha256": "6900fcb660e5afd6c6470960c74272e6242ac0552eeed88b5a750bf7c08c41d2",
+        "bytes": 137585
+      },
+      {
+        "pitch": 55,
+        "file": "marimba/55.flac",
+        "sha256": "28d6a96c12abb502cbdfd32fe9d86dee34b9262762fb3ea44621f96d49af5a18",
+        "bytes": 116410
+      },
+      {
+        "pitch": 59,
+        "file": "marimba/59.flac",
+        "sha256": "56529c8ef3155ac802d8865e753396cde23579ad5fe32aefb1f56e36f9e17f9d",
+        "bytes": 93680
+      },
+      {
+        "pitch": 65,
+        "file": "marimba/65.flac",
+        "sha256": "cdc457414d43643812c0e0b841338ccd688c51b21a5793a080b992a263ac42e9",
+        "bytes": 79819
+      },
+      {
+        "pitch": 72,
+        "file": "marimba/72.flac",
+        "sha256": "a4003490823520a7efaf3c327a849be1077ac97e68efaa2da12cdbd6347c68e7",
+        "bytes": 53748
+      },
+      {
+        "pitch": 79,
+        "file": "marimba/79.flac",
+        "sha256": "b6de2e44d28a5761239325fbed919982d2bb5292c062a97022cd8bfbcd3f3ef0",
+        "bytes": 34965
+      },
+      {
+        "pitch": 83,
+        "file": "marimba/83.flac",
+        "sha256": "8143c774b81912d56c29c6e44d6b424bf9c1dc5255fd459a829e50ce9ec205dd",
+        "bytes": 36231
+      },
+      {
+        "pitch": 89,
+        "file": "marimba/89.flac",
+        "sha256": "c8220c1612dd496a2946779d058855ee55b3b7deb2dfd6dfe874f00973c5ace0",
+        "bytes": 34666
+      },
+      {
+        "pitch": 96,
+        "file": "marimba/96.flac",
+        "sha256": "fb1f88b4be17bee629e4f2cf1d102b5b645dd141bdeea65a42ed65f6508ee613",
+        "bytes": 34135
+      }
+    ]
+  },
+  "bells": {
+    "source": "vcsl",
+    "license": "CC0-1.0",
+    "samples": [
+      {
+        "pitch": 60,
+        "file": "bells/60.flac",
+        "sha256": "07cd9c32cef824c39ced023229b45aa3b67a8defda98cf6cae8bd8749560eb23",
+        "bytes": 547628
+      },
+      {
+        "pitch": 62,
+        "file": "bells/62.flac",
+        "sha256": "655ecd3cf2c0bde2469a519cbebee05c139da0717f3d540db7fcfdf5d5e38b86",
+        "bytes": 464050
+      },
+      {
+        "pitch": 64,
+        "file": "bells/64.flac",
+        "sha256": "49a2e0817c60f227c0a450175550f6302f254fa385e14dd6ec48b3df0721183b",
+        "bytes": 547979
+      },
+      {
+        "pitch": 66,
+        "file": "bells/66.flac",
+        "sha256": "3cc92512311d1a56830931ac04784f03db761b86d7b88afc4420cae05c21fb63",
+        "bytes": 463608
+      },
+      {
+        "pitch": 68,
+        "file": "bells/68.flac",
+        "sha256": "8ecab7b2873ced373e83ae12acbf314d8436543dd4dfa9aa0c0befcf275ecc0a",
+        "bytes": 448717
+      },
+      {
+        "pitch": 70,
+        "file": "bells/70.flac",
+        "sha256": "3fa8de91a9b354a7df19bdfe655f56b6ed9f075dccb27e23ff093c7f32cf88b3",
+        "bytes": 451308
+      },
+      {
+        "pitch": 72,
+        "file": "bells/72.flac",
+        "sha256": "ea11b7dbff266267059afcb301ca69bd3734afa9ff5ec711c41df214f152557d",
+        "bytes": 454612
+      },
+      {
+        "pitch": 74,
+        "file": "bells/74.flac",
+        "sha256": "ff3407202372b8e59d84449c877ece5c95295c126628b2807161faa848f72185",
+        "bytes": 496276
+      },
+      {
+        "pitch": 76,
+        "file": "bells/76.flac",
+        "sha256": "32ecb3991f869db75f5873292615dd6e887043388a0222adae7914a93909fc01",
+        "bytes": 436944
+      }
+    ]
+  },
+  "strings": {
+    "source": "vsco",
+    "license": "CC0-1.0",
+    "samples": [
+      {
+        "pitch": 55,
+        "file": "strings/55.flac",
+        "sha256": "698089228b7bba57c2ed52942e6aea74837c4a01d0fcb02d0dd5cffc3d47a258",
+        "bytes": 352116,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 59,
+        "file": "strings/59.flac",
+        "sha256": "9f44a84b8e77db79fa98a85892f47d37251c563165a27b3b2fb8c48a6a65fff3",
+        "bytes": 355609,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 62,
+        "file": "strings/62.flac",
+        "sha256": "5c9514c0fbb1554c596842f24cdb479fb91510099f2f75ddfe0204ec93afb383",
+        "bytes": 365390,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 66,
+        "file": "strings/66.flac",
+        "sha256": "92661ca083f9253f258f9cd84746eef5214c754195061eba766fdbe08ce4999d",
+        "bytes": 381008,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 69,
+        "file": "strings/69.flac",
+        "sha256": "045b1794999485705a6e48d0eac99d29f724c2df39a81b83fae59e2d5e7f9a43",
+        "bytes": 387026,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 72,
+        "file": "strings/72.flac",
+        "sha256": "c301ee6e991719a32a343eaa42b6dc94e7b9c76bf8b289ec5593d86324d164fd",
+        "bytes": 420880,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 76,
+        "file": "strings/76.flac",
+        "sha256": "b7924b5aad35f36944acb6cffac503299c0cc4894488829989e8267e20dc053a",
+        "bytes": 448393,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 79,
+        "file": "strings/79.flac",
+        "sha256": "032057e36ec039f75ee3283a89301fa3ccf0753db2c8f0c6f260115b5309ba23",
+        "bytes": 473774,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 83,
+        "file": "strings/83.flac",
+        "sha256": "f619b2f0cdd4af48482b5d5ab9bdb235b610469cd1b96212b45380580283e301",
+        "bytes": 457364,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 86,
+        "file": "strings/86.flac",
+        "sha256": "5d5db6bba738b0a8cc96c2cdceba7248f6c5d65fce75090281d703c4f9b5243b",
+        "bytes": 475167,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      }
+    ]
+  },
+  "violin": {
+    "source": "vsco",
+    "license": "CC0-1.0",
+    "samples": [
+      {
+        "pitch": 55,
+        "file": "violin/55.flac",
+        "sha256": "d9da387f0662bed41a3ff8958c9a36adf46013a27512f30e1f7975da8ec9fc1d",
+        "bytes": 388466,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 60,
+        "file": "violin/60.flac",
+        "sha256": "12c535cbae9b2108a291707451e3a65dbc14bef836f1a34741cbc072f4819dde",
+        "bytes": 370759,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 64,
+        "file": "violin/64.flac",
+        "sha256": "637be16ce156d32750c70577a331fc6bc7252df3e751749e97e86e0d476b5fb5",
+        "bytes": 417880,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 67,
+        "file": "violin/67.flac",
+        "sha256": "796674c9ee436e7150bb2eeca4dbccaec833cdd2e1c9ced9551c6bd1cffab092",
+        "bytes": 450551,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 72,
+        "file": "violin/72.flac",
+        "sha256": "1d26f1adb6fabec35dbf5649f80d4f83017049e29fa2cab131e54ce82c6c6163",
+        "bytes": 430849,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 76,
+        "file": "violin/76.flac",
+        "sha256": "50d9039610182ef4561d16d87518981ef2c5c264967ee3b852dffb967631251f",
+        "bytes": 486627,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 79,
+        "file": "violin/79.flac",
+        "sha256": "61220641d0a8074fd196edeb9c836535b2905e43d9b4768b0134e4c0aa370098",
+        "bytes": 514790,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 84,
+        "file": "violin/84.flac",
+        "sha256": "0b4428d74228eff89a6b4ed2f48fbe86d41b5834caf8a78aaacbc7dc9e053d29",
+        "bytes": 479774,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      }
+    ]
+  },
+  "flute": {
+    "source": "vsco",
+    "license": "CC0-1.0",
+    "samples": [
+      {
+        "pitch": 60,
+        "file": "flute/60.flac",
+        "sha256": "4f9b050019b8a5f5693fdbc2a9fbdea3af6fda0bc0157a7de4a7700bbfa43ad8",
+        "bytes": 315100,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 64,
+        "file": "flute/64.flac",
+        "sha256": "b4f9b49300b6dd18e532819751975a9a84b9e5747623f072e7c939d4fe772305",
+        "bytes": 353486,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 69,
+        "file": "flute/69.flac",
+        "sha256": "fa0a465579712ce3e7d4ef2daafc705e7150ade937baeac50ee985ae99e730e0",
+        "bytes": 362891,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 72,
+        "file": "flute/72.flac",
+        "sha256": "ab3c0ad444d1fbb3b2bd37babe31187a555220e725b01877178ea80bc1f407ec",
+        "bytes": 340782,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 76,
+        "file": "flute/76.flac",
+        "sha256": "8cfe82e8d383800abf7a45516b068b4484189e02afb2aee9cdcc4e4d33c98221",
+        "bytes": 357545,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 81,
+        "file": "flute/81.flac",
+        "sha256": "673aefe66c2366e95422fd325d33a5649790b205e14aca49afd13891b395ea36",
+        "bytes": 376354,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 93,
+        "file": "flute/93.flac",
+        "sha256": "1bffaa30287c86169f2a27735e4dcec8dfeddb01b3e660fe493671e6438096c8",
+        "bytes": 388504,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      }
+    ]
+  },
+  "clarinet": {
+    "source": "vsco",
+    "license": "CC0-1.0",
+    "samples": [
+      {
+        "pitch": 50,
+        "file": "clarinet/50.flac",
+        "sha256": "3b5592d7ed7480efbc2293b138c87fef8dd169a9a337137de924107798abd24d",
+        "bytes": 371255,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 53,
+        "file": "clarinet/53.flac",
+        "sha256": "5d89e905326e01d19da564905a794418820a36b2f7dad387f1fcfb9f90e273f6",
+        "bytes": 379742,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 58,
+        "file": "clarinet/58.flac",
+        "sha256": "cb5a4ae1e25c228c4c5d3517e477fd53d2d8211419ab03bbdfe7282f4fa4b449",
+        "bytes": 389343,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 62,
+        "file": "clarinet/62.flac",
+        "sha256": "89e1472eccf32a3ee2096cfb76597f8e4ef169458ec6c1fe20bb9d4d5bd2c767",
+        "bytes": 355390,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 65,
+        "file": "clarinet/65.flac",
+        "sha256": "b19bcdfddd340f5e6c0e9843391940bbed22f4d21a3ff800165c2d320bddd445",
+        "bytes": 378403,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 70,
+        "file": "clarinet/70.flac",
+        "sha256": "96ef30e9cd9cc6b4a020291bae994d23ce2cf0216bb142c270649bb233dc581e",
+        "bytes": 373109,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 74,
+        "file": "clarinet/74.flac",
+        "sha256": "81714169f96145bebcee8b7d0ad20b409f84b90e75091237e08d51a01196d00d",
+        "bytes": 400528,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 77,
+        "file": "clarinet/77.flac",
+        "sha256": "05f340d3678516375d8311190fc4e9ba94edec000d5bc281d3bf4ce74a7e60e4",
+        "bytes": 413455,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 82,
+        "file": "clarinet/82.flac",
+        "sha256": "acbf82c85615d082d537fd17ee732c318768ac0128f08f9857c636fd6215fac7",
+        "bytes": 446298,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 86,
+        "file": "clarinet/86.flac",
+        "sha256": "72ea2106b0ea508be52d8288da6462ed367da0651e445d30c756804573ed1c03",
+        "bytes": 423983,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 90,
+        "file": "clarinet/90.flac",
+        "sha256": "a675be7e3da3dc2464ec963ee0df0eac4c7ea1c3d20c8d481b1165ffd23d531d",
+        "bytes": 489515,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      }
+    ]
+  },
+  "trumpet": {
+    "source": "vsco",
+    "license": "CC0-1.0",
+    "samples": [
+      {
+        "pitch": 53,
+        "file": "trumpet/53.flac",
+        "sha256": "590b4b70b4d68b1ccc0973ecd9459b5062404f4f50e88a8e64de7df7783a354a",
+        "bytes": 332018,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 57,
+        "file": "trumpet/57.flac",
+        "sha256": "2e25f9fd44c74176680c40b772bd938f0d19ad6d6db4858c28ecba6e78f40a3c",
+        "bytes": 305448,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 60,
+        "file": "trumpet/60.flac",
+        "sha256": "c1ce1ffb6aa8c6acd4fd4c1fdcbcb1bd70056d9fcebb2dfa5ec5e5e1c2f98645",
+        "bytes": 346519,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 63,
+        "file": "trumpet/63.flac",
+        "sha256": "48e1c4be476643dfedda601959952fefa700bba3f105a17cbaec36171bf23ed8",
+        "bytes": 334934,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 67,
+        "file": "trumpet/67.flac",
+        "sha256": "85a470fb0b079fcb9deb27d6a7eb9b5115c7716fd4b2da2862c6d0bd48bfafbb",
+        "bytes": 380103,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 70,
+        "file": "trumpet/70.flac",
+        "sha256": "0b1a8f6310afe3830cd250b98ce66c4fc73d8087d462944f79dd8c78ad8a72b6",
+        "bytes": 365080,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 74,
+        "file": "trumpet/74.flac",
+        "sha256": "2d587faaec7d8e155f99c1d0cc83a885c2080f689c6dbc18cc41caa3320e6918",
+        "bytes": 404488,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 77,
+        "file": "trumpet/77.flac",
+        "sha256": "b6f59855d8561c4eec8a7c1a3b62ebc33db40922f9a9becdb8da57feb51af52b",
+        "bytes": 381883,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 81,
+        "file": "trumpet/81.flac",
+        "sha256": "478d8950ee2a7054a5d634096858feb06fd47d12ed842c159f3f198899882fb0",
+        "bytes": 362831,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      },
+      {
+        "pitch": 84,
+        "file": "trumpet/84.flac",
+        "sha256": "92b00c8c3b1ba60a27faa47c7f1e0c1a997f4b27881c9a30a38505b911fe3537",
+        "bytes": 404966,
+        "loopStart": 0.8199773242630386,
+        "loopEnd": 3.0
+      }
+    ]
+  },
+  "guitar": {
+    "source": "discord",
+    "license": "CC0-1.0",
+    "samples": [
+      {
+        "pitch": 40,
+        "file": "guitar/40.flac",
+        "sha256": "3170895c750b229b0fe042920724f3ddb24578aa543f626b79e0661983b7d06f",
+        "bytes": 110641
+      },
+      {
+        "pitch": 43,
+        "file": "guitar/43.flac",
+        "sha256": "c5e660b85267dbf1adbd57294f8fbb92de8abf5ef4a091f85a24a0d2fb39c3dc",
+        "bytes": 48204
+      },
+      {
+        "pitch": 46,
+        "file": "guitar/46.flac",
+        "sha256": "3a596f17c31766839a8e3d04317dba546e2a9686a10e304b0aebbf7da9ddbff2",
+        "bytes": 107564
+      },
+      {
+        "pitch": 49,
+        "file": "guitar/49.flac",
+        "sha256": "8fd689c1e9626049fd1bb534bba1711c4d6ad0ac0fb71d30e167e228b21b806c",
+        "bytes": 70126
+      },
+      {
+        "pitch": 52,
+        "file": "guitar/52.flac",
+        "sha256": "5502b2e1117aee8caa74396803e3b05cef0cb7c9428eb55e3ed7ada557acf111",
+        "bytes": 88676
+      },
+      {
+        "pitch": 55,
+        "file": "guitar/55.flac",
+        "sha256": "7278203ed55e29043d788b26b93a0c0865dda103a726edb17c5e1c86f633e2c3",
+        "bytes": 61438
+      },
+      {
+        "pitch": 58,
+        "file": "guitar/58.flac",
+        "sha256": "646f38b95a11da3067f953cad0b80c4dacc3882403332c009854f6673747e764",
+        "bytes": 89957
+      },
+      {
+        "pitch": 61,
+        "file": "guitar/61.flac",
+        "sha256": "3d9bc461231b28972fccd261b25b747d6e03a71067cc7b13bb1f098c2a80feda",
+        "bytes": 82953
+      },
+      {
+        "pitch": 64,
+        "file": "guitar/64.flac",
+        "sha256": "b586e5ed7435763fbe438d6d2f90c4a319cfd395bebd2be1d2ee9b784d16de7b",
+        "bytes": 69733
+      },
+      {
+        "pitch": 68,
+        "file": "guitar/68.flac",
+        "sha256": "097e33793d67a4f5f47887506247e9408d36a10af4c010c384fee2daa0abba55",
+        "bytes": 62684
+      },
+      {
+        "pitch": 71,
+        "file": "guitar/71.flac",
+        "sha256": "01d91232dd9140331bd72bdf35e27cd230e2606a395d7bfe0acbac98c4a998db",
+        "bytes": 51938
+      },
+      {
+        "pitch": 74,
+        "file": "guitar/74.flac",
+        "sha256": "73e53af347ce43699fd4f0ae41c2e1040232dc6c8c3cd575f723d7f142b2d3a1",
+        "bytes": 38107
+      },
+      {
+        "pitch": 77,
+        "file": "guitar/77.flac",
+        "sha256": "4c41a89503908427985053fde5802a0230d50e671caf82cafd9200dc826dbc4d",
+        "bytes": 58496
+      },
+      {
+        "pitch": 80,
+        "file": "guitar/80.flac",
+        "sha256": "cea87dfcebeb3eb1e2222527ba229bb75ee8e88254f1c762aa080dbc1aa2dd45",
+        "bytes": 45789
+      },
+      {
+        "pitch": 83,
+        "file": "guitar/83.flac",
+        "sha256": "75f90c456d1e1310092595ebe2b29ed723fe03a04c308c99030c48a15da36c1a",
+        "bytes": 28561
+      }
+    ]
+  },
+  "bass": {
+    "source": "discord",
+    "license": "CC0-1.0",
+    "samples": [
+      {
+        "pitch": 24,
+        "file": "bass/24.flac",
+        "sha256": "476091627d5eca97483564bafacc0166823733fdc09820c161be317ab0eafe8e",
+        "bytes": 101090
+      },
+      {
+        "pitch": 30,
+        "file": "bass/30.flac",
+        "sha256": "39b808bd51f6fd0ce6afaf9b64cf00c695b3a6939cae161703e48be8279de239",
+        "bytes": 86553
+      },
+      {
+        "pitch": 36,
+        "file": "bass/36.flac",
+        "sha256": "e9be373e7684348cf2af4f923097c60ddebee54959e76f612059470449c46113",
+        "bytes": 91068
+      },
+      {
+        "pitch": 42,
+        "file": "bass/42.flac",
+        "sha256": "38ab796584cac748a0b6e3dbef5479910d91343864b515fd1d3abea64ccb80c7",
+        "bytes": 85133
+      },
+      {
+        "pitch": 48,
+        "file": "bass/48.flac",
+        "sha256": "7c5ac02fb22970b0b4c391b0fd3fb1fd02995a22354b8816f3f83387ce0a42fb",
+        "bytes": 71079
+      },
+      {
+        "pitch": 54,
+        "file": "bass/54.flac",
+        "sha256": "dbd4bf51ba43121f9d00540da8cd7619f9b20bf8233d9deeef025a6f1bb545b4",
+        "bytes": 111100
+      },
+      {
+        "pitch": 60,
+        "file": "bass/60.flac",
+        "sha256": "5f445c4a7aa1de5f2d663a26493baebdb62fb16256fe9037deba81cfff582e9d",
+        "bytes": 80922
+      },
+      {
+        "pitch": 66,
+        "file": "bass/66.flac",
+        "sha256": "99db6999e3fbae4fb8d665875a0bda27cbc26d173ec946999afb61089e3b7139",
+        "bytes": 95312
+      },
+      {
+        "pitch": 69,
+        "file": "bass/69.flac",
+        "sha256": "980066242faa548b445f9e561dbfa1f752bc747f4e0886e38a0043702b8594fc",
+        "bytes": 83445
+      }
+    ]
+  },
+  "classical-guitar": {
+    "source": "FreePats Spanish classical guitar, Roberto",
+    "license": "CC0-1.0",
+    "samples": [
+      {
+        "pitch": 31,
+        "file": "classical-guitar/31.flac",
+        "sha256": "0993d61acba83511a61ff83c0e57572143b6d998a8ec04b7af1420990c03174f",
+        "bytes": 175627
+      },
+      {
+        "pitch": 34,
+        "file": "classical-guitar/34.flac",
+        "sha256": "bee2816a1158906377a24c67e659a2f219069f003e362689718a0c2e2259b868",
+        "bytes": 176456
+      },
+      {
+        "pitch": 37,
+        "file": "classical-guitar/37.flac",
+        "sha256": "35eabfa35484f528ecfc9fa54fb36324163b9e23daca5038317a198cda5c4426",
+        "bytes": 168066
+      },
+      {
+        "pitch": 40,
+        "file": "classical-guitar/40.flac",
+        "sha256": "b01d5171a42803b3494e936210c8dfb61983aba4006f414a31b9e6730ae66919",
+        "bytes": 94436
+      },
+      {
+        "pitch": 43,
+        "file": "classical-guitar/43.flac",
+        "sha256": "e39d693aeccdf9534d0d259cead1c4d2b6a0550560be1c5e18ec6e4cde4e8d8b",
+        "bytes": 92798
+      },
+      {
+        "pitch": 47,
+        "file": "classical-guitar/47.flac",
+        "sha256": "5c33fd0dab5ad3a2f13cbc6f72cc6ff2fa6c3b75c0724c146087abac6bea9b42",
+        "bytes": 70380
+      },
+      {
+        "pitch": 50,
+        "file": "classical-guitar/50.flac",
+        "sha256": "bf936f9c5ebb5742af8baf55e19d98b6d73702b71c19f39da2bfbbb03d8b9960",
+        "bytes": 82562
+      },
+      {
+        "pitch": 53,
+        "file": "classical-guitar/53.flac",
+        "sha256": "2cf4ff257e7a7c68810964d66791ae8ba4accb0c5d910215bee1d0dc9e179d8c",
+        "bytes": 71738
+      },
+      {
+        "pitch": 56,
+        "file": "classical-guitar/56.flac",
+        "sha256": "9232c6e088f3b917585353cb0da37f6304d7643e70d47926c4d1ffc35cb8ac7e",
+        "bytes": 54242
+      },
+      {
+        "pitch": 59,
+        "file": "classical-guitar/59.flac",
+        "sha256": "8a5ec6a41df72c4a9a9439e304fec7f4a8ab0a32cf3e1571ad87fe355d0c1ced",
+        "bytes": 44549
+      },
+      {
+        "pitch": 62,
+        "file": "classical-guitar/62.flac",
+        "sha256": "50d62f797f91c2d0272bf09a1b812963c8d4478af3e86d86e8b6d0f03c35da55",
+        "bytes": 58254
+      },
+      {
+        "pitch": 65,
+        "file": "classical-guitar/65.flac",
+        "sha256": "4a9827e96f6bbd5a00f9e0118ec1047e3849a0d8851f7fbb07ba5ff8c2369e95",
+        "bytes": 63353
+      },
+      {
+        "pitch": 69,
+        "file": "classical-guitar/69.flac",
+        "sha256": "ec48e1ec64fe30a815566d8ce856f99ab7a96c70f6529a178bb1e0ff8cda5c96",
+        "bytes": 71736
+      },
+      {
+        "pitch": 72,
+        "file": "classical-guitar/72.flac",
+        "sha256": "9c65875522bd0583ef432409576c883c161a008dc3e4e452df8f0c8fb2e371e9",
+        "bytes": 38407
+      },
+      {
+        "pitch": 75,
+        "file": "classical-guitar/75.flac",
+        "sha256": "b4a515738b4d0a60c4b557508e461ff3c680a339c1043b067249bb0ea1788c41",
+        "bytes": 30871
+      },
+      {
+        "pitch": 78,
+        "file": "classical-guitar/78.flac",
+        "sha256": "5fb3dfbf2db17686c098256d73c9094ca414fc510b58cc24dad680a47d15f090",
+        "bytes": 34898
+      },
+      {
+        "pitch": 81,
+        "file": "classical-guitar/81.flac",
+        "sha256": "9d1a05d362ea1593707adcdca46b5c9eb4b1ed4a0e8123ee7235cba3e2026158",
+        "bytes": 39015
+      },
+      {
+        "pitch": 84,
+        "file": "classical-guitar/84.flac",
+        "sha256": "c816774580ed908dd5ff4b7df0538598f4bbcde65211b77095994a15f3c025ea",
+        "bytes": 23232
+      }
+    ]
+  }
+}

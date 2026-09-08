@@ -1,3 +1,4 @@
+import {loadInstrument,nearestSample,type LoadedSample} from './instrument-samples';
 import {sustainedNotes} from '../shared/ties';
 import {previewInstruments,type PreviewInstrument} from './preview-instruments';
 import {expandRepeats} from '../shared/repeats';
@@ -15,10 +16,22 @@ export class RenderedPlayer {
  mix(score:Score,solo:string[]){for(const p of score.parts){const gain=this.gains.get(p.id);if(gain&&this.ctx)gain.gain.setTargetAtTime(p.muted||(solo.length&&!solo.includes(p.id))?0:p.gain/Math.max(1,Math.sqrt(this.gains.size)),this.ctx.currentTime,.02);}}
  position(){return this.playing&&this.ctx?this.offset+Math.max(0,this.ctx.currentTime-this.started):this.offset;}
 }
-export class PreviewPlayer {ctx:AudioContext|null=null;nodes:AudioNode[]=[];started=0;offset=0;duration=0;playing=false;timer:ReturnType<typeof setInterval>|null=null;
+export class PreviewPlayer {prepareGeneration=0;samples:LoadedSample[]=[];sampleInstrument:PreviewInstrument|null=null;
+ async prepare(score:Score,instrument:PreviewInstrument,base:string){const generation=++this.prepareGeneration;this.ctx??=new AudioContext();await this.ctx.resume();const samples=await loadInstrument(this.ctx,instrument,score,base);if(generation===this.prepareGeneration){this.samples=samples;this.sampleInstrument=instrument;}}
+ ctx:AudioContext|null=null;nodes:AudioNode[]=[];started=0;offset=0;duration=0;playing=false;timer:ReturnType<typeof setInterval>|null=null;
  stop(){if(this.timer)clearInterval(this.timer);this.timer=null;for(const n of this.nodes)try{(n as OscillatorNode).stop?.();n.disconnect();}catch{}this.nodes=[];this.playing=false;}
  play(score:Score,offset=0,solo:string[]=[],instrument:PreviewInstrument='voice'){score=expandRepeats(score);this.stop();this.ctx??=new AudioContext();void this.ctx.resume();const ctx=this.ctx;this.started=ctx.currentTime+.05;this.offset=offset;this.duration=secondsAt(score,endTick(score));this.playing=true;
- const pending=score.parts.flatMap(p=>p.muted||(solo.length&&!solo.includes(p.id))?[]:sustainedNotes(p.notes).filter(n=>n.pitch!==null&&secondsAt(score,n.start+n.duration)>offset).map(n=>({p,n,start:secondsAt(score,n.start)-offset,end:secondsAt(score,n.start+n.duration)-offset}))).sort((a,b)=>a.start-b.start);let cursor=0;const schedule=()=>{while(cursor<pending.length&&pending[cursor].start<ctx.currentTime-this.started+2){const {p,n,start,end}=pending[cursor++];const nodeStart=this.nodes.length;const frequency=440*2**((n.pitch!-69)/12);const oscillator=ctx.createOscillator();oscillator.type='sawtooth';oscillator.frequency.value=frequency;const gain=ctx.createGain();const length=end-Math.max(0,start);
+ const pending=score.parts.flatMap(p=>p.muted||(solo.length&&!solo.includes(p.id))?[]:sustainedNotes(p.notes).filter(n=>n.pitch!==null&&secondsAt(score,n.start+n.duration)>offset).map(n=>({p,n,start:secondsAt(score,n.start)-offset,end:secondsAt(score,n.start+n.duration)-offset}))).sort((a,b)=>a.start-b.start);let cursor=0;const schedule=()=>{while(cursor<pending.length&&pending[cursor].start<ctx.currentTime-this.started+2){const {p,n,start,end}=pending[cursor++];const nodeStart=this.nodes.length;
+ if(instrument!=='voice'&&this.sampleInstrument===instrument&&this.samples.length){
+  const sample=nearestSample(this.samples,n.pitch!),source=ctx.createBufferSource(),gain=ctx.createGain(),rate=2**((n.pitch!-sample.pitch)/12),at=this.started+Math.max(0,start),until=this.started+end;
+  source.buffer=sample.buffer;source.playbackRate.value=rate;
+  if(sample.loopStart!==undefined&&sample.loopEnd!==undefined){source.loop=true;source.loopStart=sample.loopStart;source.loopEnd=sample.loopEnd;}
+  const peak=p.gain*.55/Math.sqrt(Math.max(1,score.parts.length)),attack=Math.min(.008,(until-at)/4),release=Math.min(.12,(until-at)/3);
+  gain.gain.setValueAtTime(0,at);gain.gain.linearRampToValueAtTime(peak,at+attack);gain.gain.setValueAtTime(peak,until-release);gain.gain.linearRampToValueAtTime(0,until);
+  source.connect(gain);gain.connect(ctx.destination);let seek=Math.max(0,-start)*rate;if(source.loop&&seek>=source.loopEnd)seek=source.loopStart+(seek-source.loopStart)%(source.loopEnd-source.loopStart);
+  if(seek<sample.buffer.duration){source.start(at,seek);source.stop(until+.01);this.nodes.push(source,gain);source.onended=()=>{source.disconnect();gain.disconnect();this.nodes=this.nodes.filter(node=>node!==source&&node!==gain);};}else{source.disconnect();gain.disconnect();}continue;
+ }
+ const frequency=440*2**((n.pitch!-69)/12);const oscillator=ctx.createOscillator();oscillator.type='sawtooth';oscillator.frequency.value=frequency;const gain=ctx.createGain();const length=end-Math.max(0,start);
  if(instrument!=='voice'){
   const preset=previewInstruments.find(i=>i.id===instrument)||previewInstruments[0];
   const real=new Float32Array(preset.harmonics.length+1),imag=new Float32Array([0,...preset.harmonics]);oscillator.setPeriodicWave(ctx.createPeriodicWave(real,imag));

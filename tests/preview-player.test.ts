@@ -14,7 +14,7 @@ test('all instrument presets schedule audible envelopes and stop cleanly',()=>{
   const player=new PreviewPlayer();player.ctx=ctx as any;
   try{player.play(score,.2,[],preset.id);assert.ok(levels.some(v=>v>0));assert.ok(starts.length>0&&starts.every(t=>t>=2));assert.equal(player.position(),.2);assert.ok(player.nodes.length<20);}finally{player.stop();}assert.equal(player.nodes.length,0);assert.equal(player.timer,null);
  }
- assert.equal(signatures.size,12);assert.equal(previewInstrument('invalid'),'piano');
+ assert.equal(signatures.size,13);assert.equal(previewInstrument('invalid'),'piano');
 });
 
 test('preview schedules a bounded window, advances, and releases finished voices',async()=>{
@@ -36,4 +36,12 @@ test('preview sustains ties through bar lines and first endings without merging 
  const written=JSON.stringify(score),notes=sustainedNotes(expandRepeats(score).parts[0].notes);
  assert.deepEqual(notes.map(n=>[n.start,n.duration]),[[0,2400],[2400,480],[2880,2400],[5280,480]]);
  assert.equal(JSON.stringify(score),written);
+});
+import {nearestSample} from '../src/instrument-samples.ts';
+test('sampled playback uses one recorded source for a tie and seeks inside its sustain loop',()=>{
+ const score=demoScore();score.parts=score.parts.slice(0,1);const base=score.parts[0].notes[0];score.tempo=60;score.tempoMap=[];score.parts[0].notes=[{...base,id:'first',pitch:60,start:0,duration:960,tie:'start'},{...base,id:'last',pitch:60,start:960,duration:960,tie:'stop'}];
+ const sources:any[]=[];const param=()=>({value:0,setValueAtTime(){},linearRampToValueAtTime(){}});
+ const ctx={currentTime:0,resume:async()=>{},destination:{},createGain:()=>({gain:param(),connect(){},disconnect(){}}),createBufferSource:()=>{const n={buffer:null,playbackRate:param(),loop:false,loopStart:0,loopEnd:0,connect(){},disconnect(){},start(...args:number[]){(n as any).started=args;},stop(t:number){(n as any).stopped=t;},onended:null};sources.push(n);return n;}};
+ const player=new PreviewPlayer();player.ctx=ctx as any;player.sampleInstrument='violin';player.samples=[{pitch:60,file:'test',sha256:'test',buffer:{duration:3} as AudioBuffer,loopStart:1,loopEnd:2}];
+ try{player.play(score,0,[],'violin');assert.equal(sources.length,1);assert.equal(sources[0].loop,true);assert.equal(sources[0].stopped,4.06);player.play(score,3,[],'violin');assert.equal(sources.length,2);assert.equal(sources[1].started[1],1);assert.equal(nearestSample([{pitch:48},{pitch:60},{pitch:72}],62).pitch,60);}finally{player.stop();}
 });

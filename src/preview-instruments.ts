@@ -1,8 +1,9 @@
-// Lightweight synthesized timbres: no instrument download before playback.
+// Recorded sample instruments; harmonic definitions support offline tests and the choir vowel.
 export const previewInstruments=[
  {id:'piano',en:'Piano',zh:'鋼琴',harmonics:[1,.45,.22,.12,.07,.03],attack:.006,decay:1.4,sustain:.12},
  {id:'electric-piano',en:'Electric piano',zh:'電鋼琴',harmonics:[1,.12,.35,.04,.09],attack:.008,decay:2,sustain:.15},
  {id:'guitar',en:'Acoustic guitar',zh:'木吉他',harmonics:[1,.65,.35,.2,.12,.08],attack:.004,decay:.8,sustain:.04},
+ {id:'classical-guitar',en:'Classical guitar (nylon)',zh:'古典吉他（尼龍弦）',harmonics:[1,.4,.16,.08,.03],attack:.005,decay:1.1,sustain:.035},
  {id:'bass',en:'Electric bass',zh:'電貝斯',harmonics:[1,.45,.18,.08],attack:.012,decay:.7,sustain:.35},
  {id:'strings',en:'Strings',zh:'弦樂',harmonics:[1,.5,.33,.25,.2,.16,.14,.12],attack:.16,decay:.5,sustain:.85},
  {id:'violin',en:'Violin',zh:'小提琴',harmonics:[1,.6,.5,.3,.24,.18,.12],attack:.08,decay:.4,sustain:.8},
