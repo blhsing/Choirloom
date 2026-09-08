@@ -6,6 +6,8 @@ using Microsoft.ML.OnnxRuntime.Tensors;
 
 // Headless DiffSinger ONNX inference. Model weights are used unchanged.
 // Asset cache is versioned and checksum verified; remote URLs come only from an operator manifest.
+// Stop an orphaned worker; the durable server queue will resume saved notes.
+using var parentWatch=new System.Threading.Timer(_=>{if(int.TryParse(Environment.GetEnvironmentVariable("CHOIRLOOM_PARENT_PID"),out var pid))try{using var parent=System.Diagnostics.Process.GetProcessById(pid);if(parent.HasExited)Environment.Exit(75);}catch(ArgumentException){Environment.Exit(75);}},null,1000,1000);
 var opts=new Dictionary<string,string>();for(int i=0;i+1<args.Length;i+=2)opts[args[i]]=args[i+1];
 if(opts.TryGetValue("--mix",out var mixRequest)){AudioExports.Export(mixRequest,Path.GetFullPath(opts["--output"]));return;}
 if(opts.TryGetValue("--inspect-bank",out var bankArchive)){Console.WriteLine(JsonSerializer.Serialize(BankInspector.Inspect(bankArchive)));return;}
@@ -47,6 +49,10 @@ foreach(var part in input.GetProperty("parts").EnumerateArray()){
   string[] symbols=continuation?new[]{previousVowel}:resolved.TryGetValue(note.GetProperty("id").GetString()!,out var syllable)?syllable:lyric.ToLowerInvariant() switch{"woo" or "woooo"=>new[]{"en/w","en/uw"},"doo"=>new[]{"en/d","en/uw"},"dap"=>new[]{"en/d","en/ae","en/p"},"bwee"=>new[]{"en/b","en/w","en/iy"},"ah" or "a"=>new[]{"en/aa"},"ba"=>new[]{"en/b","en/aa"},"bom"=>new[]{"en/b","en/aa","en/m"},"da"=>new[]{"en/d","en/aa"},"dum"=>new[]{"en/d","en/ah","en/m"},_=>EnglishPronunciation.TryGet(dictionary,lyric,out var found)?found:lyric.StartsWith('[')&&lyric.EndsWith(']')?lyric[1..^1].Split(' ',StringSplitOptions.RemoveEmptyEntries):throw new Exception("unknownPronunciation:"+lyric)};
   symbols=symbols.Select(native.Phone).ToArray();previousVowel=symbols.LastOrDefault(s=>vowelSet.Contains(s.Split('/').Last()))??previousVowel;previousEnd=onset+ticks;foreach(var symbol in symbols)if(!phones.ContainsKey(symbol))throw new Exception("unsupportedPhoneme:"+symbol);
   if(opts.ContainsKey("--validate-lyrics")){Console.WriteLine(JsonSerializer.Serialize(new {part=partIndex,note=note.GetProperty("id").GetString(),lyric,symbols}));continue;}
+  var checkpointKey=Convert.ToHexString(SHA256.HashData(System.Text.Encoding.UTF8.GetBytes("note-v1"+bank.GetRawText()+JsonSerializer.Serialize(symbols)+note.GetProperty("pitch").GetRawText()+duration.ToString("R",System.Globalization.CultureInfo.InvariantCulture))));
+  var checkpointDir=Path.Combine(output,"notes");Directory.CreateDirectory(checkpointDir);var checkpointFile=Path.Combine(checkpointDir,checkpointKey+".pcm");float[] noteSamples;
+  if(File.Exists(checkpointFile)){var bytes=File.ReadAllBytes(checkpointFile);if(bytes.Length%4!=0)throw new Exception("invalidNoteCheckpoint");noteSamples=new float[bytes.Length/4];Buffer.BlockCopy(bytes,0,noteSamples,0,bytes.Length);}
+  else {
   int frames=Math.Max(symbols.Length,(int)Math.Round(duration/frameSeconds));int padding=8;
   var durations=new long[symbols.Length+2];durations[0]=padding;durations[^1]=padding;int remain=frames;var vowels=vowelSet;int vowel=Array.FindIndex(symbols,s=>vowels.Contains(s.Split('/').Last()));if(vowel<0)vowel=0;for(int i=0;i<symbols.Length;i++){durations[i+1]=i==vowel?0:Math.Max(1,Math.Min(6,frames/(symbols.Length+1)));remain-=(int)durations[i+1];}durations[vowel+1]=Math.Max(1,remain);
   int count=(int)durations.Sum();float frequency=(float)(440*Math.Pow(2,(note.GetProperty("pitch").GetInt32()-69)/12.0));var f0=Enumerable.Repeat(frequency,count).ToArray();var tokens=new[]{phones["SP"]}.Concat(symbols.Select(s=>phones[s])).Append(phones["SP"]).ToArray();var languages=new[]{0L}.Concat(symbols.Select(s=>langMap.GetValueOrDefault(s.Split('/')[0],0))).Append(0L).ToArray();float[] mel;int[] melShape;
@@ -59,7 +65,10 @@ foreach(var part in input.GetProperty("parts").EnumerateArray()){
    values=values.Where(v=>acoustic.InputMetadata.ContainsKey(v.Name)).ToList();using var result=acoustic.Run(values);var tensor=result.First().AsTensor<float>();mel=tensor.ToArray();melShape=tensor.Dimensions.ToArray();
   }
   if(native.Config.MelBase!=native.VocoderConfig.MelBase){var factor=(float)(native.Config.MelBase=="10"?Math.Log(10):1/Math.Log(10));for(int m=0;m<mel.Length;m++)mel[m]*=factor;}
-  using(var vocoder=new InferenceSession(vocoderFile,sessionOptions)){using var result=vocoder.Run(new[]{NamedOnnxValue.CreateFromTensor("mel",new DenseTensor<float>(mel,melShape)),NamedOnnxValue.CreateFromTensor("f0",new DenseTensor<float>(f0,new[]{1,count}))});var wave=result.First().AsTensor<float>().ToArray();int trim=padding*hop,at=(int)Math.Round(Seconds(onset)*sampleRate),length=Math.Min((int)Math.Round(duration*sampleRate),wave.Length-trim);for(int i=0;i<length&&at+i<stem.Length;i++){float envelope=Math.Min(1,Math.Min(i/180f,(length-1-i)/180f));stem[at+i]+=wave[trim+i]*envelope;}}
+  using(var vocoder=new InferenceSession(vocoderFile,sessionOptions)){using var result=vocoder.Run(new[]{NamedOnnxValue.CreateFromTensor("mel",new DenseTensor<float>(mel,melShape)),NamedOnnxValue.CreateFromTensor("f0",new DenseTensor<float>(f0,new[]{1,count}))});var wave=result.First().AsTensor<float>().ToArray();int trim=padding*hop,at=(int)Math.Round(Seconds(onset)*sampleRate),length=Math.Min((int)Math.Round(duration*sampleRate),wave.Length-trim);noteSamples=new float[length];for(int i=0;i<length;i++){float envelope=Math.Min(1,Math.Min(i/180f,(length-1-i)/180f));noteSamples[i]=wave[trim+i]*envelope;}}
+  var bytes=new byte[noteSamples.Length*4];Buffer.BlockCopy(noteSamples,0,bytes,0,bytes.Length);File.WriteAllBytes(checkpointFile+".tmp",bytes);File.Move(checkpointFile+".tmp",checkpointFile,true);
+  }
+  int sampleAt=(int)Math.Round(Seconds(onset)*sampleRate);for(int i=0;i<noteSamples.Length&&sampleAt+i<stem.Length;i++)stem[sampleAt+i]+=noteSamples[i];
   Console.WriteLine(JsonSerializer.Serialize(new{part=partIndex,note=note.GetProperty("id").GetString()}));
  }
  if(opts.ContainsKey("--validate-lyrics")){partIndex++;continue;}

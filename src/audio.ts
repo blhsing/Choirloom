@@ -1,3 +1,4 @@
+import {sustainedNotes} from '../shared/ties';
 import {previewInstruments,type PreviewInstrument} from './preview-instruments';
 import {expandRepeats} from '../shared/repeats';
 import {type Score,PPQ,endTick} from '../shared/music';
@@ -17,7 +18,7 @@ export class RenderedPlayer {
 export class PreviewPlayer {ctx:AudioContext|null=null;nodes:AudioNode[]=[];started=0;offset=0;duration=0;playing=false;timer:ReturnType<typeof setInterval>|null=null;
  stop(){if(this.timer)clearInterval(this.timer);this.timer=null;for(const n of this.nodes)try{(n as OscillatorNode).stop?.();n.disconnect();}catch{}this.nodes=[];this.playing=false;}
  play(score:Score,offset=0,solo:string[]=[],instrument:PreviewInstrument='voice'){score=expandRepeats(score);this.stop();this.ctx??=new AudioContext();void this.ctx.resume();const ctx=this.ctx;this.started=ctx.currentTime+.05;this.offset=offset;this.duration=secondsAt(score,endTick(score));this.playing=true;
- const pending=score.parts.flatMap(p=>p.muted||(solo.length&&!solo.includes(p.id))?[]:p.notes.filter(n=>n.pitch!==null&&secondsAt(score,n.start+n.duration)>offset).map(n=>({p,n,start:secondsAt(score,n.start)-offset,end:secondsAt(score,n.start+n.duration)-offset}))).sort((a,b)=>a.start-b.start);let cursor=0;const schedule=()=>{while(cursor<pending.length&&pending[cursor].start<ctx.currentTime-this.started+2){const {p,n,start,end}=pending[cursor++];const nodeStart=this.nodes.length;const frequency=440*2**((n.pitch!-69)/12);const oscillator=ctx.createOscillator();oscillator.type='sawtooth';oscillator.frequency.value=frequency;const gain=ctx.createGain();const length=end-Math.max(0,start);
+ const pending=score.parts.flatMap(p=>p.muted||(solo.length&&!solo.includes(p.id))?[]:sustainedNotes(p.notes).filter(n=>n.pitch!==null&&secondsAt(score,n.start+n.duration)>offset).map(n=>({p,n,start:secondsAt(score,n.start)-offset,end:secondsAt(score,n.start+n.duration)-offset}))).sort((a,b)=>a.start-b.start);let cursor=0;const schedule=()=>{while(cursor<pending.length&&pending[cursor].start<ctx.currentTime-this.started+2){const {p,n,start,end}=pending[cursor++];const nodeStart=this.nodes.length;const frequency=440*2**((n.pitch!-69)/12);const oscillator=ctx.createOscillator();oscillator.type='sawtooth';oscillator.frequency.value=frequency;const gain=ctx.createGain();const length=end-Math.max(0,start);
  if(instrument!=='voice'){
   const preset=previewInstruments.find(i=>i.id===instrument)||previewInstruments[0];
   const real=new Float32Array(preset.harmonics.length+1),imag=new Float32Array([0,...preset.harmonics]);oscillator.setPeriodicWave(ctx.createPeriodicWave(real,imag));
@@ -29,4 +30,3 @@ export class PreviewPlayer {ctx:AudioContext|null=null;nodes:AudioNode[]=[];star
  }
  position(){return this.playing&&this.ctx?Math.min(this.duration,this.offset+Math.max(0,this.ctx.currentTime-this.started)):this.offset;}
 }
-

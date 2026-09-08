@@ -36,7 +36,9 @@ export const run=(sql:string,...args:any[])=>{const result=db.prepare(sql).run(.
 export const token=()=>randomBytes(32).toString('base64url');
 export const hash=(s:string)=>createHash('sha256').update(s).digest('hex');
 export const emailKey=(s:string)=>s.trim().toLowerCase();
-export function transaction<T>(fn:()=>T):T {db.exec('BEGIN IMMEDIATE');try{const v=fn();db.exec('COMMIT');return v;}catch(e){db.exec('ROLLBACK');throw e;}}
+export function transaction<T>(fn:()=>T):T {const nested=db.isTransaction;db.exec(nested?'SAVEPOINT revision_commit':'BEGIN IMMEDIATE');try{const v=fn();db.exec(nested?'RELEASE revision_commit':'COMMIT');return v;}catch(e){db.exec(nested?'ROLLBACK TO revision_commit':'ROLLBACK');if(nested)db.exec('RELEASE revision_commit');throw e;}}
 export class HttpError extends Error {constructor(public status:number,message:string){super(message);}}
 export function access(projectId:string,user:any,edit=false){const p=one('SELECT * FROM projects WHERE id=?',projectId);if(!p)throw new HttpError(404,'notFound');const member=user.verified?one('SELECT role FROM members WHERE project_id=? AND email=?',p.id,user.email)?.role:null;const role=p.owner===user.id?'owner':member||(user.role==='admin'?'viewer':null);if(!role||(edit&&role==='viewer'))throw new HttpError(403,'forbidden');return {...p,role,adminView:user.role==='admin'&&p.owner!==user.id&&!member};}
 export function revision(p:any,score:any,actor:string,label='edit',base=p.version){return transaction(()=>{const r=run('UPDATE projects SET score=?,title=?,version=version+1,updated=CURRENT_TIMESTAMP WHERE id=? AND version=?',JSON.stringify(score),score.title,p.id,base);if(!r.changes)throw new HttpError(409,'conflict');run('INSERT INTO revisions(project_id,version,score,actor,label) VALUES(?,?,?,?,?)',p.id,base+1,JSON.stringify(score),actor,label);return base+1;});}
+
+for(const [name,type] of [["worker_pid","INTEGER"]])if(!db.prepare("PRAGMA table_info(jobs)").all().some((c:any)=>c.name===name))db.exec(`ALTER TABLE jobs ADD COLUMN ${name} ${type}`);

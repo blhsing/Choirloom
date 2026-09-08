@@ -1,6 +1,6 @@
 import {compactPageSchema,compactToXML} from './compact-score.ts';
 import {Codex,type UserInput} from '@openai/codex-sdk';
-import {readFileSync,writeFileSync,readdirSync,existsSync} from 'node:fs';
+import {readFileSync,writeFileSync,readdirSync,existsSync,renameSync} from 'node:fs';
 import path from 'node:path';
 import {createCanvas,loadImage,GlobalFonts,ImageData} from '@napi-rs/canvas';
 import {XMLParser,XMLBuilder,XMLValidator} from 'fast-xml-parser';
@@ -66,6 +66,7 @@ export async function recognizeScore(file:string,dir:string,signal:AbortSignal,p
  const skillRoot=path.join(homes(),'skills','.system'),disabledSkills=existsSync(skillRoot)?readdirSync(skillRoot,{withFileTypes:true}).filter(d=>d.isDirectory()).map(d=>({path:path.join(skillRoot,d.name),enabled:false})):[];
  const codex=new Codex({codexPathOverride:process.env.CODEX_BIN,env:envFor(),config:{features:{shell_tool:false,apps:false,plugins:false,multi_agent:false,browser_use:false,computer_use:false,image_generation:false,skill_search:false,workspace_dependencies:false,code_mode_host:false},tools:{view_image:false},skills:{config:disabledSkills,max_context_tokens:1},model_instructions_file:instructions,model:recognitionModel,web_search:'disabled',project_doc_max_bytes:0,cli_auth_credentials_store:'file',log_dir:path.join(dir,'codex-log')}});
  for(const [index,file] of pages.entries()){
+  const saved=path.join(dir,`sheet-${index+1}.json`);if(existsSync(saved)){const page=JSON.parse(readFileSync(saved,'utf8'));if(!inspectTranscription(page.musicxml).length){sheets.push(page.musicxml);warnings.push(...page.warnings);continuity=page.continuity;continue;}}
   signal.throwIfAborted();const n=()=>15+Math.floor(index/pages.length*75),stage=(kind:string)=>`${kind}:${index+1}:${pages.length}`;progress(n(),stage('transcribing'));
   const thread=codex.startThread({model:recognitionModel,modelReasoningEffort:recognitionEffort,sandboxMode:'read-only',approvalPolicy:'never',workingDirectory:dir,skipGitRepoCheck:true,webSearchMode:'disabled',networkAccessEnabled:false}),source=await detailInput(file,dir,index);
   const ask=async(input:UserInput[],kind='transcribing')=>{
@@ -86,7 +87,7 @@ export async function recognizeScore(file:string,dir:string,signal:AbortSignal,p
    result=await ask([{type:'text',text:`Verify the draft against the ORIGINAL sheet above, measure by measure. These following images are your draft engraving, NOT the source. Check every pitch, duration, lyric syllable and its alignment; verify all repeat barlines and numbered endings. Correct discrepancies and return corrected compact page data only if changes are needed, otherwise page null. Do not expand repeats. Automated findings: ${JSON.stringify(issues)}. If something is illegible in the source, keep it explicit in warnings. Never claim certainty from a musical guess.`},...proof],'checking-score');
    if(result.page)musicxml=compactToXML(result.page);if(!inspectTranscription(musicxml).length)break;
   }
-  if(inspectTranscription(musicxml).length)throw Error('invalidImport');writeFileSync(path.join(dir,`sheet-${index+1}.musicxml`),musicxml);sheets.push(musicxml);warnings.push(...result.warnings.map(w=>`Page ${index+1}: ${w}`));continuity=result.continuity;
+  if(inspectTranscription(musicxml).length)throw Error('invalidImport');writeFileSync(path.join(dir,`sheet-${index+1}.musicxml`),musicxml);sheets.push(musicxml);warnings.push(...result.warnings.map(w=>`Page ${index+1}: ${w}`));continuity=result.continuity;writeFileSync(saved+'.tmp',JSON.stringify({musicxml,warnings:result.warnings.map(w=>`Page ${index+1}: ${w}`),continuity}));renameSync(saved+'.tmp',saved);
  }
  progress(94,'validating-score');const musicxml=mergeSheets(sheets);if(inspectTranscription(musicxml).length)throw Error('invalidImport');const score=fromMusicXML(musicxml);if(validateScore(score).some(f=>f.severity==='error'))throw Error('invalidImport');const output=path.join(dir,'recognized.musicxml');writeFileSync(output,musicxml);return {score,warnings,pages:pages.length,output};
 }
