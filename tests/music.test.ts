@@ -1,5 +1,13 @@
 import test from 'node:test';import assert from 'node:assert/strict';
-import {demoScore,toMusicXML,fromMusicXML,toMXL,readMXL,validateScore,wordlessLyrics} from '../shared/music.ts';
+import {demoScore,toMusicXML,fromMusicXML,toMXL,readMXL,validateScore,wordlessLyrics,notationScore} from '../shared/music.ts';
+test('two-and-a-half beats engrave as half tied to eighth without changing the source',()=>{
+ const score=demoScore();score.beats=3;score.parts[0].notes=[{...score.parts[0].notes[0],start:0,duration:1200,lyric:'woo'}];const before=JSON.stringify(score);
+ const xml=toMusicXML(score),notes=fromMusicXML(xml).parts[0].notes;
+ assert.ok(xml.includes('<duration>960</duration><tie type="start"/><type>half</type>'));
+ assert.ok(xml.includes('<duration>240</duration><tie type="stop"/><type>eighth</type>'));
+ assert.deepEqual(notes.map(n=>[n.start,n.duration,n.tie,n.lyric]),[[0,960,'start','woo'],[960,240,'stop',''],[1200,240,'none','']]);
+ assert.equal(JSON.stringify(score),before);assert.equal(notationScore(score).parts[0].notes[1].id,score.parts[0].notes[0].id+'-s1');
+});
 test('MusicXML and MXL round trips preserve notes, rhythms and lyric syllables',()=>{const source=demoScore();for(const xml of [toMusicXML(source),readMXL(toMXL(source))]){const restored=fromMusicXML(xml);assert.equal(restored.title,source.title);assert.deepEqual(restored.parts[0].notes.map(({pitch,start,duration,lyric})=>({pitch,start,duration,lyric})),source.parts[0].notes.map(({pitch,start,duration,lyric})=>({pitch,start,duration,lyric})));}});
 test('validator rejects overlap and changes to the original melody',()=>{const source=demoScore(),changed=structuredClone(source);changed.parts[0].notes[1].start=1;changed.parts[0].notes[0].pitch=61;const errors=validateScore(changed,source);assert(errors.some(e=>e.code==='overlap'));assert(errors.some(e=>e.code==='leadChanged'));});
 test('wordless patterns preserve authored lyrics and skip tied-note attacks',()=>{const p=demoScore().parts[0];p.wordless='ba';p.notes.forEach(n=>n.lyric='');p.notes[0].lyric='hello';p.notes[2].tie='stop';const result=wordlessLyrics(p);assert.equal(result.get(p.notes[0].id),'hello');assert.equal(result.get(p.notes[1].id),'ba');assert.equal(result.get(p.notes[2].id),'');});
