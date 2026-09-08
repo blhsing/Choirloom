@@ -6,7 +6,7 @@ with urllib.request.urlopen(request,timeout=120) as r:
 try:
     result=json.loads(data)
     if options['path'].startswith('/api/processes'):
-        if isinstance(result,list):result=[{k:row.get(k) for k in ['id','name','command_line','href']} for row in result if row.get('name','').lower() in ['singer','singer.exe','audiveris','audiveris.exe','java','java.exe']]
+        if isinstance(result,list):result=[{k:row.get(k) for k in ['id','name','command_line','href']} for row in result if row.get('name','').lower() in ['singer','singer.exe','java','java.exe']]
         else:result={k:result.get(k) for k in ['id','name','command_line','file_name','working_set','private_memory']}
     elif isinstance(result,list):
         wanted=['web.config','runtime','singer','node_modules','app','config','dist','AzureHost.exe']

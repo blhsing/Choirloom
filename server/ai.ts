@@ -12,7 +12,7 @@ import {log} from './diagnostics.ts';
 export const efforts=['low','medium','high','xhigh','max','ultra'] as const;
 export const homes=()=>{const home=path.join(dataDir,'codex','service');mkdirSync(home,{recursive:true,mode:0o700});return home;};
 export const codexBin=process.env.CODEX_BIN||'codex';
-const envFor=()=>{const env:Record<string,string>={CODEX_HOME:homes()};for(const k of ['PATH','SystemRoot','TEMP','TMP','HOME','USERPROFILE','SSL_CERT_FILE','CODEX_CA_CERTIFICATE'])if(process.env[k])env[k]=process.env[k]!;return env;};
+export const envFor=()=>{const env:Record<string,string>={CODEX_HOME:homes()};for(const k of ['PATH','SystemRoot','TEMP','TMP','HOME','USERPROFILE','SSL_CERT_FILE','CODEX_CA_CERTIFICATE'])if(process.env[k])env[k]=process.env[k]!;return env;};
 export const connected=()=>!existsSync(path.join(homes(),'.disabled'))&&existsSync(path.join(homes(),'auth.json'));
 const logins=new Map<string,{process:ChildProcess,output:string,status:string}>();
 export function loginStatus(user:any){const isConnected=connected(),canManage=user?.role==='admin';if(!canManage)return {connected:isConnected,status:isConnected?'connected':'unavailable',canManage:false};const s=logins.get('service');const raw=s?.output||'';const url=raw.match(/https:\/\/auth\.openai\.com\/codex\/device/)?.[0];const code=raw.match(/\b[A-Z0-9]{4,5}-[A-Z0-9]{4,5}\b/)?.[0];return {connected:isConnected,status:s?.status||'idle',canManage:true,...(!isConnected&&s?.status==='running'?{url,code}:{})};}

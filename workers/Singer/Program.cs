@@ -9,19 +9,6 @@ using Microsoft.ML.OnnxRuntime.Tensors;
 var opts=new Dictionary<string,string>();for(int i=0;i+1<args.Length;i+=2)opts[args[i]]=args[i+1];
 if(opts.TryGetValue("--mix",out var mixRequest)){AudioExports.Export(mixRequest,Path.GetFullPath(opts["--output"]));return;}
 if(opts.TryGetValue("--inspect-bank",out var bankArchive)){Console.WriteLine(JsonSerializer.Serialize(BankInspector.Inspect(bankArchive)));return;}
-if(opts.TryGetValue("--omr",out var omrFile)){
- var engine=JsonDocument.Parse(File.ReadAllText(opts["--engine-manifest"])).RootElement;
- var engineCache=Path.GetFullPath(opts["--cache"]);Directory.CreateDirectory(engineCache);
- var engineDir=await Assets.Fetch(engine.GetProperty("bundle"),engineCache);
- var target=Path.GetFullPath(opts["--output"]);Directory.CreateDirectory(target);
- // Use Java's console launcher directly: jpackage's desktop launcher can wait on
- // an inaccessible desktop dialog inside an Azure App Service worker.
- var start=new System.Diagnostics.ProcessStartInfo(Path.Combine(engineDir,"Audiveris","runtime","bin","java.exe")){UseShellExecute=false,CreateNoWindow=true,WorkingDirectory=target};
- start.Environment["APPDATA"]=Path.Combine(engineCache,"audiveris-state");
- start.Environment["TESSDATA_PREFIX"]=Path.Combine(engineDir,"Audiveris","tessdata");
- foreach(var arg in new[]{"-Xms64m","-Xmx768m","-Djava.awt.headless=true","-Duser.home="+target,"--add-opens=java.desktop/java.awt=ALL-UNNAMED","--add-opens=java.desktop/sun.awt=ALL-UNNAMED","--add-exports=java.desktop/sun.awt.image=ALL-UNNAMED","--enable-native-access=ALL-UNNAMED","-Dfile.encoding=UTF-8","-cp",Path.Combine(AppContext.BaseDirectory,"audiveris-bootstrap.jar")+Path.PathSeparator+Path.Combine(engineDir,"Audiveris","app","*"),"AudiverisBootstrap","-batch","-transcribe","-export","-swap","-constant","org.audiveris.omr.text.Language.defaultSpecification="+opts.GetValueOrDefault("--language","eng"),"-output",target,"--",Path.GetFullPath(omrFile)})start.ArgumentList.Add(arg);
- using var process=System.Diagnostics.Process.Start(start)!;await process.WaitForExitAsync();Environment.ExitCode=process.ExitCode;return;
-}
 var manifestPath=opts["--voicebanks"];
 var banks=JsonDocument.Parse(File.ReadAllText(manifestPath)).RootElement;
 var cache=Path.GetFullPath(opts.GetValueOrDefault("--cache")??Path.Combine(Path.GetDirectoryName(Path.GetFullPath(manifestPath))!,"asset-cache"));Directory.CreateDirectory(cache);

@@ -1,8 +1,0 @@
-{
-  "bundle": {
-    "url": "https://test-officialwebsite.azurewebsites.net/Choirloom/assets/Audiveris-5.11.0-portable-legacy-ocr.zip",
-    "sha256": "24f5e34e142e682f2ad1a9470043a180993442348ed25a23e9d5f5375de26504",
-    "archive": true,
-    "bytes": 167146436
-  }
-}

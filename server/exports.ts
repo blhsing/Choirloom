@@ -1,3 +1,4 @@
+import {expandRepeats} from '../shared/repeats.ts';
 import {existsSync,mkdirSync,mkdtempSync,writeFileSync,rmSync} from 'node:fs';
 import path from 'node:path';
 import {tmpdir} from 'node:os';
@@ -18,7 +19,7 @@ export function structuredFile(score:Score,format:string):{bytes:Uint8Array,mime
  if(format==='musicxml')return {bytes:strToU8(toMusicXML(score)),mime:'application/vnd.recordare.musicxml+xml'};
  if(format==='mxl')return {bytes:toMXL(score),mime:'application/vnd.recordare.musicxml'};
  if(format==='json')return {bytes:strToU8(JSON.stringify(score)),mime:'application/json'};
- if(format==='mid'){
+ if(format==='mid'){score=expandRepeats(score);
   const midi=new midiPackage.Midi();midi.header.setTempo(score.tempo);
   for(const t of score.tempoMap)midi.header.tempos.push({ticks:t.tick/PPQ*midi.header.ppq,bpm:t.bpm});
   for(const p of score.parts){const track=midi.addTrack();track.name=p.name;for(const n of p.notes)if(n.pitch!==null)track.addNote({midi:n.pitch,ticks:Math.round(n.start/PPQ*midi.header.ppq),durationTicks:Math.round(n.duration/PPQ*midi.header.ppq),velocity:.8});}

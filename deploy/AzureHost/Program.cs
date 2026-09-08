@@ -19,8 +19,6 @@ void StartNode() { lock(nodeLock) { if(node is {HasExited:false})return;
     start.Environment["PORT"] = port.ToString(); start.Environment["HOST"] = "127.0.0.1"; start.Environment["DATA_DIR"] = data;
     start.Environment["NODE_ENV"] = "production"; start.Environment["APP_ORIGIN"] = "https://test-officialwebsite.azurewebsites.net"; start.Environment["APP_BASE"] = "/Choirloom";
     start.Environment["CODEX_BIN"] = Path.Combine(root,"node_modules","@openai","codex-win32-x64","vendor","x86_64-pc-windows-msvc","bin","codex.exe");
-    start.Environment["AUDIVERIS_BIN"]=Path.Combine(root,"singer","Singer.exe");
-    start.Environment["AUDIVERIS_MANIFEST"]=Path.Combine(root,"config","audiveris.json");
     start.Environment["CHOIRLOOM_ASSET_SOURCE"]=Path.Combine(root,"assets");
     start.Environment["VOICEBANK_MANIFEST"]=Path.Combine(root,"config","voicebanks.json");
     start.Environment["DIFFSINGER_COMMAND"]=Path.Combine(root,"singer","Singer.exe");

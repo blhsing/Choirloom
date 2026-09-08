@@ -48,7 +48,7 @@ Choirloom is a browser-based vocal ensemble studio. Start with a lead melody, di
 - Persistent chats, reference files, preferences, revisions, and job status.
 - English and Traditional Chinese, with initial locale selected from the browser.
 - A searchable library of lyric-bearing song scores with direct vocal-part import.
-- Audiveris PDF/image recognition and structured MusicXML/MXL/MIDI imports.
+- Codex GPT-6 (low reasoning) PDF/image recognition and structured MusicXML/MXL/MIDI imports.
 - Instant vowel preview and DiffSinger singing with lyrics.
 - Selective score and audio exports, combined or as individual parts.
 - A browsable voice catalog with downloads, progress, cancellation, and removal.
@@ -141,9 +141,9 @@ Refresh the pinned index with `python scripts/refresh-score-library.py`. Scores 
 
 ## Importing scores
 
-MusicXML (`.xml`, `.musicxml`), compressed MusicXML (`.mxl`), and MIDI (`.mid`, `.midi`) can be imported directly. PDF, PNG, JPEG, TIFF, and SVG score imports use **Audiveris 5.11** recognition. Optical results open for review before acceptance.
+MusicXML (`.xml`, `.musicxml`), compressed MusicXML (`.mxl`), and MIDI (`.mid`, `.midi`) can be imported directly. PDF, PNG, JPEG, TIFF, and SVG score imports use **Codex GPT-6 Astra with low reasoning**, one sheet at a time. The service supplies the full sheet and overlapping detail strips, checks MusicXML durations, then renders the draft for a second visual comparison. Printed repeats and numbered endings remain in the written score; preview and singing traverse them during performance. Recognition uses the shared ChatGPT connection. Verified results import directly into the editor as a new saved revision, with any uncertainties shown in the job status.
 
-The score model uses monophonic parts and 480 ticks per quarter note. MusicXML chord tones and concurrent voices are automatically split into independent parts. Optical recognition may misread notes or lyrics; correct them in the editor. SVG input is rasterized on a white background, at up to 3,200 pixels on the longer edge and 8 megapixels to limit memory use on the hosted worker, before recognition. It must be self-contained: external image/font references and active content are rejected. SVG is a visual format, so notes and lyrics still require optical recognition and review.
+The score model uses monophonic parts and 480 ticks per quarter note. MusicXML chord tones and concurrent voices are automatically split into independent parts. Optical recognition may misread notes or lyrics; correct them in the editor. SVG input is rasterized on a white background, at up to 3,200 pixels on the longer edge and 8 megapixels to limit memory use on the hosted worker, before recognition. It must be self-contained: external image/font references and active content are rejected. SVG is a visual format, so notes and lyrics are read visually by Codex before direct import.
 
 ## Playback, tempo, and exports
 
@@ -208,7 +208,7 @@ flowchart TD
   N --> C[Official Codex SDK / CLI]
   C --> G[ChatGPT / GPT-6]
   N --> S[C# .NET 8 ONNX singing worker]
-  N --> A[Audiveris Java engine]
+  C --> A[Codex GPT-6 low: per-page MusicXML and visual verification]
   S --> V[Verified assets and caches]
   A --> V
 ```
@@ -221,7 +221,7 @@ The current deployment uses an **existing Windows Azure App Service** at `/Choir
 | SQLite, accounts, projects, chats, references | Azure durable data directory |
 | Codex SDK/CLI and shared OAuth state | Azure |
 | DiffSinger inference | Azure C# ONNX worker |
-| Audiveris recognition | Azure original Java engine and headless bootstrap |
+| Score recognition | Codex GPT-6 Astra, low reasoning; per-sheet transcription and verification |
 | Voice/engine distributions and caches | Azure asset tier and shared voice caches |
 | OCI | No Choirloom service currently installed; optional future worker placement |
 
@@ -229,7 +229,7 @@ IIS assigns a named pipe to Node. A single Node process and sequential heavy-job
 
 ## Local development
 
-Requirements: Node 24+, npm, .NET SDK 8 for singing, and a JDK 21+ to build the Audiveris bootstrap. The provided native packaging targets Windows x64. Azure helpers also require authenticated Azure CLI and Python 3. Actual AI requests require access to the configured model.
+Requirements: Node 24+, npm, .NET SDK 8 for singing, no Java runtime is required. The provided native packaging targets Windows x64. Azure helpers also require authenticated Azure CLI and Python 3. Actual AI requests require access to the configured model.
 
 Independently managed CLI tools in this workspace are installed under `C:\Tools`, with executable directories on the user PATH. The pinned Codex SDK also depends on its CLI package.
 
@@ -249,7 +249,7 @@ Set `CODEX_BIN` to a native Codex executable, or remove the override to let the 
 ./deploy/Build-Workers.ps1 -JavaHome C:\Tools\your-jdk
 ```
 
-Point `DIFFSINGER_COMMAND` and `AUDIVERIS_BIN` to `.runtime\singer\Singer.exe`. Configure manifests and obtain licensed assets separately. The UI, structured score editing, and instant preview can be developed without AI or voice downloads.
+Point `DIFFSINGER_COMMAND` to `.runtime\singer\Singer.exe`. Configure manifests and obtain licensed assets separately. The UI, structured score editing, and instant preview can be developed without AI or voice downloads.
 
 ## Configuration
 
@@ -263,9 +263,8 @@ Copy `.env.example`; never commit `.env` or credentials.
 | `DATA_DIR` | Durable database, files, and account data |
 | `NODE_ENV` | Production enables secure cookies |
 | `CODEX_BIN` | Optional native Codex executable override |
-| `DIFFSINGER_COMMAND`, `AUDIVERIS_BIN` | Published C# worker executable |
+| `DIFFSINGER_COMMAND` | Published C# worker executable |
 | `VOICEBANK_MANIFEST` | Voice manifest; defaults to `config/voicebanks.json` |
-| `AUDIVERIS_MANIFEST` | Audiveris asset manifest |
 | `SCORE_LIBRARY_MANIFEST` | Song catalog; defaults to `config/score-library.json` |
 | `CHOIRLOOM_ASSET_SOURCE` | Colocated original asset directory |
 | `ENGINE_CACHE` | Fast extraction cache, defaulting to temporary storage |
@@ -344,7 +343,7 @@ Use job/request IDs to correlate browser and server records in the Admin console
 - AI musical quality varies; validation is not a full music-theory proof system.
 - The model supports monophonic parts and one meter/key, not every notation feature. OCR and library imports need review.
 - Publisher models vary in range, timbre, language coverage, and licensing. Some catalog entries are variants of the same singer.
-- CPU singing/OMR can be slow. Heavy jobs are sequential, with one queued/running job per user and a 20-minute timeout.
+- CPU singing/recognition can be slow. Heavy jobs are sequential, with one queued/running job per user and a 20-minute timeout.
 - Browser closure is supported; native jobs interrupted by a host restart require retry.
 - Diagnostic delivery is best effort and bounded; durable chat/revision history is separate.
 - SQLite and the in-process event bus assume one app process. Horizontal scaling requires shared queue/event coordination.
@@ -357,8 +356,7 @@ Use job/request IDs to correlate browser and server records in the Admin console
 src/                        React studio, playback, chat, library, admin UI
 server/                     API, jobs, OAuth, references, live state, diagnostics
 shared/                     Score schema/conversion, selection, locale, redaction
-workers/Singer/             C# ONNX singing, assets, audio export, OMR launcher
-workers/AudiverisBootstrap/  Java headless bootstrap
+workers/Singer/             C# ONNX singing, assets, audio export
 config/                     Voice, engine, and song-library manifests
 scripts/                    Catalog maintenance
 public/brand/               Choirloom vector identity
@@ -373,7 +371,6 @@ IMPLEMENTATION_PLAN.md      Current decisions and boundaries
 
 The Codex SDK/CLI, React, Verovio, ONNX Runtime, PDF.js, native canvas, and other dependencies retain their licenses. See package metadata and [in-app notices](public/notices.html).
 
-[Audiveris 5.11.0](https://github.com/Audiveris/audiveris/tree/5.11.0) is distributed separately under AGPL-3.0. Its original Java engine is retained; source and license obligations remain applicable.
 
 [Qixuan’s terms](https://github.com/yqzhishen/qixuan-diffsinger/blob/main/terms_of_use/Terms_of_Use.zh-CN.md) include attribution, synthesized-output identification, and cloud/free-service conditions. Retain the original distribution’s terms and artwork. Public availability does not imply unrestricted redistribution or commercialization.
 
@@ -431,3 +428,5 @@ Before publishing a voice, Choirloom validates its ONNX inputs and renders the s
 Progress and errors are stored in SQLite and pushed over WebSocket. Reopening the page restores the import history, configuration choices and retry form. An application restart marks unfinished imports as interrupted so an admin can retry them. Completed imports join the durable catalog and shared installation, so all users can select them and later reinstall them after removal. Only admins can import or remove shared voices.
 
 Temporary archives, extracted duplicates and test audio are removed before another import begins. Verified shared installations remain available while storage permits. Downloads and extraction have size limits and space checks; public HTTPS destinations and each redirect are validated, and private network addresses are rejected. Import manifests live in the database and are merged into the effective worker manifest, so deployments do not erase them.
+
+The transcription workflow is defined in `server/score-recognition.ts`. It explicitly checks written measure counts, staff-relative pitches, meter, ties, lyrics, melismas and repeat endings. Unreadable text is reported for review rather than replaced with wordless syllables. Full recognized MusicXML is retained as a job artifact.
