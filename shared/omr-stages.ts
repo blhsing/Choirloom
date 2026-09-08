@@ -1,0 +1,4 @@
+export const omrStages = [
+ ['LOAD','讀取圖片','Loading image'],['BINARY','處理圖片','Preparing image'],['SCALE','量測五線譜','Measuring staves'],['GRID','尋找五線譜','Finding staves'],['HEADERS','辨識譜號與拍號','Reading clefs and meter'],['STEM_SEEDS','尋找符桿','Finding stems'],['BEAMS','辨識連桿','Reading beams'],['LEDGERS','辨識加線','Reading ledger lines'],['HEADS','辨識音符','Reading noteheads'],['STEMS','連接符桿','Connecting stems'],['REDUCTION','解析音樂符號','Resolving symbols'],['CUE_BEAMS','辨識小音符','Reading cue notes'],['TEXTS','辨識歌詞與文字','Reading lyrics and text'],['MEASURES','建立小節','Building measures'],['CHORDS','解析和弦','Resolving chords'],['CURVES','辨識連音線','Reading slurs and ties'],['SYMBOLS','辨識其他符號','Reading remaining symbols'],['LINKS','連接音樂元素','Connecting notation'],['RHYTHMS','解析節奏','Resolving rhythms'],['PAGE','整理樂譜','Finalizing score'],
+] as const;
+export function omrStageLabel(stage:string,english:boolean){return omrStages.find(s=>stage===`recognizing:${s[0]}`)?.[english?2:1];}

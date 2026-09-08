@@ -143,7 +143,7 @@ Refresh the pinned index with `python scripts/refresh-score-library.py`. Scores 
 
 MusicXML (`.xml`, `.musicxml`), compressed MusicXML (`.mxl`), and MIDI (`.mid`, `.midi`) can be imported directly. PDF, PNG, JPEG, TIFF, and SVG score imports use **Audiveris 5.11** recognition. Optical results open for review before acceptance.
 
-The score model uses monophonic parts and 480 ticks per quarter note. MusicXML chord tones and concurrent voices are automatically split into independent parts. Optical recognition may misread notes or lyrics; correct them in the editor. SVG input is rasterized on a white background, at up to 5,600 pixels on the longer edge and 20 megapixels (the recognition engine limit), before recognition. It must be self-contained: external image/font references and active content are rejected. SVG is a visual format, so notes and lyrics still require optical recognition and review.
+The score model uses monophonic parts and 480 ticks per quarter note. MusicXML chord tones and concurrent voices are automatically split into independent parts. Optical recognition may misread notes or lyrics; correct them in the editor. SVG input is rasterized on a white background, at up to 3,200 pixels on the longer edge and 8 megapixels to limit memory use on the hosted worker, before recognition. It must be self-contained: external image/font references and active content are rejected. SVG is a visual format, so notes and lyrics still require optical recognition and review.
 
 ## Playback, tempo, and exports
 
