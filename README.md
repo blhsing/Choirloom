@@ -271,7 +271,7 @@ Copy `.env.example`; never commit `.env` or credentials.
 | `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, `MAIL_FROM` | Optional recovery email configuration |
 | `SSL_CERT_FILE`, `CODEX_CA_CERTIFICATE` | Optional operator-managed trust files passed to Codex |
 
-The Azure entry script sets production paths. Helpers/manifests currently target the existing installation; adapt their names and URLs before deploying a separate instance. Do not bypass certificate verification to mask network errors.
+Without an operator-supplied trust file, the service supplies Codex with Node's bundled public roots and CA certificates from the system trust store. This prevents missing-root TLS failures in headless Windows workers while retaining certificate verification. The Azure entry script sets production paths. Helpers/manifests currently target the existing installation; adapt their names and URLs before deploying a separate instance. Do not bypass certificate verification to mask network errors.
 
 ## Azure deployment
 
