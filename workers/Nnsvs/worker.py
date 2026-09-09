@@ -41,8 +41,15 @@ def emit(**value):
     print(json.dumps(value,ensure_ascii=False),flush=True)
 
 def inside(root, relative):
-    target = (root / relative).resolve()
-    if not target.is_relative_to(root.resolve()): raise ValueError('unsafeModelPath')
+    # Azure's mounted C:\home expands to a much longer UNC path with resolve().
+    # Keep its short mount spelling. Archives cannot introduce links (see extract).
+    root = Path(os.path.abspath(root))
+    target = Path(os.path.abspath(root / relative))
+    if not target.is_relative_to(root): raise ValueError('unsafeModelPath')
+    current=target
+    while current!=root:
+        if current.is_symlink(): raise ValueError('unsafeModelPath')
+        current=current.parent
     return target
 
 def extract(archive, destination, encoding=None):
@@ -103,7 +110,7 @@ def install(bank, cache):
             if hashlib.file_digest(source,'sha256').hexdigest()!=digest: raise ValueError('assetChecksumMismatch')
         pending.replace(archive)
     if not unpacked.exists():
-        stage = Path(tempfile.mkdtemp(prefix=digest+'.extract-',dir=cache))
+        stage = Path(tempfile.mkdtemp(prefix=digest[:12]+'.extract-',dir=cache))
         try:
             if digest == '9be4daff7eef46862e19b496e9b2ff41de861c18386d4e0f224534c3744a2a83':
                 import subprocess

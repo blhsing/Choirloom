@@ -5,7 +5,7 @@ import unittest
 import tempfile
 import zipfile
 from pronunciation import approximate,note_phones
-from worker import sustained,phrases,seconds,extract,inspect
+from worker import sustained,phrases,seconds,extract,inspect,inside
 
 class SingingTests(unittest.TestCase):
     def test_ties_merge_only_contiguous_equal_pitch(self):
@@ -40,5 +40,12 @@ class SingingTests(unittest.TestCase):
             with zipfile.ZipFile(archive,'w') as z:z.writestr('../escaped.txt','bad')
             with self.assertRaises(ValueError):extract(archive,root/'model')
             self.assertFalse((root/'escaped.txt').exists())
+    def test_mounted_paths_stay_short_without_resolving_to_unc(self):
+        from unittest.mock import patch
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp)
+            with patch.object(Path,'resolve',side_effect=AssertionError('must retain mounted path')):
+                self.assertEqual(inside(root,'model/config.yaml'),root/'model/config.yaml')
+                with self.assertRaises(ValueError):inside(root,'../escaped')
 
 if __name__=='__main__':unittest.main()
