@@ -81,7 +81,7 @@ export default function App(){const [locale,setLocale]=useState(localStorage.get
 
  async function renderVocals(){
   const id=projectRef.current?.id;if(!id||renderSubmitting)return;
-  const missing=latestScore.current.parts.filter(p=>p.notes.some(n=>n.pitch!==null)&&!p.voicebank);
+  const missing=latestScore.current.parts.filter(p=>p.notes.some(n=>n.pitch!==null)&&!caps.voicebanks.some((v:any)=>v.id===p.voicebank));
   if(missing.length){setTab('ensemble');setPartEditor(missing[0].id);setScoreFocus(false);const message=t('請先為以下聲部選擇合成歌手：','Choose a synthetic singer for: ')+missing.map(p=>p.name).join('、');setRenderMessage(message);setNotice(message);record('warn','render.validation.failed',{projectId:id,partIds:missing.map(p=>p.id)});return;}
   setRenderSubmitting(true);setRenderMessage(t('正在儲存樂譜…','Saving score…'));record('info','render.requested',{projectId:id});
   try{await flush();if(projectRef.current?.id!==id)return;setRenderMessage(t('正在提交合成工作…','Submitting render…'));const r=await api(`/projects/${id}/render`,'POST');if(projectRef.current?.id!==id)return;setRenderJob((previous:any)=>previous?.id===r.id?previous:r);setJob((previous:any)=>previous?.id===r.id?previous:r);setRenderMessage('');record('info','render.accepted',{projectId:id,jobId:r.id});}
