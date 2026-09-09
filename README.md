@@ -246,10 +246,11 @@ Open **http://127.0.0.1:5173/Choirloom/**. Match `APP_ORIGIN` exactly: `localhos
 Set `CODEX_BIN` to a native Codex executable, or remove the override to let the SDK use its bundled CLI. Build workers with:
 
 ```powershell
-./deploy/Build-Workers.ps1 -JavaHome C:\Tools\your-jdk
+./deploy/Build-Workers.ps1
+./deploy/Build-Nnsvs.ps1
 ```
 
-Point `NNSVS_COMMAND` to `.runtime\singer\Singer.exe`. Configure manifests and obtain licensed assets separately. The UI, structured score editing, and instant preview can be developed without AI or voice downloads.
+Point `NNSVS_COMMAND` to `.runtime\singer-nnsvs\Singer.exe`. Follow the [pinned runtime setup](workers/Nnsvs/README.md) before building the Python runtime. Configure manifests and obtain licensed assets separately. The UI, structured score editing, and instant preview can be developed without AI or voice downloads.
 
 ## Configuration
 
