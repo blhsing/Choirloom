@@ -6,7 +6,9 @@ var opts=new Dictionary<string,string>();for(int i=0;i+1<args.Length;i+=2)opts[a
 if(opts.TryGetValue("--mix",out var request)){AudioExports.Export(request,Path.GetFullPath(opts["--output"]));return;}
 var root=Path.GetFullPath(Path.Combine(AppContext.BaseDirectory,"..","nnsvs"));
 string Setting(string name,string fallback)=>string.IsNullOrWhiteSpace(Environment.GetEnvironmentVariable(name))?fallback:Environment.GetEnvironmentVariable(name)!;
-var python=Setting("NNSVS_PYTHON",Path.Combine(root,"python","python.exe"));
+var python=Environment.GetEnvironmentVariable("NNSVS_PYTHON");
+if(string.IsNullOrWhiteSpace(python))python=PortableRuntime.Resolve(root);
+if(opts.ContainsKey("--prepare-runtime")){Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(new {python}));return;}
 var script=Setting("NNSVS_WORKER",Path.Combine(root,"worker.py"));
 var start=new ProcessStartInfo(python){UseShellExecute=false,CreateNoWindow=true,RedirectStandardOutput=true,RedirectStandardError=true};
 start.Environment["CHOIRLOOM_LAUNCHER_PID"]=Environment.ProcessId.ToString();

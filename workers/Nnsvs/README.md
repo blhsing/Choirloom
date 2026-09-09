@@ -17,6 +17,8 @@ python -m pip install cmudict==1.1.3 pykakasi==2.3.0 pypinyin==0.55.0 Unidecode=
 
 ## Models and pronunciation
 
+On Azure, the launcher unpacks the pinned runtime ZIP once into `C:\local\choirloom-nnsvs`, keyed by archive size and modification time. A process mutex and completion marker make interrupted preparation restartable. Subsequent Python imports use local disk; the original runtime archive, voice models and audio checkpoints remain in persistent storage. `Singer.exe --prepare-runtime true` prepares this cache and returns its Python path for operator checks.
+
 For a first Azure deployment, run `Prepare-Nnsvs-Host.ps1`, then `Deploy-Nnsvs-Runtime.ps1`. Run the staged `Expand-Nnsvs-Runtime.ps1` on the host and wait for its extraction log to finish. Upload original model packages with `Deploy-Nnsvs-Voices.ps1`, then run the staged `Start-Nnsvs-Install.ps1`. Its status file in persistent data records an actual phrase render for each voice; missing original packages download from the catalog. Wait for all voices to complete before deploying the application code. Routine application deployments retain the runtime, model cache and phrase checkpoints. The .NET launcher builds into the fresh `.runtime/singer-nnsvs` directory and deploys as `singer`.
 
 `config/voicebanks.json` contains original publisher URLs and checksums. Keep archives, extracted weights and publisher notices in the private shared cache. N-Editor shares one package across Cipher and Shia. The two checksum-pinned legacy ENUNU models use a one-time packing conversion, including their trusted old Python scaler/checkpoint objects. This conversion is unavailable to custom imports. All packed model inference uses PyTorch restricted weight loading; no publisher extension scripts run.
