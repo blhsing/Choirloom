@@ -10,6 +10,7 @@ try{
  }
  [IO.Compression.ZipFileExtensions]::CreateEntryFromFile($zip,(Join-Path $PSScriptRoot 'Start-Nnsvs-Install.ps1'),'Start-Nnsvs-Install.ps1',[IO.Compression.CompressionLevel]::Fastest)|Out-Null
  [IO.Compression.ZipFileExtensions]::CreateEntryFromFile($zip,(Join-Path $PSScriptRoot 'Retire-DiffSinger.py'),'Retire-DiffSinger.py',[IO.Compression.CompressionLevel]::Fastest)|Out-Null
+ [IO.Compression.ZipFileExtensions]::CreateEntryFromFile($zip,(Join-Path $PSScriptRoot 'Probe-Nnsvs-Launcher.ps1'),'Probe-Nnsvs-Launcher.ps1',[IO.Compression.CompressionLevel]::Fastest)|Out-Null
  foreach($entry in @(@('C:\Tools\7zip\7za.exe','7za.exe'),@((Join-Path $workspaceRoot 'config\voicebanks.json'),'banks-staging.json'),@((Join-Path $PSScriptRoot 'Expand-Nnsvs-Runtime.ps1'),'Expand-Nnsvs-Runtime.ps1'))){
   if($ScriptsOnly -and $entry[1] -eq '7za.exe'){continue}
   [IO.Compression.ZipFileExtensions]::CreateEntryFromFile($zip,$entry[0],$entry[1],[IO.Compression.CompressionLevel]::Fastest)|Out-Null
