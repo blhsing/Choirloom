@@ -22,7 +22,9 @@ def pack(source, target):
     for kind in ('timelag','duration','acoustic'):
         model=inside(source,cfg['model_dir'])/kind
         shutil.copyfile(model/'model.yaml',target/(kind+'_model.yaml'))
-        checkpoint=torch.load(inside(model,cfg[kind]['checkpoint']),map_location='cpu',weights_only=False)
+        # This converter is reachable only for the two checksum-pinned originals.
+        # Use the original loader even if another voice already enabled restricted inference.
+        checkpoint=torch.serialization.load(inside(model,cfg[kind]['checkpoint']),map_location='cpu',weights_only=False)
         torch.save({'state_dict':checkpoint['state_dict']},target/(kind+'_model.pth'))
         for side in ('in','out'):
             scaler=joblib.load(inside(source,cfg['stats_dir'])/f'{side}_{kind}_scaler.joblib')
