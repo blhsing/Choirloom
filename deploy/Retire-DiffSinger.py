@@ -9,16 +9,18 @@ import argparse,json,os,re,shutil,sqlite3
 
 parser=argparse.ArgumentParser()
 parser.add_argument('--data',default='C:/home/data/choirloom')
+parser.add_argument('--app',default='C:/home/site/choirloom-app')
 parser.add_argument('--apply',action='store_true')
 args=parser.parse_args()
 data=Path(os.path.abspath(args.data))
+app=Path(os.path.abspath(args.app))
 old=json.loads((data/'retired-voicebanks.json').read_text(encoding='utf-8-sig'))
 banks={b['id']:b for b in old if b.get('engine')!='nnsvs'}
 with sqlite3.connect(data/'choirloom.sqlite',timeout=30) as db:
     for bank_id,manifest in db.execute('SELECT bank_id,manifest FROM voice_custom'):
         bank=json.loads(manifest)
         if bank.get('engine')!='nnsvs':banks[bank_id]=bank
-    paths=set()
+    paths={app/'assets/Qixuan_v2.7.0.zip',app/'assets/vocoder-onnx.zip'}
     for bank in banks.values():
         for key in ('bundle','vocoderBundle','dictionary'):
             asset=bank.get(key) or {};digest=asset.get('sha256','')
@@ -32,7 +34,7 @@ with sqlite3.connect(data/'choirloom.sqlite',timeout=30) as db:
         if score.exists() and any(p.get('voicebank') in banks for p in json.loads(score.read_text(encoding='utf-8-sig')).get('parts',[])):
             jobs.append(job_id);paths.add(folder)
     # Validate every absolute target before any recursive operation.
-    allowed=[data/'voices/shared',data/'jobs']
+    allowed=[data/'voices/shared',data/'jobs',app/'assets']
     checked=[]
     for path in paths:
         target=Path(os.path.abspath(path))
