@@ -21,7 +21,7 @@ void StartNode() { lock(nodeLock) { if(node is {HasExited:false})return;
     start.Environment["CODEX_BIN"] = Path.Combine(root,"node_modules","@openai","codex-win32-x64","vendor","x86_64-pc-windows-msvc","bin","codex.exe");
     start.Environment["CHOIRLOOM_ASSET_SOURCE"]=Path.Combine(root,"assets");
     start.Environment["VOICEBANK_MANIFEST"]=Path.Combine(root,"config","voicebanks.json");
-    start.Environment["DIFFSINGER_COMMAND"]=Path.Combine(root,"singer","Singer.exe");
+    start.Environment["NNSVS_COMMAND"]=Path.Combine(root,"singer","Singer.exe");
     node = new Process { StartInfo=start, EnableRaisingEvents=true };
     node.OutputDataReceived += (_,e) => { if(e.Data is not null) app.Logger.LogInformation("Choirloom: {Message}",e.Data); };
     node.ErrorDataReceived += (_,e) => { if(e.Data is not null) app.Logger.LogWarning("Choirloom: {Message}",e.Data); };

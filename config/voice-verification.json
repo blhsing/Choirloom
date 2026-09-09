@@ -1,245 +1,117 @@
 {
-  "method": "Original publisher package; native CPU installation validation and non-silent WAV/MP3 singing smoke test on Azure; temporary workspace cleaned per voice. This does not certify every lyric or all OpenUtau features.",
+  "method": "Actual CPU NNSVS phrase inference on Windows using original publisher weights; PCM/MP3 signal verification. This verifies operation, not human-level realism or native English pronunciation.",
   "voices": [
     {
-      "id": "ada-synphonia",
+      "id": "namine-ritsu",
+      "engine": "nnsvs",
       "stage": "verified",
-      "sha256": "8596b89ab8ab99d4cdae4867f4ad2a24692ce2adb5531d6c05c37db2e6d18078",
-      "bytes": 411412319,
-      "peak": 11765,
-      "rms": 0.08291078745868036,
-      "checkedAt": "2026-09-08T06:56:13.710Z",
-      "time": "2026-09-08T06:56:13.711Z",
-      "testLyrics": [
-        "ah",
-        "hello",
-        "woo"
-      ]
+      "checkedAt": "2026-09-08",
+      "packageSha256": "ac2ed1ebe6d880cdb0bbcaa48fb51c331b86fdf013f27c09020de905e7bd63db",
+      "sampleRate": 44100,
+      "durationSeconds": 2.5,
+      "peak": 7884,
+      "rms": 0.09235214513530625,
+      "mp3Bytes": 61439,
+      "sampleSha256": "5c2122e39076bfd14b83ab0e0ce75c625db872644df7c160ee8312f770c9fb8a",
+      "test": "English approximation: Sing with me; final note sustained across a tie."
     },
     {
-      "id": "canary",
+      "id": "haruqa",
+      "engine": "nnsvs",
       "stage": "verified",
-      "sha256": "92390f434691c00d10f5df9cbef2651477edfc33b43f7c21117d6a282104717d",
-      "bytes": 545141676,
-      "peak": 11036,
-      "rms": 0.11622783734254392,
-      "checkedAt": "2026-09-08T07:03:49.722Z",
-      "time": "2026-09-08T07:03:49.723Z",
-      "testLyrics": [
-        "ah",
-        "hello",
-        "woo"
-      ]
+      "checkedAt": "2026-09-08",
+      "packageSha256": "a1e20b4d547a1714650a5d808bdd7f6a74d0ee7c437e70e0b5d0032f27603095",
+      "sampleRate": 44100,
+      "durationSeconds": 2.5,
+      "peak": 19558,
+      "rms": 0.09575298220926724,
+      "mp3Bytes": 61439,
+      "sampleSha256": "a71888379c6dd55cf574ce64f3b8cf015ad3ed4859dfdb5311b191739175aa6f",
+      "test": "English approximation: Sing with me; final note sustained across a tie."
     },
     {
-      "id": "francefrank",
+      "id": "ofuton",
+      "engine": "nnsvs",
       "stage": "verified",
-      "sha256": "d107232d4058148c9b4d9b6d632f2ce22a0c75cf4ab78f5c8391c5b8bbb322ef",
-      "bytes": 450986317,
-      "peak": 9334,
-      "rms": 0.07440095008659293,
-      "checkedAt": "2026-09-08T06:20:29.561Z",
-      "time": "2026-09-08T06:20:29.562Z",
-      "testLyrics": [
-        "ah",
-        "hello",
-        "woo"
-      ]
+      "checkedAt": "2026-09-08",
+      "packageSha256": "4b068526fc25c5291346763621a4ca4328c2edaa8b790e0b3b7472b054b075b4",
+      "sampleRate": 44100,
+      "durationSeconds": 2.5,
+      "peak": 11262,
+      "rms": 0.09189324916077869,
+      "mp3Bytes": 61439,
+      "sampleSha256": "0712225bf224d051f46e82e18366a0d2d2805a7279f843c2742de998ef45b4b7",
+      "test": "English approximation: Sing with me; final note sustained across a tie."
     },
     {
-      "id": "kaiz",
+      "id": "kurumi",
+      "engine": "nnsvs",
       "stage": "verified",
-      "sha256": "27e78a3a7bece21b926c38a881f7378097869aa501a791838d6e180d9e9fa38f",
-      "bytes": 453388234,
-      "peak": 10981,
-      "rms": 0.10326671118949202,
-      "checkedAt": "2026-09-08T06:18:33.267Z",
-      "time": "2026-09-08T06:18:33.268Z",
-      "testLyrics": [
-        "ah",
-        "hello",
-        "woo"
-      ]
+      "checkedAt": "2026-09-08",
+      "packageSha256": "5cd9df46fb2709a7822220c30c7cfac404584a1a504600a7c781700821b1923b",
+      "sampleRate": 44100,
+      "durationSeconds": 2.5,
+      "peak": 17214,
+      "rms": 0.0907156350603897,
+      "mp3Bytes": 61439,
+      "sampleSha256": "b27ff50323c8085d064e4d618fc049bf7197f29ac3256ac0fe04d0189ac07774",
+      "test": "English approximation: Sing with me; final note sustained across a tie."
     },
     {
-      "id": "leif",
+      "id": "amaboshi-cipher",
+      "engine": "nnsvs",
       "stage": "verified",
-      "sha256": "7fdce935c34544f890de4a83163b7cb6d6d23cbed1787b0bcb81f8b42727b30d",
-      "bytes": 397383419,
-      "peak": 13476,
-      "rms": 0.10443087941506526,
-      "checkedAt": "2026-09-08T06:58:16.918Z",
-      "time": "2026-09-08T06:58:16.919Z",
-      "testLyrics": [
-        "ah",
-        "hello",
-        "woo"
-      ]
+      "checkedAt": "2026-09-08",
+      "packageSha256": "9be4daff7eef46862e19b496e9b2ff41de861c18386d4e0f224534c3744a2a83",
+      "sampleRate": 44100,
+      "durationSeconds": 2.5,
+      "peak": 12511,
+      "rms": 0.09246346682615976,
+      "mp3Bytes": 61439,
+      "sampleSha256": "1c4164da95c3b3272bbb5db817c14d8f52f7503d7928fcc8084bc451b3f6a782",
+      "test": "English approximation: Sing with me; final note sustained across a tie."
     },
     {
-      "id": "liee",
+      "id": "kanade-shia",
+      "engine": "nnsvs",
       "stage": "verified",
-      "sha256": "d9fd90e61186f6397c148e3817832bd547d1f13b2ba7ba3d812efe020328fa12",
-      "bytes": 609269753,
-      "peak": 6358,
-      "rms": 0.0673537956566514,
-      "checkedAt": "2026-09-08T07:11:46.789Z",
-      "time": "2026-09-08T07:11:46.789Z",
-      "testLyrics": [
-        "ah",
-        "hello",
-        "woo"
-      ]
+      "checkedAt": "2026-09-08",
+      "packageSha256": "9be4daff7eef46862e19b496e9b2ff41de861c18386d4e0f224534c3744a2a83",
+      "sampleRate": 44100,
+      "durationSeconds": 2.5,
+      "peak": 9829,
+      "rms": 0.09543916655335194,
+      "mp3Bytes": 61439,
+      "sampleSha256": "ee0bc446bf17c4c7ae1fe4a70c48cee6051aed1d3fa928887dcb85afe324a291",
+      "test": "English approximation: Sing with me; final note sustained across a tie."
     },
     {
-      "id": "printto-millefeuille",
+      "id": "kuro",
+      "engine": "nnsvs",
       "stage": "verified",
-      "sha256": "b114c22e1fe9f0a4a6e81a43cc405cf42633fa99118aac17be3961677ef16510",
-      "bytes": 595654393,
-      "peak": 7560,
-      "rms": 0.06449933848560345,
-      "checkedAt": "2026-09-08T06:53:44.830Z",
-      "time": "2026-09-08T06:53:44.831Z",
-      "testLyrics": [
-        "ah",
-        "hello",
-        "woo"
-      ]
+      "checkedAt": "2026-09-08",
+      "packageSha256": "eafa2a6a38530a65890145169b851c6b661de8b3c2d8f4ea9a93e694286c99db",
+      "sampleRate": 44100,
+      "durationSeconds": 2.5,
+      "peak": 20439,
+      "rms": 0.09575765532615256,
+      "mp3Bytes": 61439,
+      "sampleSha256": "73a743a5bb184d566d77a7c86b394c3f02eea1bde1d63f9655526a875310f502",
+      "test": "English approximation: Sing with me; final note sustained across a tie."
     },
     {
-      "id": "printto-pure",
+      "id": "ruko",
+      "engine": "nnsvs",
       "stage": "verified",
-      "sha256": "e8716139b108c3b9ec4fd7a1f2ffcaacb730468d56701f2a54993086edd00ac4",
-      "bytes": 921862347,
-      "peak": 16950,
-      "rms": 0.1435282952646375,
-      "checkedAt": "2026-09-08T06:50:48.425Z",
-      "time": "2026-09-08T06:50:48.433Z",
-      "testLyrics": [
-        "ah",
-        "hello",
-        "woo"
-      ]
-    },
-    {
-      "id": "ria",
-      "stage": "verified",
-      "sha256": "01b472d93281a70ab0bee13f966265aa1c331e711a999294ac69450c47feccc3",
-      "bytes": 431191712,
-      "peak": 24395,
-      "rms": 0.23650063155733836,
-      "checkedAt": "2026-09-08T07:16:38.678Z",
-      "time": "2026-09-08T07:16:38.679Z",
-      "testLyrics": [
-        "啊",
-        "あ",
-        "woo"
-      ]
-    },
-    {
-      "id": "tanya",
-      "stage": "verified",
-      "sha256": "f13d6b0d3587a44e6e99e77208c9a74008dd4430fb92c4e20ea3ce5ad39f337c",
-      "bytes": 451634830,
-      "peak": 5458,
-      "rms": 0.059225464726083914,
-      "checkedAt": "2026-09-08T06:16:39.327Z",
-      "time": "2026-09-08T06:16:39.328Z",
-      "testLyrics": [
-        "ah",
-        "hello",
-        "woo"
-      ]
-    },
-    {
-      "id": "tiger",
-      "stage": "verified",
-      "sha256": "b19d498f46f05f58f049ec2ec0ee2b569a01a4fbda41667922d7c773f1196c19",
-      "bytes": 555302285,
-      "peak": 14007,
-      "rms": 0.10643777048518185,
-      "checkedAt": "2026-09-08T07:00:53.824Z",
-      "time": "2026-09-08T07:00:53.825Z",
-      "testLyrics": [
-        "ah",
-        "hello",
-        "woo"
-      ]
-    },
-    {
-      "id": "neurosynth",
-      "stage": "verified",
-      "sha256": "414ed9242558c5433bb6be31afb7f9a302b363fee5cee8c5ac3e3bece52f2ec1",
-      "bytes": 373721455,
-      "peak": 22954,
-      "rms": 0.22584570165542944,
-      "checkedAt": "2026-09-08T06:02:58.038Z",
-      "time": "2026-09-08T06:02:58.039Z",
-      "testLyrics": [
-        "ah",
-        "hello",
-        "woo"
-      ]
-    },
-    {
-      "id": "printto-v5",
-      "stage": "verified",
-      "sha256": "304c294ec3d3e5eb8b45b39ee3596df52ed8d8c1f443523c03d8ae96b8a6e1c3",
-      "bytes": 921778048,
-      "peak": 15839,
-      "rms": 0.15051916885989405,
-      "checkedAt": "2026-09-08T06:09:39.528Z",
-      "time": "2026-09-08T06:09:39.529Z",
-      "testLyrics": [
-        "ah",
-        "hello",
-        "woo"
-      ]
-    },
-    {
-      "id": "petchploy",
-      "stage": "verified",
-      "sha256": "f7a8e0a3b7bd7381c37ff333b7c8f0c3d75c8db8bdfab0c13a1278eb85c850a2",
-      "bytes": 367919577,
-      "peak": 9534,
-      "rms": 0.07916633891268796,
-      "checkedAt": "2026-09-08T06:32:54.550Z",
-      "time": "2026-09-08T06:32:54.571Z",
-      "testLyrics": [
-        "ah",
-        "hello",
-        "woo"
-      ]
+      "checkedAt": "2026-09-08",
+      "packageSha256": "7e0309e43c7eff27df1f6f0f936d3cb701598bad756c0cd80d9297c7d373d8bf",
+      "sampleRate": 44100,
+      "durationSeconds": 2.5,
+      "peak": 10713,
+      "rms": 0.09412126991529006,
+      "mp3Bytes": 61439,
+      "sampleSha256": "e5dc8063146701230e2adc5482426d60a0e149ec46bae822bbfd1e7f597290ac",
+      "test": "English approximation: Sing with me; final note sustained across a tie."
     }
-  ],
-  "adminUiImportVerification": {
-    "peak": 21406,
-    "rms": 0.2649268673107767,
-    "wavBytes": 352844,
-    "mp3Bytes": 97801,
-    "lyrics": [
-      "ah",
-      "woo",
-      "ba",
-      "bom",
-      "da",
-      "dum",
-      "doo",
-      "dap",
-      "bwee",
-      "hello",
-      "あ"
-    ],
-    "checkedAt": "2026-09-08T07:40:59.151Z",
-    "sha256": "414ed9242558c5433bb6be31afb7f9a302b363fee5cee8c5ac3e3bece52f2ec1",
-    "bankId": "neurosynth",
-    "refreshRecoveryVerified": true,
-    "temporaryCleanupVerified": true
-  },
-  "publisherPermission": {
-    "bankId": "liee",
-    "scope": "Choirloom",
-    "confirmedBy": "site operator",
-    "confirmedAt": "2026-09-08"
-  }
+  ]
 }

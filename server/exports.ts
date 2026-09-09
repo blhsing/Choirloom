@@ -45,12 +45,12 @@ export async function audioExport(projectId:string,score:Score,chosen:Score,form
   return {id:part.id,name:part.name,file:artifact.path,gain:part.gain};
  });
  if(activeExports>=2)throw new HttpError(429,'jobBusy');
- if(!process.env.DIFFSINGER_COMMAND||!existsSync(process.env.DIFFSINGER_COMMAND))throw new HttpError(503,'singerUnavailable');
+ if(!process.env.NNSVS_COMMAND||!existsSync(process.env.NNSVS_COMMAND))throw new HttpError(503,'singerUnavailable');
  const root=path.join(tmpdir(),'choirloom-exports');mkdirSync(root,{recursive:true});const dir=mkdtempSync(path.join(root,'mix-'));
  const cleanup=()=>rmSync(dir,{recursive:true,force:true});activeExports++;
  try{
   const input=path.join(dir,'request.json');writeFileSync(input,JSON.stringify({parts,format,separate}),{mode:0o600});
-  await processCommand(process.env.DIFFSINGER_COMMAND,['--mix',input,'--output',dir],signal);
+  await processCommand(process.env.NNSVS_COMMAND,['--mix',input,'--output',dir],signal);
   if(signal.aborted)throw new HttpError(499,'cancelled');
   const extension=separate&&parts.length>1?'zip':format;
   const file=path.join(dir,'export.'+extension);if(!existsSync(file))throw new HttpError(500,'workerFailed');

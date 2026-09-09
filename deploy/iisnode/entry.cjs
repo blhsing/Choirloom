@@ -6,7 +6,7 @@ process.env.APP_ORIGIN='https://test-officialwebsite.azurewebsites.net';
 process.env.APP_BASE='/Choirloom';
 process.env.DATA_DIR=path.join(process.env.HOME||root,'data','choirloom');
 process.env.CODEX_BIN=path.join(root,'node_modules','@openai','codex-win32-x64','vendor','x86_64-pc-windows-msvc','bin','codex.exe');
-process.env.DIFFSINGER_COMMAND=path.join(root,'singer','Singer.exe');
+process.env.NNSVS_COMMAND=path.join(root,'singer','Singer.exe');
 process.env.VOICEBANK_MANIFEST=path.join(root,'config','voicebanks.json');
 process.env.CHOIRLOOM_ASSET_SOURCE=path.join(root,'assets');
 import('./app/server/index.js').catch(error=>{console.error('Choirloom startup failed:',error.message);process.exitCode=1;});

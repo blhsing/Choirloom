@@ -8,7 +8,7 @@ from urllib.parse import urlsplit
 
 options=json.load(sys.stdin)
 url=urlsplit(options['url'])
-connection=http.client.HTTPSConnection(url.hostname,timeout=1800,context=ssl.create_default_context())
+connection=http.client.HTTPSConnection(url.hostname,timeout=1800,blocksize=1024*1024,context=ssl.create_default_context())
 headers={'Authorization':options['authorization'],'If-Match':'*','Content-Type':options.get('contentType','application/octet-stream')}
 file=pathlib.Path(options['file']) if options.get('file') else None
 headers['Content-Length']=str(file.stat().st_size if file else 0)

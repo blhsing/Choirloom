@@ -11,9 +11,9 @@ export function sourceUrl(value:string):URL {
  url.hash='';return url;
 }
 export function chooseConfiguration(choices:any[],selected?:string){
- const eligible=choices.filter(c=>c.sampleRate===44100&&c.hopSize===512&&c.numMelBins===128&&c.wordless);
- const chosen=selected?eligible.find(c=>c.dsConfig===selected):eligible.sort((a,b)=>a.dsConfig.split('/').length-b.dsConfig.split('/').length||a.dsConfig.localeCompare(b.dsConfig))[0];
- if(!chosen)throw Error(selected?'selectedConfigurationUnsupported':'noSupportedConfiguration: Requires 44.1 kHz / hop 512 / 128 mel bins and supported wordless phonemes');return chosen;
+ const eligible=choices.filter(c=>c.engine==='nnsvs'&&c.wordless&&[24000,44100,48000].includes(c.sampleRate));
+ const chosen=selected?eligible.find(c=>c.modelConfig===selected):eligible.sort((a,b)=>a.modelConfig.split('/').length-b.modelConfig.split('/').length||a.modelConfig.localeCompare(b.modelConfig))[0];
+ if(!chosen)throw Error(selected?'selectedConfigurationUnsupported':'noSupportedConfiguration: Requires a packed NNSVS model with timing, duration, acoustic models, scalers, qst.hed and a phoneme table');return chosen;
 }
 export function verifyWave(wav:Buffer,mp3Bytes:number){
  if(wav.toString('ascii',0,4)!=='RIFF'||wav.toString('ascii',8,12)!=='WAVE')throw Error('invalidRenderedWave');

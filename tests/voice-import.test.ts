@@ -9,8 +9,8 @@ test('voice downloads reject local destinations and normalize public Drive links
  assert.equal(sourceUrl('https://drive.google.com/file/d/ABC_xyz/view').href,'https://drive.usercontent.google.com/download?id=ABC_xyz&export=download&confirm=t');
 });
 test('configuration selection excludes unsupported audio timing and supports explicit nested choices',()=>{
- const base={sampleRate:44100,hopSize:512,numMelBins:128,wordless:true};const choices=[{...base,dsConfig:'voice/style/dsconfig.yaml'},{...base,dsConfig:'voice/dsconfig.yaml'},{...base,dsConfig:'unsupported.yaml',sampleRate:48000}];
- assert.equal(chooseConfiguration(choices).dsConfig,'voice/dsconfig.yaml');assert.equal(chooseConfiguration(choices,'voice/style/dsconfig.yaml').dsConfig,'voice/style/dsconfig.yaml');assert.throws(()=>chooseConfiguration(choices,'unsupported.yaml'));
+ const base={engine:"nnsvs",sampleRate:48000,wordless:true};const choices=[{...base,modelConfig:'voice/style/config.yaml'},{...base,modelConfig:'voice/config.yaml'},{...base,modelConfig:'unsupported.yaml',sampleRate:22050}];
+ assert.equal(chooseConfiguration(choices).modelConfig,'voice/config.yaml');assert.equal(chooseConfiguration(choices,'voice/style/config.yaml').modelConfig,'voice/style/config.yaml');assert.throws(()=>chooseConfiguration(choices,'unsupported.yaml'));
 });
 test('render verification ignores headers and rejects silence, incomplete PCM, and missing MP3',()=>{
  const wave=Buffer.alloc(44+8820);wave.write('RIFF');wave.writeUInt32LE(wave.length-8,4);wave.write('WAVEfmt ',8);wave.writeUInt32LE(16,16);wave.writeUInt16LE(1,20);wave.writeUInt16LE(1,22);wave.writeUInt32LE(44100,24);wave.writeUInt32LE(88200,28);wave.writeUInt16LE(2,32);wave.writeUInt16LE(16,34);wave.write('data',36);wave.writeUInt32LE(8820,40);

@@ -15,7 +15,7 @@ test('Azure named-pipe requests work with forwarded IPv4 ports and IPv6', {skip:
 });
 test('voice downloads migrate to a shared cache and only admins can remove them',async()=>{
  const {writeFileSync,mkdirSync,existsSync}=await import('node:fs'),{run,one}=await import('../server/db.ts'),{voiceCache,migrateSharedVoices}=await import('../server/voicebanks.ts');
- const sha='a'.repeat(64);writeFileSync(path.join(process.env.DATA_DIR!,'voicebanks.json'),JSON.stringify([{id:'test-bank',name:'Test voice',bundle:{sha256:sha,bytes:100},supportedLanguages:['en']}]))
+ const sha='a'.repeat(64);writeFileSync(path.join(process.env.DATA_DIR!,'voicebanks.json'),JSON.stringify([{id:'test-bank',engine:'nnsvs',name:'Test voice',bundle:{sha256:sha,bytes:100},supportedLanguages:['en']}]))
  const a=await request('/auth/signup','POST',{name:'Singer A',email:'singer-a@example.com',password:'long password 123'}),b=await request('/auth/signup','POST',{name:'Singer B',email:'singer-b@example.com',password:'long password 123'});
  const publicCatalog=await request('/voicebanks');assert.equal(publicCatalog.status,200);assert.equal(publicCatalog.data.canManage,false);run("UPDATE users SET role='admin' WHERE id=?",a.data.user.id);
  const old=path.join(process.env.DATA_DIR!,'voices',a.data.user.id);mkdirSync(old,{recursive:true});writeFileSync(path.join(old,sha),'model');run("INSERT INTO voice_installs(user_id,bank_id,status,progress,bytes) VALUES(?,?,'installed',100,100)",a.data.user.id,'test-bank');migrateSharedVoices();
@@ -32,7 +32,7 @@ async function request(url:string,method='GET',body?:any,cookie='',csrf=''){retu
 test('only admins can import voices and durable imported manifests join the shared catalog',async()=>{
  const user=await request('/auth/signup','POST',{name:'Import tester',email:'voice-import-test@example.com',password:'long password 123'});
  assert.equal((await request('/voicebanks/import','POST',{name:'Voice',url:'https://example.com/voice.zip',publisher:'Publisher',licenseUrl:'https://example.com/terms'},user.cookie,user.data.csrf)).status,403);
- const {run}=await import('../server/db.ts'),{catalog,catalogPath}=await import('../server/voicebanks.ts'),{readFileSync}=await import('node:fs');run('INSERT INTO voice_custom(bank_id,manifest) VALUES(?,?)','import-fixture',JSON.stringify({id:'import-fixture',name:'Imported fixture',installable:true,imported:true}));
+ const {run}=await import('../server/db.ts'),{catalog,catalogPath}=await import('../server/voicebanks.ts'),{readFileSync}=await import('node:fs');run('INSERT INTO voice_custom(bank_id,manifest) VALUES(?,?)','import-fixture',JSON.stringify({id:'import-fixture',engine:'nnsvs',name:'Imported fixture',installable:true,imported:true}));
  assert(catalog().some(b=>b.id==='import-fixture'));assert(JSON.parse(readFileSync(catalogPath,'utf8')).some((b:any)=>b.id==='import-fixture'));assert((await request('/voicebanks','GET',undefined,user.cookie)).data.banks.some((b:any)=>b.id==='import-fixture'));assert.deepEqual((await request('/voicebanks','GET',undefined,user.cookie)).data.imports,[]);
  run('DELETE FROM voice_custom WHERE bank_id=?','import-fixture');
 });

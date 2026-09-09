@@ -49,7 +49,7 @@ Choirloom is a browser-based vocal ensemble studio. Start with a lead melody, di
 - English and Traditional Chinese, with initial locale selected from the browser.
 - A searchable library of lyric-bearing song scores with direct vocal-part import.
 - Codex GPT-6 (low reasoning) PDF/image recognition and structured MusicXML/MXL/MIDI imports.
-- Instant vowel preview and DiffSinger singing with lyrics.
+- Sampled-instrument instant preview and NNSVS singing with lyrics.
 - Selective score and audio exports, combined or as individual parts.
 - A browsable voice catalog with downloads, progress, cancellation, and removal.
 - WebSocket updates and automatic reconnection, with admin-visible diagnostics.
@@ -147,7 +147,7 @@ The score model uses monophonic parts and 480 ticks per quarter note. MusicXML c
 
 ## Playback, tempo, and exports
 
-**Instant preview** uses browser vowel synthesis without lyric pronunciation or a downloaded voicebank. **Rendered singing** runs DiffSinger inference through the C# ONNX worker and produces individual WAV/MP3 stems and a mixed rendering. Playback supports part levels, mute, solo, and looping.
+**Instant preview** uses recorded instrument samples, including classical guitar. **Rendered singing** uses NNSVS phrase synthesis through a Python/PyTorch worker, with a small .NET launcher for Windows and WAV/MP3 exports. Ties sustain across written notes; tempo changes and repeats follow the score. Completed phrases are checkpointed for restart recovery. Playback supports part levels, mute, solo, and looping.
 
 BPM is adjustable in the bar above playback with a number field, plus/minus buttons, slider, and **Tap** control. Changes persist in the score. Existing tempo-map changes scale proportionally; rendered singing must be regenerated after a tempo change.
 
@@ -165,11 +165,11 @@ Multiple separate files download as a ZIP. Audio mixing uses selected part level
 
 The entire configured catalog appears by default, including installed voices. Search names, aliases, languages, or ranges; filter by language and download state. Empty results offer a clear-filters action. A broken catalog is shown as an error rather than an endless preparation message.
 
-The catalog includes independently configured singers and model variants. Each card lists the lyric handling verified in Choirloom. Select a singer separately for each part: changing the musical voice type adjusts its range but does not change the singer’s identity. Qixuan also supports Mandarin characters/pinyin and Japanese kana/romaji.
+The catalog includes independently configured singers and model variants. Each card lists the lyric handling verified in Choirloom. Select a singer separately for each part: changing the musical voice type adjusts its range but does not change the singer’s identity. The installed models sing Japanese natively. English, Chinese and Portuguese lyrics use approximate Japanese phonemes; their written lyrics are never changed.
 
 Downloads are shared by all users: one installed copy serves the entire studio. Any user can download a voice; only administrators can cancel or remove shared downloads. Progress and storage are shared. Removing a download preserves projects, assignments, and rendered audio. Removal is blocked during any active render. Interrupted downloads can be retried.
 
-`config/voicebanks.json` defines approved URLs, SHA-256 hashes, model paths, aliases, languages, and licensing links. Workers verify assets and reject unsafe archive paths. Workers can fetch checksum-pinned original packages from the configured Azure asset path, GitHub releases, public Google Drive downloads, and the approved NeuroSynth model endpoint. Downloaded weights remain in the private shared cache.
+`config/voicebanks.json` defines approved URLs, SHA-256 hashes, model paths, aliases, languages, and licensing links. Workers verify assets and reject unsafe archive paths. Workers fetch checksum-pinned original publisher packages; model files remain private and publisher extensions are not executed. Downloaded weights remain in the private shared cache.
 
 ## Accounts, sharing, and administration
 
@@ -207,7 +207,7 @@ flowchart TD
   N --> D[(SQLite and durable files)]
   N --> C[Official Codex SDK / CLI]
   C --> G[ChatGPT / GPT-6]
-  N --> S[C# .NET 8 ONNX singing worker]
+  N --> S[NNSVS Python/PyTorch singing worker]
   C --> A[Codex GPT-6 low: per-page MusicXML and visual verification]
   S --> V[Verified assets and caches]
   A --> V
@@ -220,7 +220,7 @@ The current deployment uses an **existing Windows Azure App Service** at `/Choir
 | React, Express, WebSocket server | Azure isolated IISNode virtual application |
 | SQLite, accounts, projects, chats, references | Azure durable data directory |
 | Codex SDK/CLI and shared OAuth state | Azure |
-| DiffSinger inference | Azure C# ONNX worker |
+| NNSVS inference | Azure Python/PyTorch worker |
 | Score recognition | Codex GPT-6 Astra, low reasoning; per-sheet transcription and verification |
 | Voice/engine distributions and caches | Azure asset tier and shared voice caches |
 | OCI | No Choirloom service currently installed; optional future worker placement |
@@ -249,7 +249,7 @@ Set `CODEX_BIN` to a native Codex executable, or remove the override to let the 
 ./deploy/Build-Workers.ps1 -JavaHome C:\Tools\your-jdk
 ```
 
-Point `DIFFSINGER_COMMAND` to `.runtime\singer\Singer.exe`. Configure manifests and obtain licensed assets separately. The UI, structured score editing, and instant preview can be developed without AI or voice downloads.
+Point `NNSVS_COMMAND` to `.runtime\singer\Singer.exe`. Configure manifests and obtain licensed assets separately. The UI, structured score editing, and instant preview can be developed without AI or voice downloads.
 
 ## Configuration
 
@@ -263,7 +263,7 @@ Copy `.env.example`; never commit `.env` or credentials.
 | `DATA_DIR` | Durable database, files, and account data |
 | `NODE_ENV` | Production enables secure cookies |
 | `CODEX_BIN` | Optional native Codex executable override |
-| `DIFFSINGER_COMMAND` | Published C# worker executable |
+| `NNSVS_COMMAND` | Published C# worker executable |
 | `VOICEBANK_MANIFEST` | Voice manifest; defaults to `config/voicebanks.json` |
 | `SCORE_LIBRARY_MANIFEST` | Song catalog; defaults to `config/score-library.json` |
 | `CHOIRLOOM_ASSET_SOURCE` | Colocated original asset directory |
@@ -343,7 +343,7 @@ Use job/request IDs to correlate browser and server records in the Admin console
 - AI musical quality varies; validation is not a full music-theory proof system.
 - The model supports monophonic parts and one meter/key, not every notation feature. OCR and library imports need review.
 - Publisher models vary in range, timbre, language coverage, and licensing. Some catalog entries are variants of the same singer.
-- CPU singing/recognition can be slow. Heavy jobs are sequential, with one queued/running job per user and a 20-minute timeout.
+- CPU singing/recognition can be slow. Heavy jobs are sequential, with one queued/running job per user and a configurable two-hour rendering budget.
 - Browser closure is supported; native jobs interrupted by a host restart require retry.
 - Diagnostic delivery is best effort and bounded; durable chat/revision history is separate.
 - SQLite and the in-process event bus assume one app process. Horizontal scaling requires shared queue/event coordination.
@@ -356,7 +356,8 @@ Use job/request IDs to correlate browser and server records in the Admin console
 src/                        React studio, playback, chat, library, admin UI
 server/                     API, jobs, OAuth, references, live state, diagnostics
 shared/                     Score schema/conversion, selection, locale, redaction
-workers/Singer/             C# ONNX singing, assets, audio export
+workers/Singer/             Windows NNSVS launcher and audio export
+workers/Nnsvs/              Phrase synthesis, pronunciation, model validation
 config/                     Voice, engine, and song-library manifests
 scripts/                    Catalog maintenance
 public/brand/               Choirloom vector identity
@@ -369,10 +370,9 @@ IMPLEMENTATION_PLAN.md      Current decisions and boundaries
 
 ## Third-party components and licensing
 
-The Codex SDK/CLI, React, Verovio, ONNX Runtime, PDF.js, native canvas, and other dependencies retain their licenses. See package metadata and [in-app notices](public/notices.html).
+The Codex SDK/CLI, React, Verovio, NNSVS, PyTorch, PDF.js, native canvas, and other dependencies retain their licenses. See package metadata and [in-app notices](public/notices.html).
 
 
-[Qixuan’s terms](https://github.com/yqzhishen/qixuan-diffsinger/blob/main/terms_of_use/Terms_of_Use.zh-CN.md) include attribution, synthesized-output identification, and cloud/free-service conditions. Retain the original distribution’s terms and artwork. Public availability does not imply unrestricted redistribution or commercialization.
 
 [OpenScore Lieder](https://github.com/OpenScore/Lieder) supplies CC0 transcriptions and metadata. Choirloom preserves source attribution; the source repository includes the complete CC0 dedication.
 
@@ -386,11 +386,11 @@ User prompts have **Rewind to prompt** and **Retry** controls. Rewind removes th
 
 ### Publisher voice directory
 
-The directory contains 17 voicebank entries, including Printto variants: Qixuan, Umidaji, Nishiren Gard, NeuroSynth, Printto V5, Tanya, Kaiz, FranceFrank, Petchploy, Printto Pure, Printto Millefeuille, Ada Synphonia, Leif, TIGER, Canary, LIEE and Ria. Browse without a keyword or filter by language, publisher, compatibility and download status.
+The verified NNSVS library contains Namine Ritsu, Haruqa, Ofuton-P, Oniku Kurumi, Amaboshi Cipher, Kanade Shia, Kuro Bousuku and Yokune Ruko ♀. Every entry has a pinned publisher package and an actual WAV/MP3 synthesis test; see [the verification record](config/voice-verification.json). Each has a prerecorded audition clip.
 
-All 14 additions passed actual native singing smoke tests. **All 17 entries are enabled.** On September 8, 2026, the site operator confirmed creator permission covering LIEE in Choirloom; its card retains the publisher terms and attribution. See [the verification record](config/voice-verification.json) for pinned hashes and results. The other additions use verified English/wordless pronunciation paths; Ria uses Chinese, Japanese and wordless paths. NeuroSynth also passed Japanese pronunciation and every Choirloom wordless pattern through the live admin importer, including a page reload during verification. These labels describe tested Choirloom capabilities, not every language in the publisher's training data.
+These are Japanese models. Other lyric languages use phonetic approximations, not native multilingual singing. Haruqa and Kuro use WORLD vocoders; the other models include neural vocoders. Model quality varies. Publisher terms, including commercial-use and attribution restrictions, are linked in the library and included in export credits. Downloaded weights stay in the private shared cache. The directory records additional releases that require permission or are no longer available; it is not an exhaustive worldwide index.
 
-Installed voices are shared by all users. Original archives and notices remain in the private Azure cache, and are not republished as public downloads. Publisher terms apply, including restrictions that vary by voice. This maintained directory is not an exhaustive index of every voice on the internet. Admins can import further compatible ONNX packages through the UI. Refresh publisher metadata with `python scripts/refresh-voice-directory.py` and review changed sources before deployment.
+Select NNSVS voices for your parts before rendering. New render keys identify the NNSVS engine so obsolete singing audio is not reused.
 
 Browser diagnostics buffer startup events until session initialization finishes. If an HTTP upload encounters a rotated session token, the client refreshes its token before retrying; origin and CSRF enforcement remain enabled.
 
@@ -402,31 +402,12 @@ The score has a dedicated scrollable viewport and a page selector. **Full-screen
 
 Score requests time out after 30 seconds instead of showing Saving indefinitely. Failed saves expose **Retry save**. Local draft backup failures are logged and do not prevent server saving; a failed save retains the current in-memory draft. Browser storage may be unavailable or full, so a local backup cannot always be guaranteed.
 
-### Native publisher voicebank adapter
+### NNSVS runtime and voice imports
 
-The .NET singer reads OpenUtau `dsconfig.yaml`, JSON or text phoneme inventories, language IDs, speaker embeddings, and embedded vocoder configuration without rewriting model weights or publisher files. It supports the renderer’s continuous and legacy acceleration inputs and converts mel logarithm bases when required. Unsupported model inputs or incompatible vocoder settings fail installation validation.
+See [runtime setup](workers/Nnsvs/README.md). Run `deploy/Build-Nnsvs.ps1` to stage the portable runtime, then `deploy/Deploy-Nnsvs-Runtime.ps1` for the runtime and `deploy/Deploy-Nnsvs-Voices.ps1` for private model packages. Subsequent code deployments include the Python worker scripts and Windows launcher.
 
-Umidaji v110 has been tested with English lyrics and wordless syllables using its first speaker style, `umidaji-snow`. It downloads the original checksum-pinned GitHub release directly into the private shared Azure cache; the application does not republish the package as a public asset. Team BRAPA restricts use to personal, noncommercial purposes without additional permission, requires attribution, and imposes other conditions: consult the included terms and publisher link. This adapter does not yet reproduce OpenUtau’s full pronunciation, variance, pitch-prediction, or style-mixing pipeline. Each newly enabled entry has a pinned package and an actual inference record. The site operator confirmed the required creator permission for LIEE in Choirloom.
+Admins can import packed NNSVS ZIP packages from public HTTPS URLs. The inspector requires timing, duration and acoustic checkpoints, NumPy scalers, a question set and a phoneme table. It rejects traversal paths, dynamic configuration interpolation and arbitrary Hydra targets. Inference uses restricted checkpoint loading and never executes publisher extensions. The checksum-pinned original Haruqa and Kuro releases have a dedicated legacy ENUNU conversion path; arbitrary uploaded pickle-based models are not converted. Traditional UTAU samples and DiffSinger ONNX packages are unsupported.
 
-Nishiren Gard v2.0 also passed English/wordless WAV and MP3 inference on Azure, using its Standard speaker embedding and bundled vocoder. Its original archive remains intact in the private cache. Attribution is required, commercial use needs author approval, and the publisher’s additional terms apply.
-
-
-### Adding and verifying publisher packages
-
-Native OpenUtau packages use `dsConfig` to locate their original acoustic configuration. `innerArchive` selects a nested voice ZIP when a publisher ships a larger package. Embedded `dsvocoder/vocoder.yaml` settings are read directly. A separately distributed vocoder uses `vocoderBundle`, `vocoder`, and (when no vocoder YAML is included) `vocoderMelBase`. Text and JSON phoneme inventories are supported, as are speaker embeddings and continuous/legacy acceleration inputs. Nested packages use short cache paths to avoid Windows native path limits.
-
-Before enabling a catalog entry, pin the original archive’s SHA-256, inspect its configuration and terms, validate native model inputs, and render actual lyrics and wordless notes to WAV/MP3. Keep a small verification record. Verification uses an isolated temporary workspace, one voice at a time; remove the package, extracted models, and test audio before starting the next voice. This cleanup does not remove shared installations.
-
-### Importing new voicebanks
-
-An administrator can open **Shared voice library → Import a new voice from a URL**. Supply a name, publisher attribution, a public ZIP download URL (Google Drive share links are also accepted), and the publisher's license URL. An optional configuration path selects a particular model in a package; an optional ONNX vocoder ZIP supplies a dependency that is not in the built-in vocoder registry.
-
-The importer downloads one package at a time, pins its SHA-256, inspects OpenUtau DiffSinger configurations and nested ZIPs, detects JSON or text phoneme inventories and speaker embeddings, and resolves embedded or registered vocoders. The current native engine requires 44.1 kHz audio, 512-sample hops and 128 mel bins. Original model weights and publisher notices are preserved. PyTorch training checkpoints and traditional UTAU sample banks require a different conversion or rendering engine and are rejected with a diagnosis.
-
-Before publishing a voice, Choirloom validates its ONNX inputs and renders the supported wordless syllables plus sample lyrics for detected English, Chinese and Japanese pronunciation paths. It checks actual PCM samples for non-silent output and verifies MP3 output. This is an inference smoke test, not a guarantee of pronunciation quality for every lyric or parity with every OpenUtau feature. The first speaker style is used; unsupported configurations and vocoders are reported explicitly.
-
-Progress and errors are stored in SQLite and pushed over WebSocket. Reopening the page restores the import history, configuration choices and retry form. An application restart marks unfinished imports as interrupted so an admin can retry them. Completed imports join the durable catalog and shared installation, so all users can select them and later reinstall them after removal. Only admins can import or remove shared voices.
-
-Temporary archives, extracted duplicates and test audio are removed before another import begins. Verified shared installations remain available while storage permits. Downloads and extraction have size limits and space checks; public HTTPS destinations and each redirect are validated, and private network addresses are rejected. Import manifests live in the database and are merged into the effective worker manifest, so deployments do not erase them.
+An import becomes selectable only after actual lyric/wordless synthesis and non-silent WAV/MP3 validation. Installations and import progress are durable and shared. Language labels describe the model's native frontend; English/Chinese/Portuguese approximation is separate.
 
 The transcription workflow is defined in `server/score-recognition.ts`. It explicitly checks written measure counts, staff-relative pitches, meter, ties, lyrics, melismas and repeat endings. Unreadable text is reported for review rather than replaced with wordless syllables. Full recognized MusicXML is retained as a job artifact.

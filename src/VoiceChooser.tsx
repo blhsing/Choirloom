@@ -3,7 +3,7 @@ import {Play,Square,ChevronDown,Check} from 'lucide-react';
 let activeSample:HTMLAudioElement|null=null;
 export function voiceProperties(voice:any,locale:string){
  const en=locale==='en';const gender=voice.gender==='male'?(en?'Male':'男聲'):voice.gender==='female'?(en?'Female':'女聲'):(en?'Gender unspecified':'性別未標示');
- return [gender,...(voice.languages||[])].join(' · ');
+ return [gender,...(voice.languages||[]).filter((l:string)=>!l.startsWith('Wordless')), ...(voice.approximateLanguages?.length?[(en?'Approx. ':'近似發音：')+voice.approximateLanguages.join('/').toUpperCase()]:[])].join(' · ');
 }
 export function VoiceChooser({voices,value,disabled,locale,onChange}:{voices:any[],value:string,disabled:boolean,locale:string,onChange:(id:string)=>void}){
  const en=locale==='en',selected=voices.find(v=>v.id===value),details=useRef<HTMLDetailsElement>(null),audio=useRef<HTMLAudioElement|null>(null);

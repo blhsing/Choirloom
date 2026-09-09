@@ -25,7 +25,7 @@
 
 - Use the existing Windows Azure App Service at `/Choirloom/`; no added paid service or plan upgrade.
 - IISNode hosts the Node API and frontend, separately from existing virtual applications.
-- DiffSinger inference uses C#/.NET and ONNX Runtime. Score-image conversion uses Codex GPT-6 Astra with low reasoning, per-sheet visual transcription and verification.
+- NNSVS phrase inference uses a portable Python runtime with a C#/.NET launcher and MP3 export. Score-image conversion uses Codex GPT-6 Astra with low reasoning, per-sheet visual transcription and verification.
 - Assets live on Azure. Workers verify hashes and read local assets or fetch HTTPS copies.
 - No Choirloom service currently runs on OCI. If future measurements justify placing a worker there, access OCI directly without a proxy and use an unoccupied port.
 - Durable data stays outside application deployments; temporary engine caches are regenerable.

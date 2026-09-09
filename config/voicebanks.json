@@ -1,976 +1,414 @@
 [
   {
-    "id": "qixuan-2.7",
-    "name": "绮萱 · Qixuan",
-    "version": "2.7.0",
-    "supportedLanguages": [
-      "English",
-      "中文（單字／拼音）",
-      "日本語（かな／romaji）"
-    ],
-    "description": {
-      "en": "A clear female DiffSinger voice for English, Mandarin characters or pinyin, and Japanese kana or romaji. Lower parts transpose this same voice; they do not become a separate male singer.",
-      "zh-Hant": "清亮的女性 DiffSinger 聲音，支援英語、國語單字或拼音，以及日語假名或羅馬字。低音聲部使用同一聲音移調，並非獨立男性聲庫。"
-    },
-    "attribution": "AI synthesized · 绮萱 · DiffSinger",
-    "licenseUrl": "https://github.com/yqzhishen/qixuan-diffsinger/blob/main/terms_of_use/Terms_of_Use.zh-CN.md",
+    "id": "namine-ritsu",
+    "engine": "nnsvs",
+    "name": "Namine Ritsu · 波音リツ",
     "bundle": {
-      "url": "https://test-officialwebsite.azurewebsites.net/Choirloom/assets/Qixuan_v2.7.0.zip",
-      "sha256": "fe8ee7c95883d327a2b7facbbe832a7a53e1344918dc791ca83fc23b08034110",
-      "bytes": 420707627,
+      "url": "https://www.canon-voice.com/voice/ENUNU_%E6%B3%A2%E9%9F%B3%E3%83%AA%E3%83%84CC_4130_5styles_WD_HN-uSFGAN.zip",
+      "sha256": "ac2ed1ebe6d880cdb0bbcaa48fb51c331b86fdf013f27c09020de905e7bd63db",
+      "filename": "ritsu-4130.zip",
+      "bytes": 101971663,
       "archive": true
     },
-    "vocoderBundle": {
-      "url": "https://test-officialwebsite.azurewebsites.net/Choirloom/assets/vocoder-onnx.zip",
-      "sha256": "ba7d43142d41f6900c8264b5662ca7125a50feb8760bb8b9615c61a8f5e6902e",
-      "bytes": 52760610,
-      "archive": true
-    },
-    "dictionary": {
-      "url": "https://test-officialwebsite.azurewebsites.net/Choirloom/assets/cmudict.dict",
-      "sha256": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22",
-      "bytes": 3618488,
-      "archive": false
-    },
-    "acoustic": "Qixuan_v2.7.0_DiffSinger_OpenUtau/0101_qixuan_muon1_acoustic.qixuan.onnx",
-    "phonemes": "Qixuan_v2.7.0_DiffSinger_OpenUtau/0101_qixuan_muon1_acoustic.phonemes.json",
-    "languages": "Qixuan_v2.7.0_DiffSinger_OpenUtau/0101_qixuan_muon1_acoustic.languages.json",
-    "vocoder": "pc_nsf_hifigan_44.1k_hop512_128bin_2025.02.onnx",
-    "displayName": {
-      "zh-Hant": "綺萱 · Qixuan",
-      "en": "Qixuan"
-    },
-    "aliases": [
-      "绮萱",
-      "綺萱",
-      "qixuan",
-      "english",
-      "mandarin",
-      "chinese",
-      "japanese",
-      "英語",
-      "英文",
-      "國語",
-      "中文",
-      "日語",
-      "日文"
-    ],
-    "tags": [
-      "female",
-      "clear",
-      "soprano",
-      "alto",
-      "tenor",
-      "bass",
-      "女聲",
-      "女高音",
-      "女低音",
-      "男高音",
-      "男低音"
-    ],
     "gender": "female",
+    "source": "Canon",
+    "sourceUrl": "https://www.canon-voice.com/voicebanks/",
+    "licenseUrl": "https://www.canon-voice.com/terms/",
+    "version": "4130",
     "languageCodes": [
-      "en",
-      "zh",
-      "ja"
-    ]
-  },
-  {
-    "id": "umidaji",
-    "name": "Umidaji",
-    "version": "v110",
-    "source": "Team-BRAPA",
-    "sourceUrl": "https://github.com/Team-BRAPA/Umidaji-DiffSinger",
-    "downloadUrl": "https://github.com/Team-BRAPA/Umidaji-DiffSinger/releases/tag/v110",
-    "licenseUrl": "https://github.com/Team-BRAPA/Umidaji-DiffSinger",
-    "languageCodes": [
-      "en"
-    ],
-    "supportedLanguages": [
-      "English",
-      "Wordless / 無詞"
-    ],
-    "gender": "unspecified",
-    "tags": [],
-    "aliases": [
-      "Umidaji",
-      "Team-BRAPA",
-      "pt"
-    ],
-    "attribution": "AI synthesized · Umidaji · Team BRAPA · DiffSinger",
-    "installable": true,
-    "compatibility": "publisher",
-    "checkedAt": "2026-09-08",
-    "description": {
-      "en": "Original publisher ONNX voicebank, read without conversion. English lyrics and wordless syllables; uses the first speaker style. Review the publisher’s usage terms before use.",
-      "zh-Hant": "直接讀取原始 ONNX 聲庫，無需轉換。支援英語歌詞與無詞音節，使用第一個音色。使用前請閱讀原作者授權條款。"
-    },
-    "releaseApi": "https://api.github.com/repos/Team-BRAPA/Umidaji-DiffSinger/releases",
-    "downloads": [
-      {
-        "name": "Umidaji_DS_v110.zip",
-        "url": "https://github.com/Team-BRAPA/Umidaji-DiffSinger/releases/download/v110/Umidaji_DS_v110.zip",
-        "bytes": 285454947
-      }
-    ],
-    "dsConfig": "Umidaji_DS_v110/dsconfig.yaml",
-    "bundle": {
-      "url": "https://github.com/Team-BRAPA/Umidaji-DiffSinger/releases/download/v110/Umidaji_DS_v110.zip",
-      "sha256": "38c9689d0adfd3ba5dc3a7e4e613241d3b37696eacfd68f71b46e5483a346d59",
-      "bytes": 285454947,
-      "archive": true
-    },
-    "dictionary": {
-      "url": "https://test-officialwebsite.azurewebsites.net/Choirloom/assets/cmudict.dict",
-      "sha256": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22",
-      "bytes": 3618488,
-      "archive": false
-    }
-  },
-  {
-    "id": "nishiren",
-    "name": "Nishiren Gard",
-    "version": "v2.0",
-    "source": "Gardanana",
-    "sourceUrl": "https://github.com/Gardanana/Nishiren-AI-Diffsinger",
-    "downloadUrl": "https://github.com/Gardanana/Nishiren-AI-Diffsinger/releases/tag/v2.0",
-    "licenseUrl": "https://github.com/Gardanana/Nishiren-AI-Diffsinger/blob/main/terms-of-service.md",
-    "languageCodes": [
-      "en"
-    ],
-    "supportedLanguages": [
-      "English",
-      "Wordless / 無詞"
-    ],
-    "gender": "unspecified",
-    "tags": [],
-    "aliases": [
-      "Nishiren Gard",
-      "Gardanana",
-      "en",
-      "ja",
-      "zh",
-      "ko",
-      "es",
-      "it",
-      "fr",
-      "th"
-    ],
-    "attribution": "AI synthesized · Nishiren Gard · Gardanana · DiffSinger",
-    "installable": true,
-    "compatibility": "publisher",
-    "checkedAt": "2026-09-08",
-    "description": {
-      "en": "Nishiren Gard v2.0, original unmodified voicebank. English lyrics and wordless syllables using the Standard speaker style. Noncommercial use; commercial use requires author approval. Read all publisher terms.",
-      "zh-Hant": "Nishiren Gard v2.0 原始未修改聲庫。支援英語歌詞與無詞音節，使用 Standard 音色。非商業使用；商業使用須取得作者同意。請閱讀完整授權條款。"
-    },
-    "releaseApi": "https://api.github.com/repos/Gardanana/Nishiren-AI-Diffsinger/releases",
-    "downloads": [
-      {
-        "name": "Nishiren.Diffsinger.v2.0.zip",
-        "url": "https://github.com/Gardanana/Nishiren-AI-Diffsinger/releases/download/v2.0/Nishiren.Diffsinger.v2.0.zip",
-        "bytes": 938980498
-      }
-    ],
-    "dsConfig": "Nishiren Diffsinger v2.0/dsconfig.yaml",
-    "bundle": {
-      "url": "https://github.com/Gardanana/Nishiren-AI-Diffsinger/releases/download/v2.0/Nishiren.Diffsinger.v2.0.zip",
-      "sha256": "5caadbb526b4cc5800f39e42952708ff24320b8f70e835c70319ed73f92dc99b",
-      "bytes": 938980498,
-      "archive": true
-    },
-    "dictionary": {
-      "url": "https://test-officialwebsite.azurewebsites.net/Choirloom/assets/cmudict.dict",
-      "sha256": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22",
-      "bytes": 3618488,
-      "archive": false
-    }
-  },
-  {
-    "id": "ada-synphonia",
-    "name": "Ada Synphonia",
-    "version": "1.0.2",
-    "source": "PRINTmov",
-    "sourceUrl": "https://printmov.com/singers",
-    "downloadUrl": "https://printmov.com/diff-th-plugin-install?vb-link=1F1mkKL9N3BujWxLTzRed5Y6TKC1MFXhG&vb-name=Ada%20Synphonia",
-    "licenseUrl": "https://printmov.com/singers",
-    "languageCodes": [
-      "en"
-    ],
-    "supportedLanguages": [
-      "English",
-      "Wordless / 無詞"
-    ],
-    "gender": "unspecified",
-    "tags": [],
-    "aliases": [
-      "Ada Synphonia",
-      "PRINTmov",
-      "en",
-      "th",
-      "ja",
-      "fr",
-      "ru",
-      "ko",
-      "es",
-      "zh",
-      "id",
-      "fil"
-    ],
-    "attribution": "AI synthesized · Ada Synphonia · PRINTmov",
-    "installable": true,
-    "compatibility": "publisher",
-    "checkedAt": "2026-09-08T06:56:13.710Z",
-    "description": {
-      "en": "Verified English lyrics and wordless singing using the original publisher model and default speaker style. Publisher terms apply.",
-      "zh-Hant": "使用原始聲庫與預設音色，已驗證英語歌詞及無詞演唱。須遵守發布者條款。"
-    },
-    "bundle": {
-      "url": "https://drive.usercontent.google.com/download?id=1F1mkKL9N3BujWxLTzRed5Y6TKC1MFXhG&export=download&confirm=t",
-      "bytes": 411412319,
-      "sha256": "8596b89ab8ab99d4cdae4867f4ad2a24692ce2adb5531d6c05c37db2e6d18078",
-      "archive": true
-    },
-    "dsConfig": "Ada_Synphonia_v1_0_2/dsconfig.yaml",
-    "dictionary": {
-      "url": "https://test-officialwebsite.azurewebsites.net/Choirloom/assets/cmudict.dict",
-      "sha256": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22",
-      "bytes": 3618488,
-      "archive": false
-    },
-    "vocoderBundle": {
-      "url": "https://github.com/openvpi/vocoders/releases/download/nsf-hifigan-44.1k-hop512-128bin-2024.02/nsf_hifigan_44.1k_hop512_128bin_2024.02_logE.oudep",
-      "bytes": 52893960,
-      "sha256": "6e99b33f220fdef5338b8f6f31788e13b5187d0a4ffc11f901de8f9f400b4845",
-      "archive": true
-    }
-  },
-  {
-    "id": "canary",
-    "name": "Canary",
-    "version": "v106",
-    "source": "spicytigermeat",
-    "sourceUrl": "https://github.com/spicytigermeat/canary_diffsinger",
-    "downloadUrl": "https://github.com/spicytigermeat/canary_diffsinger/releases/tag/v106",
-    "licenseUrl": "https://github.com/spicytigermeat/canary_diffsinger",
-    "languageCodes": [
-      "en"
-    ],
-    "supportedLanguages": [
-      "English",
-      "Wordless / 無詞"
-    ],
-    "gender": "male",
-    "tags": [],
-    "aliases": [
-      "Canary",
-      "spicytigermeat",
-      "en",
-      "ja",
-      "fr",
-      "ko"
-    ],
-    "attribution": "AI synthesized · Canary · JAE VOCAL PROJECT / Mina Moonrise / TigerMeat",
-    "installable": true,
-    "compatibility": "publisher",
-    "checkedAt": "2026-09-08T07:03:49.722Z",
-    "description": {
-      "en": "Verified English lyrics and wordless singing using the original publisher model and default speaker style. Publisher terms apply.",
-      "zh-Hant": "使用原始聲庫與預設音色，已驗證英語歌詞及無詞演唱。須遵守發布者條款。"
-    },
-    "releaseApi": "https://api.github.com/repos/spicytigermeat/canary_diffsinger/releases",
-    "downloads": [
-      {
-        "name": "Canary_DS_v106_PACK.zip",
-        "url": "https://github.com/spicytigermeat/canary_diffsinger/releases/download/v106/Canary_DS_v106_PACK.zip",
-        "bytes": 545141676
-      }
-    ],
-    "bundle": {
-      "url": "https://github.com/spicytigermeat/canary_diffsinger/releases/download/v106/Canary_DS_v106_PACK.zip",
-      "bytes": 545141676,
-      "sha256": "92390f434691c00d10f5df9cbef2651477edfc33b43f7c21117d6a282104717d",
-      "archive": true
-    },
-    "dsConfig": "dsconfig.yaml",
-    "dictionary": {
-      "url": "https://test-officialwebsite.azurewebsites.net/Choirloom/assets/cmudict.dict",
-      "sha256": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22",
-      "bytes": 3618488,
-      "archive": false
-    },
-    "innerArchive": "Canary_DS_v106_PACK/Voice Library/Canary_DS_v106.zip"
-  },
-  {
-    "id": "francefrank",
-    "name": "FranceFrank",
-    "version": "2.2.0",
-    "source": "PRINTmov",
-    "sourceUrl": "https://printmov.com/francefrank",
-    "downloadUrl": "https://printmov.com/francefrank",
-    "licenseUrl": "https://printmov.com/francefrank",
-    "languageCodes": [
-      "en"
-    ],
-    "supportedLanguages": [
-      "English",
-      "Wordless / 無詞"
-    ],
-    "gender": "male",
-    "tags": [],
-    "aliases": [
-      "FranceFrank",
-      "PRINTmov",
-      "en",
-      "th",
-      "ja"
-    ],
-    "attribution": "AI synthesized · FranceFrank · PRINTmov",
-    "installable": true,
-    "compatibility": "publisher",
-    "checkedAt": "2026-09-08T06:20:29.561Z",
-    "description": {
-      "en": "Verified English lyrics and wordless singing using the original publisher model and default speaker style. Publisher terms apply.",
-      "zh-Hant": "使用原始聲庫與預設音色，已驗證英語歌詞及無詞演唱。須遵守發布者條款。"
-    },
-    "bundle": {
-      "url": "https://drive.usercontent.google.com/download?id=1egZnUJ5l70IH2LcP2Uk-0wJQ_Hbmf6VD&export=download&confirm=t",
-      "bytes": 450986317,
-      "sha256": "d107232d4058148c9b4d9b6d632f2ce22a0c75cf4ab78f5c8391c5b8bbb322ef",
-      "archive": true
-    },
-    "dsConfig": "FranceFrank_v2_2_0_p2_1/dsconfig.yaml",
-    "dictionary": {
-      "url": "https://test-officialwebsite.azurewebsites.net/Choirloom/assets/cmudict.dict",
-      "sha256": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22",
-      "bytes": 3618488,
-      "archive": false
-    }
-  },
-  {
-    "id": "kaiz",
-    "name": "Kaiz",
-    "version": "2.2.0",
-    "source": "PRINTmov",
-    "sourceUrl": "https://printmov.com/kaiz",
-    "downloadUrl": "https://printmov.com/kaiz",
-    "licenseUrl": "https://printmov.com/kaiz",
-    "languageCodes": [
-      "en"
-    ],
-    "supportedLanguages": [
-      "English",
-      "Wordless / 無詞"
-    ],
-    "gender": "male",
-    "tags": [],
-    "aliases": [
-      "Kaiz",
-      "PRINTmov",
-      "en",
-      "th",
-      "ja",
-      "fr",
-      "ru",
-      "ko",
-      "es",
-      "zh",
-      "id",
-      "fil"
-    ],
-    "attribution": "AI synthesized · Kaiz · PRINTmov",
-    "installable": true,
-    "compatibility": "publisher",
-    "checkedAt": "2026-09-08T06:18:33.267Z",
-    "description": {
-      "en": "Verified English lyrics and wordless singing using the original publisher model and default speaker style. Publisher terms apply.",
-      "zh-Hant": "使用原始聲庫與預設音色，已驗證英語歌詞及無詞演唱。須遵守發布者條款。"
-    },
-    "bundle": {
-      "url": "https://drive.usercontent.google.com/download?id=13ZASxvX-Rq7Q1CF5g0raUL7XBwqBJgMX&export=download&confirm=t",
-      "bytes": 453388234,
-      "sha256": "27e78a3a7bece21b926c38a881f7378097869aa501a791838d6e180d9e9fa38f",
-      "archive": true
-    },
-    "dsConfig": "Kaiz_AI_v2_2_0_p2_1/dsconfig.yaml",
-    "dictionary": {
-      "url": "https://test-officialwebsite.azurewebsites.net/Choirloom/assets/cmudict.dict",
-      "sha256": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22",
-      "bytes": 3618488,
-      "archive": false
-    }
-  },
-  {
-    "id": "leif",
-    "name": "Leif",
-    "version": "v111",
-    "source": "JaimeSynth / TigerMeat",
-    "sourceUrl": "https://leifly.carrd.co/",
-    "downloadUrl": "https://leifly.carrd.co/",
-    "licenseUrl": "https://leifly.carrd.co/",
-    "languageCodes": [
-      "en"
-    ],
-    "supportedLanguages": [
-      "English",
-      "Wordless / 無詞"
-    ],
-    "gender": "male",
-    "tags": [
-      "soft",
-      "power",
-      "deep"
-    ],
-    "aliases": [
-      "Leif",
-      "JaimeSynth / TigerMeat",
-      "en",
-      "ja",
-      "es",
-      "fr",
-      "it",
-      "pt",
-      "zh",
-      "ko"
-    ],
-    "attribution": "AI synthesized · Leif · beikon / JaimeSynth / TigerMeat",
-    "installable": true,
-    "compatibility": "publisher",
-    "checkedAt": "2026-09-08T06:58:16.918Z",
-    "description": {
-      "en": "Verified English lyrics and wordless singing using the original publisher model and default speaker style. Publisher terms apply.",
-      "zh-Hant": "使用原始聲庫與預設音色，已驗證英語歌詞及無詞演唱。須遵守發布者條款。"
-    },
-    "bundle": {
-      "url": "https://drive.usercontent.google.com/download?id=16-NK0Jz-kCLl8hGyFX71pszwPYVeUxYq&export=download&confirm=t",
-      "bytes": 397383419,
-      "sha256": "7fdce935c34544f890de4a83163b7cb6d6d23cbed1787b0bcb81f8b42727b30d",
-      "archive": true
-    },
-    "dsConfig": "Leif_DS_v111/dsconfig.yaml",
-    "dictionary": {
-      "url": "https://test-officialwebsite.azurewebsites.net/Choirloom/assets/cmudict.dict",
-      "sha256": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22",
-      "bytes": 3618488,
-      "archive": false
-    }
-  },
-  {
-    "id": "liee",
-    "name": "LIEE · Immortal Idol",
-    "version": "MM2.8",
-    "source": "julieraptor",
-    "sourceUrl": "https://github.com/julieraptor/DIFFSINGER-LIEE-Immortal-Idol",
-    "downloadUrl": "https://github.com/julieraptor/DIFFSINGER-LIEE-Immortal-Idol/releases/tag/MM2.8",
-    "licenseUrl": "https://docs.google.com/document/d/1t13WKc7VA2Q3G_MppznbAwhl3vLIL2MNPyjVN3kWDDg/edit",
-    "languageCodes": [
-      "en"
-    ],
-    "supportedLanguages": [
-      "English",
-      "Wordless / 無詞"
-    ],
-    "gender": "unspecified",
-    "tags": [],
-    "aliases": [
-      "LIEE · Immortal Idol",
-      "julieraptor",
-      "en",
-      "ja",
-      "pl",
-      "fr",
-      "vi",
-      "zh",
-      "es",
-      "fil"
-    ],
-    "attribution": "AI synthesized · LIEE · Immortal Idol · julieraptor",
-    "installable": true,
-    "compatibility": "verified",
-    "checkedAt": "2026-09-08T07:11:46.789Z",
-    "description": {
-      "en": "Verified English lyrics and wordless singing using the original LIEE model. The site operator confirmed creator permission covering Choirloom. Credit LIEE and julieraptor; publisher terms apply.",
-      "zh-Hant": "已驗證原始 LIEE 聲庫的英語歌詞及無詞演唱。網站管理者已確認取得涵蓋 Choirloom 的創作者許可。請標示 LIEE 與 julieraptor，並遵守發布者條款。"
-    },
-    "releaseApi": "https://api.github.com/repos/julieraptor/DIFFSINGER-LIEE-Immortal-Idol/releases",
-    "downloads": [
-      {
-        "name": "Diffsinger.LIEE.Immortal.Idol.MM.2.8.JubiLIEE.2025.1.1.zip",
-        "url": "https://github.com/julieraptor/DIFFSINGER-LIEE-Immortal-Idol/releases/download/MM2.8/Diffsinger.LIEE.Immortal.Idol.MM.2.8.JubiLIEE.2025.1.1.zip",
-        "bytes": 609269753
-      },
-      {
-        "name": "Diffsinger.LIEE.Immortal.Idol.MM.2.8.JubiLIEE.2025.zip",
-        "url": "https://github.com/julieraptor/DIFFSINGER-LIEE-Immortal-Idol/releases/download/MM2.8/Diffsinger.LIEE.Immortal.Idol.MM.2.8.JubiLIEE.2025.zip",
-        "bytes": 608169560
-      }
-    ],
-    "bundle": {
-      "url": "https://github.com/julieraptor/DIFFSINGER-LIEE-Immortal-Idol/releases/download/MM2.8/Diffsinger.LIEE.Immortal.Idol.MM.2.8.JubiLIEE.2025.1.1.zip",
-      "bytes": 609269753,
-      "sha256": "d9fd90e61186f6397c148e3817832bd547d1f13b2ba7ba3d812efe020328fa12",
-      "archive": true
-    },
-    "dsConfig": "Diffsinger LIEE Immortal Idol (JubiLIEE 2025)/dsconfig.yaml",
-    "dictionary": {
-      "url": "https://test-officialwebsite.azurewebsites.net/Choirloom/assets/cmudict.dict",
-      "sha256": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22",
-      "bytes": 3618488,
-      "archive": false
-    },
-    "innerArchive": "Diffsinger LIEE Immortal Idol MM 2.8 (JubiLIEE 2025)/Diffsinger LIEE Immortal Idol (JubiLIEE 2025).zip",
-    "permissionConfirmedForChoirloom": true,
-    "permissionConfirmedAt": "2026-09-08"
-  },
-  {
-    "id": "printto-millefeuille",
-    "name": "Printto Magicbeat Millefeuille",
-    "version": "2.0.0",
-    "source": "PRINTmov / UTAU France",
-    "sourceUrl": "https://printmov.com/printto",
-    "downloadUrl": "https://printmov.com/printto",
-    "licenseUrl": "https://printmov.com/printto",
-    "languageCodes": [
-      "en"
-    ],
-    "supportedLanguages": [
-      "English",
-      "Wordless / 無詞"
-    ],
-    "gender": "male",
-    "tags": [],
-    "aliases": [
-      "Printto Magicbeat Millefeuille",
-      "PRINTmov / UTAU France",
-      "zh",
-      "en",
-      "fr",
-      "de",
-      "it",
-      "ja",
-      "ko",
-      "pl",
-      "pt",
-      "ru",
-      "es",
-      "th"
-    ],
-    "attribution": "AI synthesized · Printto Magicbeat Millefeuille · PRINTmov / UTAU France",
-    "installable": true,
-    "compatibility": "publisher",
-    "checkedAt": "2026-09-08T06:53:44.830Z",
-    "description": {
-      "en": "Verified English lyrics and wordless singing using the original publisher model and default speaker style. Publisher terms apply.",
-      "zh-Hant": "使用原始聲庫與預設音色，已驗證英語歌詞及無詞演唱。須遵守發布者條款。"
-    },
-    "bundle": {
-      "url": "https://drive.usercontent.google.com/download?id=1uVbt_FOQr7P7ySSqVe01Kh83UGlIjHC_&export=download&confirm=t",
-      "bytes": 595654393,
-      "sha256": "b114c22e1fe9f0a4a6e81a43cc405cf42633fa99118aac17be3961677ef16510",
-      "archive": true
-    },
-    "dsConfig": "Printto_Magicbeat_AI_Millefeuille_v2_0_0/dsconfig.yaml",
-    "dictionary": {
-      "url": "https://test-officialwebsite.azurewebsites.net/Choirloom/assets/cmudict.dict",
-      "sha256": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22",
-      "bytes": 3618488,
-      "archive": false
-    },
-    "vocoderBundle": {
-      "url": "https://github.com/openvpi/vocoders/releases/download/nsf-hifigan-44.1k-hop512-128bin-2024.02/nsf_hifigan_44.1k_hop512_128bin_2024.02_logE.oudep",
-      "bytes": 52893960,
-      "sha256": "6e99b33f220fdef5338b8f6f31788e13b5187d0a4ffc11f901de8f9f400b4845",
-      "archive": true
-    }
-  },
-  {
-    "id": "printto-pure",
-    "name": "Printto Magicbeat V5 Pure",
-    "version": "1.0.0",
-    "source": "PRINTmov",
-    "sourceUrl": "https://printmov.com/printto",
-    "downloadUrl": "https://printmov.com/printto",
-    "licenseUrl": "https://printmov.com/printto",
-    "languageCodes": [
-      "en"
-    ],
-    "supportedLanguages": [
-      "English",
-      "Wordless / 無詞"
-    ],
-    "gender": "male",
-    "tags": [
-      "commercial pack"
-    ],
-    "aliases": [
-      "Printto Magicbeat V5 Pure",
-      "PRINTmov",
-      "th",
-      "ja",
-      "en"
-    ],
-    "attribution": "AI synthesized · Printto Magicbeat V5 Pure · PRINTmov",
-    "installable": true,
-    "compatibility": "publisher",
-    "checkedAt": "2026-09-08T06:50:48.425Z",
-    "description": {
-      "en": "Verified English lyrics and wordless singing using the original publisher model and default speaker style. Publisher terms apply.",
-      "zh-Hant": "使用原始聲庫與預設音色，已驗證英語歌詞及無詞演唱。須遵守發布者條款。"
-    },
-    "bundle": {
-      "url": "https://drive.usercontent.google.com/download?id=1dCDcfXg-AXuRTdCZFXrc_0uzj7-Pgmu_&export=download&confirm=t",
-      "bytes": 921862347,
-      "sha256": "e8716139b108c3b9ec4fd7a1f2ffcaacb730468d56701f2a54993086edd00ac4",
-      "archive": true
-    },
-    "dsConfig": "PM-31_Commercial_v1_0_0/PM-31_Commercial_Indigo/dsconfig.yaml",
-    "dictionary": {
-      "url": "https://test-officialwebsite.azurewebsites.net/Choirloom/assets/cmudict.dict",
-      "sha256": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22",
-      "bytes": 3618488,
-      "archive": false
-    }
-  },
-  {
-    "id": "ria",
-    "name": "Ria",
-    "version": "v0.4-tpse",
-    "source": "RibosomeK",
-    "sourceUrl": "https://github.com/RibosomeK/RiaDiffSinger",
-    "downloadUrl": "https://github.com/RibosomeK/RiaDiffSinger/releases/tag/v0.4-tpse",
-    "licenseUrl": "https://github.com/RibosomeK/RiaDiffSinger",
-    "languageCodes": [
-      "zh",
       "ja"
     ],
     "supportedLanguages": [
-      "Chinese",
       "Japanese",
       "Wordless / 無詞"
     ],
-    "gender": "unspecified",
-    "tags": [],
-    "aliases": [
-      "Ria",
-      "RibosomeK",
-      "yue",
+    "approximateLanguages": [
+      "en",
       "zh",
-      "ja"
+      "pt"
     ],
-    "attribution": "AI synthesized · Ria · RibosomeK",
+    "attribution": "NNSVS · Namine Ritsu · 波音リツ · Canon",
     "installable": true,
-    "compatibility": "publisher",
-    "checkedAt": "2026-09-08T07:16:38.678Z",
-    "description": {
-      "en": "Original publisher model with Chinese and Japanese pronunciation dictionaries and wordless singing. Publisher terms apply.",
-      "zh-Hant": "原始聲庫，使用中文及日文發音字典，並支援無詞演唱。須遵守發布者條款。"
-    },
-    "releaseApi": "https://api.github.com/repos/RibosomeK/RiaDiffSinger/releases",
-    "downloads": [
-      {
-        "name": "Ria-v0.4-tpse.zip",
-        "url": "https://github.com/RibosomeK/RiaDiffSinger/releases/download/v0.4-tpse/Ria-v0.4-tpse.zip",
-        "bytes": 431191712
-      },
-      {
-        "name": "tpse_dspitch.zip",
-        "url": "https://github.com/RibosomeK/RiaDiffSinger/releases/download/v0.4-tpse/tpse_dspitch.zip",
-        "bytes": 118758694
-      }
-    ],
-    "bundle": {
-      "url": "https://github.com/RibosomeK/RiaDiffSinger/releases/download/v0.4-tpse/Ria-v0.4-tpse.zip",
-      "bytes": 431191712,
-      "sha256": "01b472d93281a70ab0bee13f966265aa1c331e711a999294ac69450c47feccc3",
-      "archive": true
-    },
-    "dsConfig": "dsconfig.yaml",
-    "dictionary": {
-      "url": "https://test-officialwebsite.azurewebsites.net/Choirloom/assets/cmudict.dict",
-      "sha256": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22",
-      "bytes": 3618488,
-      "archive": false
-    },
-    "vocoderBundle": {
-      "url": "https://github.com/openvpi/vocoders/releases/download/nsf-hifigan-44.1k-hop512-128bin-2024.02/nsf_hifigan_44.1k_hop512_128bin_2024.02_logE.oudep",
-      "bytes": 52893960,
-      "sha256": "6e99b33f220fdef5338b8f6f31788e13b5187d0a4ffc11f901de8f9f400b4845",
-      "archive": true
-    }
-  },
-  {
-    "id": "tanya",
-    "name": "Tanya Magicbeat",
-    "version": "4.0.0",
-    "source": "PRINTmov",
-    "sourceUrl": "https://printmov.com/tanya",
-    "downloadUrl": "https://printmov.com/tanya",
-    "licenseUrl": "https://printmov.com/tanya",
-    "languageCodes": [
-      "en"
-    ],
-    "supportedLanguages": [
-      "English",
-      "Wordless / 無詞"
-    ],
-    "gender": "female",
-    "tags": [],
-    "aliases": [
-      "Tanya Magicbeat",
-      "PRINTmov",
-      "en",
-      "th",
-      "ja",
-      "fr",
-      "ru",
-      "ko",
-      "es",
-      "zh",
-      "id",
-      "fil"
-    ],
-    "attribution": "AI synthesized · Tanya Magicbeat · PRINTmov",
-    "installable": true,
-    "compatibility": "publisher",
-    "checkedAt": "2026-09-08T06:16:39.327Z",
-    "description": {
-      "en": "Verified English lyrics and wordless singing using the original publisher model and default speaker style. Publisher terms apply.",
-      "zh-Hant": "使用原始聲庫與預設音色，已驗證英語歌詞及無詞演唱。須遵守發布者條款。"
-    },
-    "bundle": {
-      "url": "https://drive.usercontent.google.com/download?id=1MC8WUM2vCtx9dJ3zhLniKI1n6Lk_CK4_&export=download&confirm=t",
-      "bytes": 451634830,
-      "sha256": "f13d6b0d3587a44e6e99e77208c9a74008dd4430fb92c4e20ea3ce5ad39f337c",
-      "archive": true
-    },
-    "dsConfig": "Tanya_Magicbeat_v4_0_0_p3_0/dsconfig.yaml",
-    "dictionary": {
-      "url": "https://test-officialwebsite.azurewebsites.net/Choirloom/assets/cmudict.dict",
-      "sha256": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22",
-      "bytes": 3618488,
-      "archive": false
-    }
-  },
-  {
-    "id": "tiger",
-    "name": "TIGER",
-    "version": "v106",
-    "source": "spicytigermeat",
-    "sourceUrl": "https://github.com/spicytigermeat/tiger_diffsinger",
-    "downloadUrl": "https://github.com/spicytigermeat/tiger_diffsinger/releases/tag/v106",
-    "licenseUrl": "https://github.com/spicytigermeat/tiger_diffsinger",
-    "languageCodes": [
-      "en"
-    ],
-    "supportedLanguages": [
-      "English",
-      "Wordless / 無詞"
-    ],
-    "gender": "male",
-    "tags": [],
-    "aliases": [
-      "TIGER",
-      "spicytigermeat",
-      "en",
-      "ja",
-      "es",
-      "fr",
-      "ko"
-    ],
-    "attribution": "AI synthesized · TIGER · spicytigermeat",
-    "installable": true,
-    "compatibility": "publisher",
-    "checkedAt": "2026-09-08T07:00:53.824Z",
-    "description": {
-      "en": "Verified English lyrics and wordless singing using the original publisher model and default speaker style. Publisher terms apply.",
-      "zh-Hant": "使用原始聲庫與預設音色，已驗證英語歌詞及無詞演唱。須遵守發布者條款。"
-    },
-    "releaseApi": "https://api.github.com/repos/spicytigermeat/tiger_diffsinger/releases",
-    "downloads": [
-      {
-        "name": "TIGER_DS_v106_PACK.zip",
-        "url": "https://github.com/spicytigermeat/tiger_diffsinger/releases/download/v106/TIGER_DS_v106_PACK.zip",
-        "bytes": 555302285
-      }
-    ],
-    "bundle": {
-      "url": "https://github.com/spicytigermeat/tiger_diffsinger/releases/download/v106/TIGER_DS_v106_PACK.zip",
-      "bytes": 555302285,
-      "sha256": "b19d498f46f05f58f049ec2ec0ee2b569a01a4fbda41667922d7c773f1196c19",
-      "archive": true
-    },
-    "dsConfig": "dsconfig.yaml",
-    "dictionary": {
-      "url": "https://test-officialwebsite.azurewebsites.net/Choirloom/assets/cmudict.dict",
-      "sha256": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22",
-      "bytes": 3618488,
-      "archive": false
-    },
-    "innerArchive": "TIGER_DS_v106_PACK/Voice Library/TIGER_DS_v106.zip"
-  },
-  {
-    "id": "neurosynth",
-    "name": "NeuroSynth",
-    "version": "1 (2026-03-27)",
-    "source": "NeuroSynth Project",
-    "sourceUrl": "https://neuros.click/neuro-synth/",
-    "downloadUrl": "https://neuros.click/neuro-synth/",
-    "licenseUrl": "https://neuros.click/neuro-synth/",
-    "languageCodes": [
-      "en",
-      "ja"
-    ],
-    "supportedLanguages": [
-      "English",
-      "Japanese (kana / romaji)",
-      "Wordless / 無詞"
-    ],
-    "gender": "unspecified",
+    "checkedAt": "2026-09-08",
     "tags": [
-      "B2-G6",
-      "noncommercial"
+      "nnsvs",
+      "japanese",
+      "female"
     ],
+    "description": {
+      "en": "Native Japanese singing. Other lyrics use approximate Japanese phonemes. Commercial and noncommercial use allowed; publisher terms apply.",
+      "zh-Hant": "原生日語演唱；其他語言使用日語音素近似發音。 Commercial and noncommercial use allowed; publisher terms apply."
+    },
     "aliases": [
-      "NeuroSynth",
-      "NeuroSynth Project",
-      "en",
+      "Namine Ritsu · 波音リツ",
+      "namine-ritsu",
+      "English approximation",
+      "英文近似",
+      "Chinese approximation",
+      "中文近似",
+      "Japanese",
+      "日文"
+    ]
+  },
+  {
+    "id": "haruqa",
+    "engine": "nnsvs",
+    "name": "Haruqa",
+    "bundle": {
+      "url": "https://drive.usercontent.google.com/download?id=1aHGsVgRc96YmvL4vg3oP6Y-wPrS4b6eX&export=download&confirm=t",
+      "filename": "haruqa.zip",
+      "sha256": "a1e20b4d547a1714650a5d808bdd7f6a74d0ee7c437e70e0b5d0032f27603095",
+      "bytes": 155284042,
+      "archive": true
+    },
+    "modelConfig": "packed/config.yaml",
+    "gender": "unspecified",
+    "source": "Haruqa",
+    "sourceUrl": "https://haruqa.github.io/",
+    "licenseUrl": "https://haruqa.github.io/",
+    "version": "20201217",
+    "languageCodes": [
       "ja"
     ],
-    "attribution": "AI synthesized · NeuroSynth · Superbox2147 and Wispers",
-    "installable": true,
-    "compatibility": "publisher",
-    "checkedAt": "2026-09-08T06:02:58.038Z",
-    "description": {
-      "en": "Verified English lyrics, Japanese kana/romaji and all Choirloom wordless syllables using the original NeuroSynth model. CC BY-NC 4.0; credit Superbox2147 and Wispers.",
-      "zh-Hant": "已驗證原始 NeuroSynth 聲庫的英語歌詞、日語假名／羅馬字及所有 Choirloom 無詞音節。CC BY-NC 4.0；須標示 Superbox2147 與 Wispers。"
-    },
-    "bundle": {
-      "url": "https://neurosynth.neuros.click/models/NeuroSynth-1.zip",
-      "bytes": 373721455,
-      "sha256": "414ed9242558c5433bb6be31afb7f9a302b363fee5cee8c5ac3e3bece52f2ec1",
-      "archive": true
-    },
-    "dsConfig": "NeuroSynth-1/dsconfig.yaml",
-    "vocoderBundle": {
-      "url": "https://test-officialwebsite.azurewebsites.net/Choirloom/assets/vocoder-onnx.zip",
-      "sha256": "ba7d43142d41f6900c8264b5662ca7125a50feb8760bb8b9615c61a8f5e6902e",
-      "bytes": 52760610,
-      "archive": true
-    },
-    "vocoder": "pc_nsf_hifigan_44.1k_hop512_128bin_2025.02.onnx",
-    "vocoderMelBase": "e",
-    "dictionary": {
-      "url": "https://test-officialwebsite.azurewebsites.net/Choirloom/assets/cmudict.dict",
-      "sha256": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22",
-      "bytes": 3618488,
-      "archive": false
-    }
-  },
-  {
-    "id": "printto-v5",
-    "name": "Printto Magicbeat V5",
-    "version": "5.3.1",
-    "source": "PRINTmov",
-    "sourceUrl": "https://printmov.com/printto",
-    "downloadUrl": "https://printmov.com/printto",
-    "licenseUrl": "https://printmov.com/printto",
-    "languageCodes": [
-      "en"
-    ],
     "supportedLanguages": [
-      "English",
+      "Japanese",
       "Wordless / 無詞"
     ],
-    "gender": "male",
-    "tags": [],
-    "aliases": [
-      "Printto Magicbeat V5",
-      "PRINTmov",
+    "approximateLanguages": [
       "en",
-      "th",
-      "ja",
-      "fr",
-      "ru",
-      "ko",
-      "es",
       "zh",
-      "id",
-      "fil"
+      "pt"
     ],
-    "attribution": "AI synthesized · Printto Magicbeat V5 · PRINTmov",
+    "attribution": "NNSVS · Haruqa · Haruqa",
     "installable": true,
-    "compatibility": "publisher",
-    "checkedAt": "2026-09-08T06:09:39.528Z",
+    "checkedAt": "2026-09-08",
+    "tags": [
+      "nnsvs",
+      "japanese",
+      "unspecified"
+    ],
     "description": {
-      "en": "Verified English lyrics and wordless singing using the original publisher model and its default speaker style. Publisher terms apply.",
-      "zh-Hant": "使用原始聲庫與預設音色，已驗證英語歌詞及無詞演唱。使用時須遵守發布者條款。"
+      "en": "Native Japanese singing. Other lyrics use approximate Japanese phonemes. Personal and doujin commercial use allowed. Redistribution needs permission. Androgynous voice; suited to lower parts.",
+      "zh-Hant": "原生日語演唱；其他語言使用日語音素近似發音。 Personal and doujin commercial use allowed. Redistribution needs permission. Androgynous voice; suited to lower parts."
     },
-    "bundle": {
-      "url": "https://drive.usercontent.google.com/download?id=12TpsjVF_7-WioAGoTm7X-RCeRMzb1BsY&export=download&confirm=t",
-      "bytes": 921778048,
-      "sha256": "304c294ec3d3e5eb8b45b39ee3596df52ed8d8c1f443523c03d8ae96b8a6e1c3",
-      "archive": true
-    },
-    "dsConfig": "Printto_Magicbeat_v5_3_1/Printto_Magicbeat_V5_Indigo/dsconfig.yaml",
-    "dictionary": {
-      "url": "https://test-officialwebsite.azurewebsites.net/Choirloom/assets/cmudict.dict",
-      "sha256": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22",
-      "bytes": 3618488,
-      "archive": false
-    }
+    "aliases": [
+      "Haruqa",
+      "haruqa",
+      "English approximation",
+      "英文近似",
+      "Chinese approximation",
+      "中文近似",
+      "Japanese",
+      "日文"
+    ]
   },
   {
-    "id": "petchploy",
-    "name": "Petchploy",
-    "version": "1.0.1",
-    "source": "PRINTmov",
-    "sourceUrl": "https://printmov.com/petchploy",
-    "downloadUrl": "https://printmov.com/petchploy",
-    "licenseUrl": "https://printmov.com/petchploy",
+    "id": "ofuton",
+    "name": "Ofuton-P · おふとんP",
+    "engine": "nnsvs",
+    "bundle": {
+      "url": "https://drive.usercontent.google.com/download?id=1y3uSkL27rREXkpbDZKqv4L9SJUpTqGc9&export=download&confirm=t",
+      "sha256": "4b068526fc25c5291346763621a4ca4328c2edaa8b790e0b3b7472b054b075b4",
+      "bytes": 254697204,
+      "filename": "ofuton.zip",
+      "archive": true
+    },
+    "gender": "male",
+    "source": "Tarou Shirani",
+    "sourceUrl": "https://taroushirani.github.io/",
+    "licenseUrl": "https://sites.google.com/view/oftn-utagoedb",
+    "version": "WORLD v4 SiFiGAN",
     "languageCodes": [
-      "en"
+      "ja"
     ],
     "supportedLanguages": [
-      "English",
+      "Japanese",
       "Wordless / 無詞"
     ],
-    "gender": "unspecified",
-    "tags": [],
-    "aliases": [
-      "Petchploy",
-      "PRINTmov",
-      "th",
+    "approximateLanguages": [
       "en",
-      "ja",
-      "fr"
+      "zh",
+      "pt"
     ],
-    "attribution": "AI synthesized · Petchploy · PRINTmov",
+    "attribution": "DB制作:おふとんP · Model: Tarou Shirani · NNSVS",
     "installable": true,
-    "compatibility": "publisher",
-    "checkedAt": "2026-09-08T06:32:54.550Z",
+    "checkedAt": "2026-09-08",
+    "tags": [
+      "nnsvs",
+      "japanese",
+      "male"
+    ],
     "description": {
-      "en": "Verified English lyrics and wordless singing using the original publisher model and its default speaker style. Publisher terms apply.",
-      "zh-Hant": "使用原始聲庫與預設音色，已驗證英語歌詞及無詞演唱。使用時須遵守發布者條款。"
+      "en": "Native Japanese singing. Other lyrics use approximate Japanese phonemes. Noncommercial use. Commercial/corporate use requires publisher permission. Credit: DB制作:おふとんP.",
+      "zh-Hant": "原生日語演唱；其他語言使用日語音素近似發音。 Noncommercial use. Commercial/corporate use requires publisher permission. Credit: DB制作:おふとんP."
     },
+    "aliases": [
+      "Ofuton-P · おふとんP",
+      "ofuton",
+      "English approximation",
+      "英文近似",
+      "Chinese approximation",
+      "中文近似",
+      "Japanese",
+      "日文"
+    ]
+  },
+  {
+    "id": "kurumi",
+    "name": "Oniku Kurumi · 御丹宮くるみ",
+    "engine": "nnsvs",
     "bundle": {
-      "url": "https://drive.usercontent.google.com/download?id=1OGJANFgWl4M7A54wBU50UOMtkVWrmFcL&export=download&confirm=t",
-      "bytes": 367919577,
-      "sha256": "f7a8e0a3b7bd7381c37ff333b7c8f0c3d75c8db8bdfab0c13a1278eb85c850a2",
+      "url": "https://drive.usercontent.google.com/download?id=1axL6QIU4f7YImH9azPBj88LfmwnPHeYl&export=download&confirm=t",
+      "sha256": "5cd9df46fb2709a7822220c30c7cfac404584a1a504600a7c781700821b1923b",
+      "bytes": 225990427,
+      "filename": "kurumi.zip",
       "archive": true
     },
-    "dsConfig": "Petchploy_v1_0_1/dsconfig.yaml",
-    "dictionary": {
-      "url": "https://test-officialwebsite.azurewebsites.net/Choirloom/assets/cmudict.dict",
-      "sha256": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22",
-      "bytes": 3618488,
-      "archive": false
+    "gender": "female",
+    "source": "Tarou Shirani",
+    "sourceUrl": "https://taroushirani.github.io/",
+    "licenseUrl": "https://onikuru.info/db-download/",
+    "version": "WORLD v4 HN-uSFGAN",
+    "languageCodes": [
+      "ja"
+    ],
+    "supportedLanguages": [
+      "Japanese",
+      "Wordless / 無詞"
+    ],
+    "approximateLanguages": [
+      "en",
+      "zh",
+      "pt"
+    ],
+    "attribution": "AIシンガー御丹宮くるみ · Model: Tarou Shirani · NNSVS",
+    "installable": true,
+    "checkedAt": "2026-09-08",
+    "tags": [
+      "nnsvs",
+      "japanese",
+      "female"
+    ],
+    "description": {
+      "en": "Native Japanese singing. Other lyrics use approximate Japanese phonemes. Noncommercial use. Commercial/corporate use requires publisher permission. Credit: AIシンガー御丹宮くるみ.",
+      "zh-Hant": "原生日語演唱；其他語言使用日語音素近似發音。 Noncommercial use. Commercial/corporate use requires publisher permission. Credit: AIシンガー御丹宮くるみ."
     },
-    "vocoderBundle": {
-      "url": "https://github.com/openvpi/vocoders/releases/download/nsf-hifigan-44.1k-hop512-128bin-2024.02/nsf_hifigan_44.1k_hop512_128bin_2024.02_logE.oudep",
-      "bytes": 52893960,
-      "sha256": "6e99b33f220fdef5338b8f6f31788e13b5187d0a4ffc11f901de8f9f400b4845",
+    "aliases": [
+      "Oniku Kurumi · 御丹宮くるみ",
+      "kurumi",
+      "English approximation",
+      "英文近似",
+      "Chinese approximation",
+      "中文近似",
+      "Japanese",
+      "日文"
+    ]
+  },
+  {
+    "id": "amaboshi-cipher",
+    "name": "Amaboshi Cipher · 雨星サイファ",
+    "engine": "nnsvs",
+    "bundle": {
+      "url": "https://www.canon-voice.com/tools/N-Editor%20Setup%200.18.0.exe",
+      "sha256": "9be4daff7eef46862e19b496e9b2ff41de861c18386d4e0f224534c3744a2a83",
+      "bytes": 739280840,
+      "filename": "N-Editor-0.18.0.exe",
       "archive": true
     },
-    "vocoderMelBase": "e"
+    "modelConfig": "resources/app/singer/雨星サイファ/config.yaml",
+    "gender": "female",
+    "source": "Chikano / Canon",
+    "sourceUrl": "https://parapluie2c56m.wixsite.com/mysite/voicebank",
+    "licenseUrl": "https://parapluie2c56m.wixsite.com/mysite/terms-of-use",
+    "version": "Kire WS 2808",
+    "languageCodes": [
+      "ja"
+    ],
+    "supportedLanguages": [
+      "Japanese",
+      "Wordless / 無詞"
+    ],
+    "approximateLanguages": [
+      "en",
+      "zh",
+      "pt"
+    ],
+    "attribution": "NNSVS · Amaboshi Cipher · 雨星サイファ · Chikano / Canon",
+    "installable": true,
+    "checkedAt": "2026-09-08",
+    "tags": [
+      "nnsvs",
+      "japanese",
+      "female"
+    ],
+    "description": {
+      "en": "Native Japanese singing. Other lyrics use approximate Japanese phonemes. Commercial and noncommercial use allowed. Do not redistribute model weights or use outputs for model training.",
+      "zh-Hant": "原生日語演唱；其他語言使用日語音素近似發音。 Commercial and noncommercial use allowed. Do not redistribute model weights or use outputs for model training."
+    },
+    "aliases": [
+      "Amaboshi Cipher · 雨星サイファ",
+      "amaboshi-cipher",
+      "English approximation",
+      "英文近似",
+      "Chinese approximation",
+      "中文近似",
+      "Japanese",
+      "日文"
+    ]
+  },
+  {
+    "id": "kanade-shia",
+    "name": "Kanade Shia · 花撫シア",
+    "engine": "nnsvs",
+    "bundle": {
+      "url": "https://www.canon-voice.com/tools/N-Editor%20Setup%200.18.0.exe",
+      "sha256": "9be4daff7eef46862e19b496e9b2ff41de861c18386d4e0f224534c3744a2a83",
+      "bytes": 739280840,
+      "filename": "N-Editor-0.18.0.exe",
+      "archive": true
+    },
+    "modelConfig": "resources/app/singer/花撫シア/config.yaml",
+    "gender": "female",
+    "source": "Itsuri / Canon",
+    "sourceUrl": "https://itsuriutau.wixsite.com/kanadeshia",
+    "licenseUrl": "https://itsuriutau.wixsite.com/kanadeshia/%E8%A4%87%E8%A3%BD-readme-basic-2",
+    "version": "Vivid",
+    "languageCodes": [
+      "ja"
+    ],
+    "supportedLanguages": [
+      "Japanese",
+      "Wordless / 無詞"
+    ],
+    "approximateLanguages": [
+      "en",
+      "zh",
+      "pt"
+    ],
+    "attribution": "花撫シア / CV: いつり · Model: カノン · NNSVS",
+    "installable": true,
+    "checkedAt": "2026-09-08",
+    "tags": [
+      "nnsvs",
+      "japanese",
+      "female"
+    ],
+    "description": {
+      "en": "Native Japanese singing. Other lyrics use approximate Japanese phonemes. Credit required: 花撫シア / いつり. Personal monetized works allowed; corporate products require prior contact.",
+      "zh-Hant": "原生日語演唱；其他語言使用日語音素近似發音。 Credit required: 花撫シア / いつり. Personal monetized works allowed; corporate products require prior contact."
+    },
+    "aliases": [
+      "Kanade Shia · 花撫シア",
+      "kanade-shia",
+      "English approximation",
+      "英文近似",
+      "Chinese approximation",
+      "中文近似",
+      "Japanese",
+      "日文"
+    ]
+  },
+  {
+    "id": "kuro",
+    "engine": "nnsvs",
+    "name": "Kuro Bousuku · 黒昴宿",
+    "bundle": {
+      "url": "https://drive.usercontent.google.com/download?id=1ecPZwJTBajHKWBIczBev7qIFqeVxIsIb&export=download&confirm=t",
+      "sha256": "eafa2a6a38530a65890145169b851c6b661de8b3c2d8f4ea9a93e694286c99db",
+      "bytes": 405859239,
+      "filename": "kuro.zip",
+      "archive": true
+    },
+    "gender": "male",
+    "source": "ATSUYA",
+    "sourceUrl": "https://atsuya19960924.wixsite.com/akasubaru/複製-ai-song-ai-talk",
+    "licenseUrl": "https://atsuya19960924.wixsite.com/akasubaru/複製-ai-利用規約-read-me",
+    "version": "RMDN 2021-1011",
+    "languageCodes": [
+      "ja"
+    ],
+    "supportedLanguages": [
+      "Japanese",
+      "Wordless / 無詞"
+    ],
+    "approximateLanguages": [
+      "en",
+      "zh",
+      "pt"
+    ],
+    "attribution": "NNSVS · Kuro Bousuku · 黒昴宿",
+    "installable": true,
+    "checkedAt": "2026-09-08",
+    "tags": [
+      "nnsvs",
+      "japanese"
+    ],
+    "description": {
+      "en": "Japanese voice; other lyrics use approximate Japanese pronunciation. Free personal/doujin use; other commercial use requires publisher permission. Publisher terms apply.",
+      "zh-Hant": "日語聲庫；其他歌詞使用日語近似發音。個人／同人使用免費，其他商用須先取得發布者許可。"
+    },
+    "archiveEncoding": "cp932",
+    "modelConfig": "packed/config.yaml",
+    "aliases": [
+      "Kuro Bousuku · 黒昴宿",
+      "kuro",
+      "English approximation",
+      "英文近似",
+      "Chinese approximation",
+      "中文近似",
+      "Japanese",
+      "日文"
+    ]
+  },
+  {
+    "id": "ruko",
+    "engine": "nnsvs",
+    "name": "Yokune Ruko ♀ · 欲音ルコ",
+    "bundle": {
+      "url": "https://d1ur6xrrtdgdi7.cloudfront.net/zip/ENUNU_%E6%AC%B2%E9%9F%B3%E3%83%AB%E3%82%B3%E2%99%80_WORLD-diffusion_V200.zip",
+      "sha256": "7e0309e43c7eff27df1f6f0f936d3cb701598bad756c0cd80d9297c7d373d8bf",
+      "bytes": 148137476,
+      "filename": "ruko.zip",
+      "archive": true
+    },
+    "gender": "female",
+    "source": "Long Sleeper",
+    "sourceUrl": "https://long-sleeper.net/index.php?id=45",
+    "licenseUrl": "https://long-sleeper.net/index.php?id=22",
+    "version": "WORLD-diffusion 2.00",
+    "languageCodes": [
+      "ja"
+    ],
+    "supportedLanguages": [
+      "Japanese",
+      "Wordless / 無詞"
+    ],
+    "approximateLanguages": [
+      "en",
+      "zh",
+      "pt"
+    ],
+    "attribution": "NNSVS · Yokune Ruko ♀ · 欲音ルコ",
+    "installable": true,
+    "checkedAt": "2026-09-08",
+    "tags": [
+      "nnsvs",
+      "japanese"
+    ],
+    "description": {
+      "en": "Japanese voice; other lyrics use approximate Japanese pronunciation. Free personal/doujin use; other commercial use requires publisher permission. Publisher terms apply.",
+      "zh-Hant": "日語聲庫；其他歌詞使用日語近似發音。個人／同人使用免費，其他商用須先取得發布者許可。"
+    },
+    "flags": "i7",
+    "aliases": [
+      "Yokune Ruko ♀ · 欲音ルコ",
+      "ruko",
+      "English approximation",
+      "英文近似",
+      "Chinese approximation",
+      "中文近似",
+      "Japanese",
+      "日文"
+    ]
   }
 ]

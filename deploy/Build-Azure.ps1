@@ -20,7 +20,10 @@ try {
  Copy-StageDirectory '.runtime/app' 'app'
  Copy-StageDirectory 'dist' 'dist'
  Copy-StageDirectory 'config' 'config'
- Copy-StageDirectory '.runtime/singer' 'singer'
+ Copy-StageDirectory '.runtime/singer-nnsvs' 'singer'
+ New-Item -ItemType Directory -Force (Join-Path $stage 'nnsvs') | Out-Null
+ Copy-Item -LiteralPath workers/Nnsvs/worker.py,workers/Nnsvs/pronunciation.py,workers/Nnsvs/legacy.py -Destination (Join-Path $stage 'nnsvs') -Force
+ Copy-Item -LiteralPath '.runtime/nnsvs/7za.exe' -Destination (Join-Path $stage 'nnsvs') -Force
  Copy-Item -LiteralPath package.json,package-lock.json -Destination $stage -Force
  Copy-Item -LiteralPath deploy/iisnode/entry.cjs,deploy/iisnode/web.config -Destination $stage -Force
  New-Item -ItemType Directory -Force (Join-Path $stage 'runtime') | Out-Null
