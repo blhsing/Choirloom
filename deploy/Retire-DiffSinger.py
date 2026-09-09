@@ -5,13 +5,13 @@ Defaults to a dry run; --apply removes only retired model packages and render jo
 whose saved score still selects those voices. Scores themselves are retained.
 """
 from pathlib import Path
-import argparse,json,re,shutil,sqlite3
+import argparse,json,os,re,shutil,sqlite3
 
 parser=argparse.ArgumentParser()
 parser.add_argument('--data',default='C:/home/data/choirloom')
 parser.add_argument('--apply',action='store_true')
 args=parser.parse_args()
-data=Path(args.data).resolve()
+data=Path(os.path.abspath(args.data))
 old=json.loads((data/'retired-voicebanks.json').read_text(encoding='utf-8-sig'))
 banks={b['id']:b for b in old if b.get('engine')!='nnsvs'}
 with sqlite3.connect(data/'choirloom.sqlite',timeout=30) as db:
@@ -32,11 +32,12 @@ with sqlite3.connect(data/'choirloom.sqlite',timeout=30) as db:
         if score.exists() and any(p.get('voicebank') in banks for p in json.loads(score.read_text(encoding='utf-8-sig')).get('parts',[])):
             jobs.append(job_id);paths.add(folder)
     # Validate every absolute target before any recursive operation.
-    allowed=[(data/'voices/shared').resolve(),(data/'jobs').resolve()]
+    allowed=[data/'voices/shared',data/'jobs']
     checked=[]
     for path in paths:
-        target=path.resolve()
+        target=Path(os.path.abspath(path))
         if not any(target.parent==root for root in allowed):raise RuntimeError('Unsafe cleanup target: '+str(target))
+        if target.is_symlink():raise RuntimeError('Refusing linked cleanup target: '+str(target))
         if target.exists():checked.append(target)
     print(json.dumps({'retiredVoices':len(banks),'renderJobs':len(jobs),'paths':[str(p) for p in sorted(checked)],'apply':args.apply}),flush=True)
     if args.apply:
@@ -45,7 +46,7 @@ with sqlite3.connect(data/'choirloom.sqlite',timeout=30) as db:
             else:target.unlink()
         for job_id in jobs:
             prefix=str(data/'jobs'/job_id)
-            db.execute('DELETE FROM artifacts WHERE path LIKE ?',(prefix+'%',))
+            db.execute('DELETE FROM artifacts WHERE path LIKE ?',(prefix+os.sep+'%',))
             db.execute('DELETE FROM jobs WHERE id=?',(job_id,))
         for bank_id in banks:
             db.execute('DELETE FROM voice_library WHERE bank_id=?',(bank_id,))
